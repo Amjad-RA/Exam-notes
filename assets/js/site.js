@@ -115,13 +115,13 @@
     update();
   }
 
-  /* ---------- Q&A: module filters + read / practice mode ---------- */
+  /* ---------- Q&A: module filters + open / close all answers ---------- */
   function initQa() {
     var items = Array.prototype.slice.call(document.querySelectorAll("details.qa"));
     if (!items.length) return;
     var filterBtns = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
     var modeBtn = document.querySelector("[data-mode-toggle]");
-    var practice = false;
+    var allOpen = false;
 
     function applyFilter(f) {
       items.forEach(function (d) {
@@ -142,10 +142,10 @@
 
     if (modeBtn) {
       modeBtn.addEventListener("click", function () {
-        practice = !practice;
-        items.forEach(function (d) { d.open = !practice; });
-        modeBtn.textContent = practice ? "Show all answers" : "Practice mode: hide answers";
-        modeBtn.setAttribute("aria-pressed", practice ? "true" : "false");
+        allOpen = !allOpen;
+        items.forEach(function (d) { d.open = allOpen; });
+        modeBtn.textContent = allOpen ? "Close all answers" : "Open all answers";
+        modeBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
       });
     }
   }

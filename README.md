@@ -16,9 +16,9 @@ Visual, exam-focused revision notes for FYUGP programmes (University of Calicut 
 Each subject page follows the same four-part structure:
 
 1. **10-minute cheat sheet**: one card per module with the core definitions, lists, acronyms and memory hooks.
-2. **Chapter-by-chapter breakdown**: a golden definition per module, the key frameworks, and diagrams and tables you can reproduce in an answer script.
-3. **Solved PYQs and likely questions**: every past question answered in examiner format, grouped by mark value. You can filter by module or show only repeated questions, and practice mode hides the answers.
-4. **Exam strategy**: time plan, answer templates, diagrams to practise, and keywords.
+2. **Module notes**: a golden definition per module, the key frameworks, and diagrams and tables you can reproduce in an answer script.
+3. **Past questions with answers**: every past question answered in examiner format, grouped by mark value. Answers start hidden — tap a question to see its answer, or open them all. You can filter by module or show only repeated questions.
+4. **Exam tips**: time plan, answer templates, diagrams to practise, and keywords.
 
 The site has a light/dark theme toggle and a print / save-as-PDF button. Every answer opens automatically when printing.
 
