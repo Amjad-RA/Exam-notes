@@ -611,3 +611,41 @@ details.qa[open] > summary .chev { transform: rotate(90deg); }
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* ---------- Literature components (English notes) ---------- */
+.pass { --mc: var(--ink-2); --mc-ink: var(--bg); }
+.text-meta { display: flex; flex-wrap: wrap; gap: 6px; margin: 2px 0 12px; }
+.one-line { font-size: 1.02rem; border-left: 3px solid var(--mc, var(--ink)); padding: 4px 0 4px 12px; margin: 0 0 14px; }
+.qbank { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.qbank li { margin: 0; padding: 6px 0 6px 12px; border-left: 3px solid var(--mc, var(--line-strong)); font-family: var(--font-serif); font-size: .98rem; line-height: 1.45; }
+.qbank li small { display: block; font-family: var(--font-sans); color: var(--muted); font-size: .76rem; margin-top: 2px; }
+.text-card { border-top: 1px dashed var(--line); padding-top: 22px; }
+.exam-angle { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: .86rem; color: var(--ink-2); margin-top: 10px; }
+.exam-angle b { color: var(--ink); }
+.passage-box { background: var(--surface-2); border-radius: 10px; padding: 12px 14px; font-size: .92rem; margin: 10px 0 14px; }
+.passage-box p:last-child { margin-bottom: 0; }
+.qa-list { margin: 0; padding-left: 1.4em; }
+.qa-list > li { margin: 0 0 12px; }
+.qa-list .q { font-weight: 700; display: block; }
+.qa-list .a { display: block; color: var(--ink); }
+.qa-list .a::before { content: "→ "; color: var(--muted); font-weight: 700; }
+.model { border-left: 3px solid var(--ink); padding: 2px 0 2px 14px; margin: 14px 0; }
+.model p { margin-bottom: .6em; }
+.model > :last-child { margin-bottom: 0; }
+.badge.wc { background: transparent; }
+.venn { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 8px; align-items: stretch; }
+.venn > div { border-radius: 12px; padding: 12px 14px; font-size: .9rem; min-width: 0; }
+.venn .v-l, .venn .v-r { background: var(--surface-2); border: 1px solid var(--line); }
+.venn .v-mid { background: color-mix(in srgb, var(--mc, var(--m1)) 14%, var(--surface)); border: 1px solid color-mix(in srgb, var(--mc, var(--m1)) 40%, var(--line)); }
+.venn h5 { font-size: .95rem; }
+.venn ul { margin: 0; padding-left: 1.05em; }
+@media (max-width: 640px) { .venn { grid-template-columns: 1fr; } }
+.graph-mini { display: grid; grid-template-columns: auto 1fr; grid-template-rows: 1fr auto; gap: 4px; max-width: 280px; margin: 6px auto; font-size: .76rem; color: var(--ink-2); }
+.graph-mini .yl { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; }
+.graph-mini .plot { height: 120px; border-left: 2px solid var(--line-strong); border-bottom: 2px solid var(--line-strong); position: relative; }
+.graph-mini .area { position: absolute; left: 0; bottom: 0; width: 70%; height: 65%; background: color-mix(in srgb, var(--m2) 25%, transparent); border: 1px dashed var(--m2); display: grid; place-items: center; font-weight: 700; color: var(--ink); }
+.graph-mini .xl { grid-column: 2; text-align: center; }
+.arc { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; align-items: end; }
+.arc > div { border-radius: 8px 8px 4px 4px; padding: 8px 6px; font-size: .78rem; text-align: center; background: color-mix(in srgb, var(--m4) calc(var(--h) * 9%), var(--surface-2)); border: 1px solid var(--line); min-width: 0; color: var(--ink); }
+.arc > div b { display: block; font-size: .84rem; }
+@media (max-width: 640px) { .arc { grid-template-columns: 1fr; } .arc > div { height: auto !important; text-align: left; } }
