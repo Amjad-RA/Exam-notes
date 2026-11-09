@@ -31,6 +31,20 @@
     .svg-legend li { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
     .svg-legend .ln { width: 26px; height: 0; border-top: 3px solid var(--m2); }
     .svg-legend .ln.dash { border-top: 3px dashed var(--ink-2); }
+    svg.diag .c-a { fill: color-mix(in srgb, var(--m1) 15%, transparent); stroke: var(--m1); stroke-width: 2; }
+    svg.diag .c-b { fill: color-mix(in srgb, var(--m3) 15%, transparent); stroke: var(--m3); stroke-width: 2; }
+    svg.diag .c-c { fill: color-mix(in srgb, var(--m4) 18%, transparent); stroke: var(--m4); stroke-width: 2; }
+    /* 2 × 2 matrices */
+    .mx-wrap { display: grid; grid-template-columns: 26px 1fr; grid-template-rows: auto auto; gap: 6px; }
+    .mx-y { writing-mode: vertical-rl; transform: rotate(180deg); text-align: center; font-size: .78rem; font-weight: 700; color: var(--ink-2); letter-spacing: .02em; }
+    .mx-x { grid-column: 2; text-align: center; font-size: .78rem; font-weight: 700; color: var(--ink-2); letter-spacing: .02em; }
+    .mx2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; min-width: 0; }
+    .mx2 > div { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--surface-2); min-width: 0; font-size: .9rem; }
+    .mx2 > div.hi { background: color-mix(in srgb, var(--mc, var(--m2)) 14%, var(--surface)); border-color: color-mix(in srgb, var(--mc, var(--m2)) 40%, var(--line)); }
+    .mx2 h5 { font-size: .95rem; margin: 0 0 4px; }
+    .mx2 .ax { display: block; font-size: .74rem; color: var(--ink-2); margin-bottom: 4px; }
+    .mx2 p { margin: 0; }
+    .p4 .mini-card h5 .big { font-family: var(--font-serif, Georgia), serif; font-size: 1.6rem; color: var(--mc); margin-right: 6px; }
   </style>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 </head>
@@ -309,21 +323,1693 @@
       </div>
     </section>
 
+    <!-- ===================== 2. MODULE BREAKDOWN ===================== -->
     <section class="block" id="modules">
       <div class="section-head">
         <span class="sec-num">2</span>
         <div>
-          <h2>Module breakdown, solved PYQs &amp; strategy</h2>
-          <p>Being added next: module notes with PLC, channel-level and pricing diagrams, both papers solved, and the exam plan.</p>
+          <h2>Chapter-by-chapter core breakdown</h2>
+          <p>Golden definition, the key frameworks, and every diagram drawn the way you should reproduce it in the answer script. Module V (field project, case studies) is internal work and is not examined in the written paper.</p>
         </div>
       </div>
-      <div class="tip"><span class="callout-title">Coming shortly</span>Until then, the cheat sheet above covers every definition, list and framework you need, and the overview shows which topics are asked most.</div>
-      <span id="m1"></span><span id="m2"></span><span id="m3"></span><span id="m4"></span>
-      <span id="pyqs"></span><span id="sec-a"></span><span id="sec-b"></span><span id="sec-c"></span><span id="strategy"></span>
+
+      <!-- ========== MODULE I ========== -->
+      <article class="module m1" id="m1">
+        <div class="module-banner">
+          <div class="mnum">Module I · 8 hours · 33 of 196 PYQ marks</div>
+          <h3>Introduction to Marketing</h3>
+          <div class="chips"><span class="chip">Definition &amp; concepts</span><span class="chip">Evolution</span><span class="chip">Marketing vs selling</span><span class="chip">Marketing environment</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“Marketing is the process by which companies create value for customers and build strong customer relationships in order to capture value from customers in return.”</blockquote>
+          <div class="g-src">— Philip Kotler &amp; Gary Armstrong, <em>Principles of Marketing</em>. Shorter form for 3 marks: “marketing is managing profitable customer relationships.”</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">1.1</span>Meaning, core concepts and characteristics</h4>
+          <p>Marketing is wider than selling or advertising. It starts <strong>before</strong> production (finding out what customers need) and continues <strong>after</strong> the sale (service, relationship). The <b>American Marketing Association (2017)</b> defines it as “the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large.”</p>
+          <div class="flow accent" style="--mc:var(--m1)">
+            <div class="flow-step"><b>Needs</b><small>States of felt deprivation — food, safety, belonging</small></div>
+            <div class="flow-step"><b>Wants</b><small>Needs shaped by culture — biryani, not just food</small></div>
+            <div class="flow-step"><b>Demands</b><small>Wants backed by buying power</small></div>
+            <div class="flow-step"><b>Offering</b><small>Product, service, experience</small></div>
+            <div class="flow-step"><b>Exchange</b><small>Getting something by offering something in return</small></div>
+          </div>
+          <div class="grid-4" style="margin-top:14px">
+            <div class="mini-card"><h5>Customer-oriented</h5><p>Starts and ends with the customer's needs.</p></div>
+            <div class="mini-card"><h5>Exchange process</h5><p>Value given for value received — goods for money.</p></div>
+            <div class="mini-card"><h5>Continuous</h5><p>Research → product → price → distribution → after-sales, then repeat.</p></div>
+            <div class="mini-card"><h5>Goal-oriented</h5><p>Customer satisfaction <i>and</i> profit for the firm.</p></div>
+            <div class="mini-card"><h5>Integrated</h5><p>All 4Ps and all departments work together.</p></div>
+            <div class="mini-card"><h5>Human &amp; social activity</h5><p>Satisfies human wants; affects society.</p></div>
+            <div class="mini-card"><h5>Art and science</h5><p>Creative skill plus research and analysis.</p></div>
+            <div class="mini-card"><h5>Dynamic</h5><p>Changes with technology, tastes and environment.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.2</span>The five marketing concepts and their evolution</h4>
+          <p>A marketing concept (or philosophy) is the idea that guides a firm's marketing effort — whose interests come first: the factory's, the product's, the sales target's, the customer's, or society's. Historically, firms moved from the inside-out view to the outside-in view.</p>
+          <figure class="diagram">
+            <div class="diagram-title">Evolution of marketing philosophy — from factory focus to society focus</div>
+            <div class="flow accent" style="--mc:var(--m1)">
+              <div class="flow-step"><b>1 · Production</b><small>Till ~1920s · “Consumers want products that are available and cheap.” Focus: efficient mass production (Ford Model T).</small></div>
+              <div class="flow-step"><b>2 · Product</b><small>“Consumers want the best quality and features.” Risk: <i>marketing myopia</i> (Levitt, 1960).</small></div>
+              <div class="flow-step"><b>3 · Selling</b><small>~1930s–50s · “Consumers won't buy enough unless pushed.” Aggressive selling and promotion.</small></div>
+              <div class="flow-step"><b>4 · Marketing</b><small>~1950s on · Find needs and satisfy them better than rivals. “Customer is king.”</small></div>
+              <div class="flow-step"><b>5 · Societal</b><small>~1970s on · Satisfy wants <i>and</i> preserve consumers' and society's long-run well-being.</small></div>
+            </div>
+            <figcaption>Dates are approximate eras from the US experience; in exams, the <b>order</b> and the <b>key assumption</b> of each concept earn the marks.</figcaption>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Concept</th><th>Starting point</th><th>Focus</th><th>Indian example</th></tr></thead>
+              <tbody>
+                <tr><th>Production</th><td>Factory</td><td>Volume, low cost, wide availability</td><td>Early Maruti 800, Nirma detergent's low-cost model</td></tr>
+                <tr><th>Product</th><td>Product</td><td>Quality, performance, features</td><td>HMT watches — fine product, lost to changing tastes (myopia)</td></tr>
+                <tr><th>Selling</th><td>Factory</td><td>Pushing existing products, sales targets</td><td>Insurance, timeshares, “unsought” goods</td></tr>
+                <tr><th>Marketing</th><td>Market</td><td>Customer needs, integrated marketing</td><td>Hindustan Unilever's sachet packs for rural buyers</td></tr>
+                <tr><th>Societal</th><td>Market + society</td><td>Consumer wants, company profit, <b>social welfare</b></td><td>Amul's co-operative model; Tata Tea “Jaago Re”</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.3</span>Marketing vs selling — and the role of marketing in business</h4>
+          <p>Theodore Levitt: <strong>“Selling focuses on the needs of the seller; marketing on the needs of the buyer.”</strong> Selling is one part of marketing; marketing is the whole process.</p>
+          <figure class="diagram">
+            <div class="diagram-title">Inside-out vs outside-in (Kotler &amp; Armstrong)</div>
+            <div class="pushpull">
+              <div class="pp-row">
+                <div class="pp-label">Selling<small>Inside-out</small></div>
+                <div class="pp-chain"><span class="node">Factory</span><span class="arr">→</span><span class="node">Existing products</span><span class="arr">→</span><span class="node">Selling &amp; promoting</span><span class="arr">→</span><span class="node">Profits through sales volume</span></div>
+              </div>
+              <div class="pp-row">
+                <div class="pp-label">Marketing<small>Outside-in</small></div>
+                <div class="pp-chain"><span class="node">Market</span><span class="arr">→</span><span class="node">Customer needs</span><span class="arr">→</span><span class="node">Integrated marketing</span><span class="arr">→</span><span class="node">Profits through customer satisfaction</span></div>
+              </div>
+            </div>
+            <figcaption>Each row reads: starting point → focus → means → ends.</figcaption>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Basis</th><th>Selling</th><th>Marketing</th></tr></thead>
+              <tbody>
+                <tr><th>Emphasis</th><td>Product</td><td>Customer needs</td></tr>
+                <tr><th>Sequence</th><td>Make first, then sell</td><td>Find needs first, then make</td></tr>
+                <tr><th>Scope</th><td>Narrow — one part of marketing</td><td>Wide — research to after-sales</td></tr>
+                <tr><th>Time horizon</th><td>Short-term sales targets</td><td>Long-term growth and relationships</td></tr>
+                <tr><th>Profit through</th><td>Sales volume</td><td>Customer satisfaction</td></tr>
+                <tr><th>Orientation</th><td>Seller's need for cash</td><td>Buyer's need for satisfaction</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Role in business</h5><p>Links the firm to the market; generates revenue; guides what to produce; creates time, place and possession utility.</p></div>
+            <div class="mini-card"><h5>Role for consumers</h5><p>Better products, choice, information, convenience, higher living standards.</p></div>
+            <div class="mini-card"><h5>Role in the economy</h5><p>Creates employment, supports mass production, speeds economic development.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.4</span>The societal marketing concept</h4>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Three considerations that must be balanced</div>
+              <svg class="diag" viewBox="0 0 420 335" role="img" aria-label="Three overlapping circles: society (human welfare), consumers (want satisfaction) and company (profits); the overlap is the societal marketing concept">
+                <circle class="c-c" cx="210" cy="125" r="95"/>
+                <circle class="c-a" cx="160" cy="205" r="95"/>
+                <circle class="c-b" cx="260" cy="205" r="95"/>
+                <text x="210" y="72" class="bold" text-anchor="middle">Society</text>
+                <text x="210" y="88" class="small" text-anchor="middle">(human welfare)</text>
+                <text x="126" y="252" class="bold" text-anchor="middle">Consumers</text>
+                <text x="140" y="322" class="small" text-anchor="middle">(want satisfaction)</text>
+                <text x="294" y="252" class="bold" text-anchor="middle">Company</text>
+                <text x="280" y="322" class="small" text-anchor="middle">(profits)</text>
+                <text x="210" y="172" class="small bold" text-anchor="middle">Societal</text>
+                <text x="210" y="186" class="small bold" text-anchor="middle">marketing</text>
+                <text x="210" y="200" class="small bold" text-anchor="middle">concept</text>
+              </svg>
+            </figure>
+            <div>
+              <p><strong>Societal marketing concept:</strong> the firm should determine the needs, wants and interests of target markets and deliver the desired satisfactions more effectively than competitors, <span class="kw">in a way that maintains or improves the consumer's and society's well-being</span>.</p>
+              <p><b>Why it emerged:</b> the pure marketing concept can satisfy short-run wants while harming people in the long run — fast food and health, plastic bottles and pollution, tobacco.</p>
+              <ul class="tight">
+                <li><b>Examples:</b> Tata Tea <i>Jaago Re</i> (civic awareness), HUL Lifebuoy hand-washing campaign, ITC <i>e-Choupal</i> for farmers, reusable cloth bags in retail.</li>
+                <li><b>Benefits to firm:</b> trust, goodwill, loyalty, fewer legal problems.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.5</span>Marketing environment and its impact on strategy</h4>
+          <p><strong>Marketing environment</strong> = the actors and forces outside marketing that affect management's ability to build and maintain successful relationships with target customers (Kotler). It brings <b>opportunities</b> and <b>threats</b>, so strategy must adapt to it.</p>
+          <figure class="diagram">
+            <div class="layers">
+              <div class="layer"><div class="l-name">Internal<small>Controllable</small></div><div>Company itself — top management, finance, R&amp;D, purchasing, operations, accounts; the 4Ps</div></div>
+              <div class="layer"><div class="l-name">Micro<small>Close to the firm</small></div><div>Suppliers · marketing intermediaries (resellers, logistics firms, agencies, banks) · customers · competitors · publics (media, government, citizen groups)</div></div>
+              <div class="layer"><div class="l-name">Macro<small>Uncontrollable</small></div><div><b>PESTLE</b> — political, economic, social-cultural, technological, legal, ecological/natural; plus demographic</div></div>
+            </div>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Macro force</th><th>Impact on strategy — Indian example</th></tr></thead>
+              <tbody>
+                <tr><th>Economic</th><td>GST changed pricing and warehousing; rising incomes grow premium segments</td></tr>
+                <tr><th>Technological</th><td>UPI and e-commerce created direct-to-consumer brands; quick commerce changed distribution</td></tr>
+                <tr><th>Social-cultural</th><td>Health awareness → millet snacks, sugar-free variants</td></tr>
+                <tr><th>Legal / political</th><td>Single-use plastic ban (July 2022) → paper straws, new packaging</td></tr>
+                <tr><th>Natural</th><td>Water scarcity, climate risk → water-saving products, sustainability claims</td></tr>
+                <tr><th>Demographic</th><td>A young population → digital-first marketing, youth brands</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE II ========== -->
+      <article class="module m2" id="m2">
+        <div class="module-banner">
+          <div class="mnum">Module II · 12 hours · 80 of 196 PYQ marks — the heaviest</div>
+          <h3>Product and Pricing</h3>
+          <div class="chips"><span class="chip">Marketing mix</span><span class="chip">Product classes</span><span class="chip">NPD</span><span class="chip">PLC</span><span class="chip">Brand equity</span><span class="chip">Warranty</span><span class="chip">Pricing</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“A product is anything that can be offered to a market for attention, acquisition, use, or consumption that might satisfy a want or need.”</blockquote>
+          <div class="g-src">— Kotler &amp; Armstrong. It includes physical objects, services, events, persons, places, organisations and ideas.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">2.1</span>The marketing mix — 4Ps</h4>
+          <p><strong>Marketing mix</strong> = the set of controllable, tactical marketing tools that the firm blends to produce the response it wants in the target market. The term was coined by <b>Neil Borden</b>; the <b>4P framework</b> is by <b>E. Jerome McCarthy (1960)</b>.</p>
+          <div class="grid-4 p4">
+            <div class="mini-card"><h5><span class="big">P</span>Product</h5><p>Variety, quality, design, features, brand name, packaging, services, warranties.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Price</h5><p>List price, discounts, allowances, payment period, credit terms.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Place</h5><p>Channels, coverage, locations, inventory, transportation, logistics.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Promotion</h5><p>Advertising, sales promotion, personal selling, public relations, digital.</p></div>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Services: 7Ps (Booms &amp; Bitner, 1981)</h5><p>4Ps + <b>People</b> (staff, customers) + <b>Process</b> (how service is delivered) + <b>Physical evidence</b> (ambience, uniforms, website).</p></div>
+            <div class="mini-card"><h5>Buyer's view: 4Cs (Lauterborn, 1990)</h5><p>Product → <b>Customer solution</b> · Price → <b>Customer cost</b> · Place → <b>Convenience</b> · Promotion → <b>Communication</b>.</p></div>
+          </div>
+          <div class="exam-angle"><b>Exam angle:</b> for “Elaborate the concept of marketing mix” (6m), give the definition → the 4Ps with 3–4 elements each → one example such as Maggi's mix → 7Ps in one line → importance (integration, customer satisfaction, competitive advantage).</div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.2</span>Classification of products</h4>
+          <figure class="diagram">
+            <div class="tree">
+              <div class="tree-root">Products</div>
+              <div class="tree-children">
+                <div class="tree-node m2"><h5>Consumer products</h5><ul class="tight">
+                  <li><b>Convenience</b> — bought often, little effort, low price: soap, toothpaste, newspapers (staples, impulse, emergency)</li>
+                  <li><b>Shopping</b> — compared on suitability, quality, price, style before buying: clothes, furniture, TVs, mobiles</li>
+                  <li><b>Specialty</b> — unique brand, buyers make special effort: Rolex, luxury cars, a famous doctor</li>
+                  <li><b>Unsought</b> — not known or not normally thought of: life insurance, smoke detectors, blood donation</li>
+                </ul></div>
+                <div class="tree-node m2"><h5>Industrial products</h5><ul class="tight">
+                  <li><b>Materials &amp; parts</b> — raw materials (cotton, crude oil), manufactured parts (yarn, tyres)</li>
+                  <li><b>Capital items</b> — installations (buildings, generators) and accessory equipment (tools, computers)</li>
+                  <li><b>Supplies &amp; services</b> — lubricants, paper; maintenance, repair, consulting</li>
+                </ul></div>
+                <div class="tree-node m2"><h5>Services</h5><ul class="tight">
+                  <li><b>Intangibility</b> — cannot be seen or touched before purchase</li>
+                  <li><b>Inseparability</b> — produced and consumed together</li>
+                  <li><b>Variability</b> — quality depends on who, when, where</li>
+                  <li><b>Perishability</b> — cannot be stored (empty seat on a flight)</li>
+                </ul></div>
+              </div>
+            </div>
+            <figcaption>Other bases: durability — durable (fridge) vs non-durable (soap); tangibility — goods vs services.</figcaption>
+          </figure>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.3</span>New product development (NPD) — process and strategies</h4>
+          <p>A <strong>new product</strong> can be an original product, an improved or modified product, or a new brand the firm develops through its own R&amp;D. Many new products fail, so firms follow a systematic eight-stage process.</p>
+          <figure class="diagram">
+            <div class="diagram-title">The NPD process (Kotler) — each stage is a go / drop gate</div>
+            <div class="flow accent" style="--mc:var(--m2)">
+              <div class="flow-step"><b>1 · Idea generation</b><small>Internal R&amp;D, customers, competitors, dealers, crowdsourcing</small></div>
+              <div class="flow-step"><b>2 · Idea screening</b><small>Drop poor ideas early (avoid drop and go errors)</small></div>
+              <div class="flow-step"><b>3 · Concept development &amp; testing</b><small>Turn idea into a consumer concept; test with target buyers</small></div>
+              <div class="flow-step"><b>4 · Marketing strategy</b><small>Target market, positioning, price, distribution, budget</small></div>
+              <div class="flow-step"><b>5 · Business analysis</b><small>Sales, cost and profit projections</small></div>
+              <div class="flow-step"><b>6 · Product development</b><small>Prototype, functional and consumer tests</small></div>
+              <div class="flow-step"><b>7 · Test marketing</b><small>Product and programme tried in a realistic market</small></div>
+              <div class="flow-step"><b>8 · Commercialisation</b><small>Full launch — when, where, to whom, how</small></div>
+            </div>
+          </figure>
+          <div class="grid-2">
+            <div class="mini-card"><h5>NPD strategies in a competitive market</h5><ul class="tight">
+              <li><b>Innovation / first-mover</b> — be first, build brand and patents (Apple iPhone, 2007)</li>
+              <li><b>Fast follower / imitation</b> — improve on a pioneer's product at lower risk (“me-too”)</li>
+              <li><b>Line and brand extension</b> — new variants under a known brand (Maggi Atta Noodles)</li>
+              <li><b>Product modification</b> — improve quality, features or style of existing products</li>
+              <li><b>Acquisition / licensing</b> — buy a firm, patent or licence to make someone else's product</li>
+              <li><b>Customer-centred &amp; team-based NPD</b> — co-create with customers; cross-functional teams for speed</li>
+            </ul></div>
+            <div class="mini-card"><h5>Why new products fail</h5><ul class="tight">
+              <li>Overestimated market size</li>
+              <li>Poor design or wrong positioning</li>
+              <li>Wrong price, weak promotion</li>
+              <li>Higher-than-expected costs</li>
+              <li>Competitors fight back harder than expected</li>
+            </ul><p style="margin-top:6px"><b>Example:</b> Coca-Cola's “New Coke” (1985) was pulled after about three months.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.4</span>Product life cycle (PLC) and its implications for strategy</h4>
+          <p><strong>PLC</strong> = the course of a product's sales and profits over its lifetime. It has four stages after product development: <b>introduction, growth, maturity and decline</b>. The concept was popularised by <b>Theodore Levitt (1965)</b>.</p>
+          <figure class="diagram">
+            <div class="diagram-title">Sales and profits over the product life cycle</div>
+            <svg class="diag m2" viewBox="0 0 600 340" role="img" aria-label="Product life cycle: sales rise slowly in introduction, fast in growth, peak in maturity and fall in decline; profit is negative in introduction, peaks in late growth and falls in maturity and decline">
+              <defs><marker id="ahp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ah-ink"/></marker></defs>
+              <rect class="band" x="60" y="44" width="110" height="256"/>
+              <rect class="band2" x="170" y="44" width="130" height="256"/>
+              <rect class="band" x="300" y="44" width="150" height="256"/>
+              <rect class="band2" x="450" y="44" width="125" height="256"/>
+              <text x="115" y="38" class="small bold" text-anchor="middle">Introduction</text>
+              <text x="235" y="38" class="small bold" text-anchor="middle">Growth</text>
+              <text x="375" y="38" class="small bold" text-anchor="middle">Maturity</text>
+              <text x="512" y="38" class="small bold" text-anchor="middle">Decline</text>
+              <path class="axis" d="M60,22 L60,300" marker-start="url(#ahp)"/>
+              <path class="axis" d="M60,250 L585,250" marker-end="url(#ahp)"/>
+              <text x="52" y="254" class="small" text-anchor="end">0</text>
+              <text x="66" y="296" class="small">Loss</text>
+              <text x="586" y="242" class="small" text-anchor="end">Time</text>
+              <text x="14" y="18" class="small">₹ Sales &amp; profit</text>
+              <path class="curve" d="M60,248 C110,246 150,238 170,226 C215,200 260,118 300,96 C330,80 360,70 390,70 C420,70 440,80 460,98 C500,134 540,176 572,194"/>
+              <path class="curve2" d="M60,250 C90,268 130,284 170,250 C205,220 250,150 300,136 C335,126 365,140 400,166 C440,196 510,236 572,262"/>
+              <text x="392" y="60" class="bold" text-anchor="middle">Sales</text>
+              <text x="318" y="160" class="bold">Profit</text>
+            </svg>
+            <ul class="svg-legend"><li><span class="ln"></span>Sales</li><li><span class="ln dash"></span>Profit</li></ul>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th></th><th>Introduction</th><th>Growth</th><th>Maturity</th><th>Decline</th></tr></thead>
+              <tbody>
+                <tr><th>Sales</th><td>Low</td><td>Rising rapidly</td><td>Peak</td><td>Declining</td></tr>
+                <tr><th>Profit</th><td>Negative</td><td>Rising</td><td>High, then falling</td><td>Declining</td></tr>
+                <tr><th>Customers</th><td>Innovators</td><td>Early adopters</td><td>Mass market</td><td>Laggards</td></tr>
+                <tr><th>Competitors</th><td>Few</td><td>Growing</td><td>Many, stable then falling</td><td>Declining</td></tr>
+                <tr><th>Objective</th><td>Awareness and trial</td><td>Maximise market share</td><td>Maximise profit, defend share</td><td>Cut costs, milk the brand</td></tr>
+                <tr><th>Product</th><td>Basic</td><td>Extensions, service, warranty</td><td>Diversify brands and models</td><td>Phase out weak items</td></tr>
+                <tr><th>Price</th><td>Skimming or penetration</td><td>Penetration</td><td>Match or beat competitors</td><td>Cut price</td></tr>
+                <tr><th>Distribution</th><td>Selective</td><td>Intensive</td><td>More intensive</td><td>Selective — drop weak outlets</td></tr>
+                <tr><th>Promotion</th><td>Build awareness; heavy sales promotion to induce trial</td><td>Build awareness and interest in the mass market</td><td>Stress brand differences; sales promotion to encourage switching</td><td>Reduce to the minimum to keep loyal buyers</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Maturity strategies (Kotler)</h5><ul class="tight"><li><b>Modify the market</b> — new users, new uses (Dettol for floors as well as wounds)</li><li><b>Modify the product</b> — quality, features, style</li><li><b>Modify the marketing mix</b> — price cuts, new channels, new ad campaign</li></ul></div>
+            <div class="mini-card"><h5>Indian examples</h5><ul class="tight"><li><b>Introduction:</b> new EV two-wheelers</li><li><b>Growth:</b> smartwatches, plant-based foods</li><li><b>Maturity:</b> toothpaste, detergents, smartphones</li><li><b>Decline:</b> landline phones, DVD players</li></ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.5</span>Brand, brand equity, positioning and differentiation</h4>
+          <p><strong>Brand</strong> (AMA): a name, term, sign, symbol or design, or a combination of these, that identifies the goods or services of one seller and differentiates them from competitors. <strong>Brand equity</strong> = the differential effect that knowing the brand name has on customer response to the product (Kotler) — the extra value a brand adds.</p>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Aaker's five elements of brand equity</div>
+              <div class="tree">
+                <div class="tree-root">Brand equity</div>
+                <div class="tree-children">
+                  <div class="tree-node m2"><h5>Brand awareness</h5><p>Recognition and recall — “Xerox” for photocopy</p></div>
+                  <div class="tree-node m2"><h5>Perceived quality</h5><p>Customers' judgement of excellence — Tata Salt's purity</p></div>
+                  <div class="tree-node m2"><h5>Brand associations</h5><p>Images linked to the brand — Royal Enfield and adventure</p></div>
+                  <div class="tree-node m2"><h5>Brand loyalty</h5><p>Repeat purchase, willingness to pay more — Apple users</p></div>
+                  <div class="tree-node m2"><h5>Proprietary assets</h5><p>Patents, trademarks, channel relationships</p></div>
+                </div>
+              </div>
+            </figure>
+            <div>
+              <h5>Building and managing brand equity</h5>
+              <ul class="tight">
+                <li>Consistent quality and a clear brand promise</li>
+                <li>Strong name, logo, tagline and packaging</li>
+                <li>Integrated communication and brand experiences</li>
+                <li>Loyalty programmes and good after-sales service</li>
+                <li>Careful brand extensions that don't dilute the brand</li>
+                <li>Track brand health — awareness, preference, loyalty</li>
+                <li>Keller's <b>CBBE pyramid</b>: identity → meaning → response → relationship (resonance)</li>
+              </ul>
+              <h5 style="margin-top:12px">Brand positioning</h5>
+              <p>Positioning = arranging for a product to occupy a <span class="kw">clear, distinctive and desirable place in the minds of target consumers</span> relative to competing products (Ries &amp; Trout popularised the term, 1972).</p>
+            </div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Positioning / differentiation basis</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><th>Product attribute or feature</th><td>Volvo — safety</td></tr>
+                <tr><th>Benefit</th><td>Colgate — cavity protection</td></tr>
+                <tr><th>Price–quality</th><td>Big Bazaar “Isse sasta aur achha kahin nahi”; Taj Hotels at the premium end</td></tr>
+                <tr><th>Use or application</th><td>Bournvita — energy for growing children</td></tr>
+                <tr><th>User</th><td>Johnson's Baby — for babies</td></tr>
+                <tr><th>Against a competitor</th><td>Pepsi vs Coca-Cola</td></tr>
+                <tr><th>Differentiation tools</th><td>Product, service, channel, people, image (Kotler)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.6</span>Warranties and guarantees</h4>
+          <div class="tchart">
+            <div><h5>Warranty</h5><ul>
+              <li>A <b>written assurance</b> by the seller that the product is free from defects and will perform as stated</li>
+              <li>If it fails within the warranty period, it will be <b>repaired or replaced</b></li>
+              <li>Comes with <b>conditions</b> (proper use, no tampering); may be extended for a fee</li>
+              <li>Types: <b>express</b> (stated in writing) and <b>implied</b> (by law — fitness for purpose, merchantability)</li>
+              <li>Example: 1-year manufacturer's warranty on a Samsung TV; 2 years on panel</li>
+            </ul></div>
+            <div><h5>Guarantee</h5><ul>
+              <li>A <b>broader promise</b>, often about satisfaction or quality</li>
+              <li>Usually offers a <b>refund or replacement</b>, often with fewer conditions</li>
+              <li>Generally <b>free</b>; used as a confidence-building promotional tool</li>
+              <li>Example: “money-back guarantee within 7 days”; Domino's well-known “30 minutes or free” delivery promise</li>
+            </ul></div>
+          </div>
+          <div class="grid-3">
+            <div class="mini-card"><h5>For buyers</h5><p>Reduce perceived risk; protection against defects.</p></div>
+            <div class="mini-card"><h5>For sellers</h5><p>Signal quality, build trust and repeat sales, differentiate the product.</p></div>
+            <div class="mini-card"><h5>Legal back-up</h5><p>Consumer Protection Act, 2019 — “defect” and “deficiency in service” can be complained against.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.7</span>Pricing — objectives, policies and factors</h4>
+          <p><strong>Price</strong> = the amount of money charged for a product or service; the sum of the values customers exchange for the benefits of having or using it. It is the <b>only element of the mix that produces revenue</b>; all others are costs.</p>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Pricing objectives</h5><ol class="tight">
+              <li><b>Survival</b> — cover variable costs in bad times</li>
+              <li><b>Profit maximisation / target return</b> on investment</li>
+              <li><b>Market-share leadership</b> — low prices to build volume</li>
+              <li><b>Product-quality leadership</b> — premium prices</li>
+              <li><b>Meeting or preventing competition</b></li>
+              <li><b>Price stabilisation</b> — avoid price wars</li>
+              <li><b>Social objectives</b> — affordable essentials, e.g., Amul milk</li>
+            </ol></div>
+            <div class="mini-card"><h5>Pricing policies</h5><ul class="tight">
+              <li><b>One-price vs variable price</b></li>
+              <li><b>Skimming</b> — high initial price, then lower (new iPhones)</li>
+              <li><b>Penetration</b> — low price to win share fast (Jio, 2016)</li>
+              <li><b>Psychological</b> — ₹499, ₹99</li>
+              <li><b>Discounts &amp; allowances</b> — cash, quantity, seasonal, trade</li>
+              <li><b>Geographical</b> — uniform delivered vs zone pricing</li>
+              <li><b>Product-line, bundle and promotional pricing</b></li>
+            </ul></div>
+          </div>
+          <div class="tchart">
+            <div><h5>Internal factors</h5><ul><li>Marketing objectives</li><li>Costs — fixed and variable (the price floor)</li><li>Marketing-mix strategy and positioning</li><li>Product stage in the PLC</li><li>Organisational considerations</li></ul></div>
+            <div><h5>External factors</h5><ul><li><b>Demand</b> — price elasticity, customer perceptions of value (the price ceiling)</li><li><b>Competition</b> — rivals' prices, costs and reactions</li><li>Economic conditions — inflation, recession</li><li>Government regulation — GST, MRP rules, drug price control (DPCO)</li><li>Channel members' margins</li></ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.8</span>Pricing methods — the three anchors</h4>
+          <figure class="diagram">
+            <div class="diagram-title">Price lies between the cost floor and the value ceiling; competitors' prices set the range in between</div>
+            <div class="tree">
+              <div class="tree-root">Pricing methods</div>
+              <div class="tree-children">
+                <div class="tree-node m2"><h5>Cost-based</h5><ul class="tight"><li><b>Cost-plus / markup</b>: price = unit cost + fixed % (cost ₹80 + 25% = ₹100)</li><li><b>Break-even / target-return</b>: BEP units = fixed cost ÷ (price − variable cost per unit)</li><li><b>Marginal-cost pricing</b>: cover variable cost plus a contribution</li></ul></div>
+                <div class="tree-node m2"><h5>Value-based</h5><ul class="tight"><li>Price set on the buyer's <b>perceived value</b>, not seller's cost</li><li><b>Good-value</b> — right quality at a fair price; <b>EDLP</b> (everyday low price, e.g., D-Mart)</li><li><b>Value-added</b> — add features and service to justify a higher price</li></ul></div>
+                <div class="tree-node m2"><h5>Competition-based</h5><ul class="tight"><li><b>Going-rate</b> — follow the market leader's price (petrol pumps, steel)</li><li><b>Sealed-bid / tender</b> — price set on expected rival bids (government contracts)</li><li><b>Premium or discount</b> to rivals depending on positioning</li></ul></div>
+              </div>
+            </div>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Method</th><th>Merit</th><th>Limitation</th></tr></thead>
+              <tbody>
+                <tr><th>Cost-plus</th><td>Simple; covers costs; seems fair</td><td>Ignores demand and competitors' prices</td></tr>
+                <tr><th>Break-even</th><td>Shows how many units must be sold at each price</td><td>Assumes costs and price are constant</td></tr>
+                <tr><th>Value-based</th><td>Captures what customers are willing to pay</td><td>Hard to measure perceived value</td></tr>
+                <tr><th>Going-rate</th><td>Avoids price wars; easy where products are similar</td><td>No independence; ignores own costs</td></tr>
+                <tr><th>Sealed-bid</th><td>Wins contracts in open competition</td><td>Risk of under-pricing below cost</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE III ========== -->
+      <article class="module m3" id="m3">
+        <div class="module-banner">
+          <div class="mnum">Module III · 10 hours · 36 of 196 PYQ marks</div>
+          <h3>Distribution and Promotion</h3>
+          <div class="chips"><span class="chip">Channels &amp; intermediaries</span><span class="chip">Types of channels</span><span class="chip">Sales promotion</span><span class="chip">Personal selling</span><span class="chip">Public relations</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“A marketing channel (or distribution channel) is a set of interdependent organisations that help make a product or service available for use or consumption by the consumer or business user.”</blockquote>
+          <div class="g-src">— Kotler &amp; Armstrong. Place in the 4Ps = channels + physical distribution (logistics).</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">3.1</span>Why intermediaries? The role of marketing channels</h4>
+          <figure class="diagram">
+              <div class="diagram-title">How a distributor reduces the number of contacts</div>
+              <svg class="diag m3" viewBox="0 0 620 285" role="img" aria-label="Without a distributor, three manufacturers selling to three customers need nine contacts; with one distributor they need six">
+                <g class="link">
+                  <path d="M66,50 L196,50 M66,50 L196,120 M66,50 L196,190 M66,120 L196,50 M66,120 L196,120 M66,120 L196,190 M66,190 L196,50 M66,190 L196,120 M66,190 L196,190"/>
+                  <path d="M366,50 L432,120 M366,120 L432,120 M366,190 L432,120 M492,120 L556,50 M492,120 L556,120 M492,120 L556,190"/>
+                </g>
+                <rect class="box" x="20" y="36" width="46" height="28" rx="6"/><text x="43" y="56" text-anchor="middle" style="font-size:15px">M1</text>
+                <rect class="box" x="20" y="106" width="46" height="28" rx="6"/><text x="43" y="126" text-anchor="middle" style="font-size:15px">M2</text>
+                <rect class="box" x="20" y="176" width="46" height="28" rx="6"/><text x="43" y="196" text-anchor="middle" style="font-size:15px">M3</text>
+                <rect class="box" x="196" y="36" width="46" height="28" rx="6"/><text x="219" y="56" text-anchor="middle" style="font-size:15px">C1</text>
+                <rect class="box" x="196" y="106" width="46" height="28" rx="6"/><text x="219" y="126" text-anchor="middle" style="font-size:15px">C2</text>
+                <rect class="box" x="196" y="176" width="46" height="28" rx="6"/><text x="219" y="196" text-anchor="middle" style="font-size:15px">C3</text>
+                <rect class="box" x="320" y="36" width="46" height="28" rx="6"/><text x="343" y="56" text-anchor="middle" style="font-size:15px">M1</text>
+                <rect class="box" x="320" y="106" width="46" height="28" rx="6"/><text x="343" y="126" text-anchor="middle" style="font-size:15px">M2</text>
+                <rect class="box" x="320" y="176" width="46" height="28" rx="6"/><text x="343" y="196" text-anchor="middle" style="font-size:15px">M3</text>
+                <rect class="box-acc" x="432" y="100" width="60" height="40" rx="8"/><text x="462" y="126" text-anchor="middle" class="bold" style="font-size:16px">D</text>
+                <rect class="box" x="556" y="36" width="46" height="28" rx="6"/><text x="579" y="56" text-anchor="middle" style="font-size:15px">C1</text>
+                <rect class="box" x="556" y="106" width="46" height="28" rx="6"/><text x="579" y="126" text-anchor="middle" style="font-size:15px">C2</text>
+                <rect class="box" x="556" y="176" width="46" height="28" rx="6"/><text x="579" y="196" text-anchor="middle" style="font-size:15px">C3</text>
+                <text x="131" y="242" class="bold" style="font-size:17px" text-anchor="middle">Without distributor</text>
+                <text x="131" y="266" class="small" style="font-size:16px" text-anchor="middle">3 × 3 = 9 contacts</text>
+                <text x="461" y="242" class="bold" style="font-size:17px" text-anchor="middle">With distributor (D)</text>
+                <text x="461" y="266" class="small" style="font-size:16px" text-anchor="middle">3 + 3 = 6 contacts</text>
+              </svg>
+              <figcaption>M = manufacturer, C = customer. Fewer contacts means less effort and cost for everyone.</figcaption>
+          </figure>
+            <div class="mini-card">
+              <h5>Role and importance of intermediaries</h5>
+              <ul class="tight">
+                <li><b>Contact efficiency</b> — fewer transactions (diagram)</li>
+                <li><b>Bridge the gaps</b> of time, place and possession between producer and consumer</li>
+                <li><b>Assortment</b> — producers make large quantities of few items; consumers want small quantities of many</li>
+                <li><b>Market coverage</b> — reach lakhs of retail outlets (HUL reaches millions of outlets through distributors)</li>
+                <li><b>Specialised skill</b> — local knowledge, selling, storage</li>
+                <li><b>Financing and risk-bearing</b> — buy stock, extend credit</li>
+                <li><b>Feedback</b> — pass on market information to the producer</li>
+              </ul>
+            </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.2</span>Functions of distribution channels</h4>
+          <div class="grid-4">
+            <div class="mini-card"><h5>Information</h5><p>Gather and share data on customers, competitors and the environment.</p></div>
+            <div class="mini-card"><h5>Promotion</h5><p>Spread persuasive communication about the offer — displays, demos.</p></div>
+            <div class="mini-card"><h5>Contact</h5><p>Find and communicate with prospective buyers.</p></div>
+            <div class="mini-card"><h5>Matching</h5><p>Shape the offer to buyers' needs — sorting, grading, assembling, packaging.</p></div>
+            <div class="mini-card"><h5>Negotiation</h5><p>Agree on price and terms so ownership can transfer.</p></div>
+            <div class="mini-card"><h5>Physical distribution</h5><p>Transport and store the goods.</p></div>
+            <div class="mini-card"><h5>Financing</h5><p>Acquire and use funds to cover channel costs; give credit.</p></div>
+            <div class="mini-card"><h5>Risk-taking</h5><p>Bear the risks of stock loss, price fall, bad debts.</p></div>
+          </div>
+          <div class="mnemonic"><span class="callout-title">Memory hook</span><b>“I PC MN PFR”</b> — the first five help complete transactions; the last three help fulfil them.</div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.3</span>Types of channels</h4>
+          <figure class="diagram">
+            <div class="diagram-title">Channel levels — consumer goods (each intermediary adds one level)</div>
+            <div class="pushpull">
+              <div class="pp-row"><div class="pp-label">Zero-level<small>Direct marketing</small></div><div class="pp-chain"><span class="node">Manufacturer</span><span class="arr">→</span><span class="node">Consumer</span></div></div>
+              <div class="pp-row"><div class="pp-label">One-level</div><div class="pp-chain"><span class="node">Manufacturer</span><span class="arr">→</span><span class="node">Retailer</span><span class="arr">→</span><span class="node">Consumer</span></div></div>
+              <div class="pp-row"><div class="pp-label">Two-level</div><div class="pp-chain"><span class="node">Manufacturer</span><span class="arr">→</span><span class="node">Wholesaler</span><span class="arr">→</span><span class="node">Retailer</span><span class="arr">→</span><span class="node">Consumer</span></div></div>
+              <div class="pp-row"><div class="pp-label">Three-level</div><div class="pp-chain"><span class="node">Manufacturer</span><span class="arr">→</span><span class="node">Agent</span><span class="arr">→</span><span class="node">Wholesaler</span><span class="arr">→</span><span class="node">Retailer</span><span class="arr">→</span><span class="node">Consumer</span></div></div>
+            </div>
+            <figcaption>Examples: zero — Eureka Forbes door-to-door, a company's own website; one — Maruti car dealers; two — FMCG goods through distributors and kirana shops; three — imported or agricultural goods via agents.</figcaption>
+          </figure>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Industrial channels</h5><p>Manufacturer → industrial customer (direct, most common); or via industrial distributor, manufacturer's representative or sales branch.</p></div>
+            <div class="mini-card"><h5>Vertical marketing system (VMS)</h5><p>Producer, wholesaler and retailer act as one system. <b>Corporate</b> (one owner — Bata, Raymond shops), <b>contractual</b> (franchise — McDonald's), <b>administered</b> (a dominant member leads — HUL).</p></div>
+            <div class="mini-card"><h5>Other types</h5><p><b>Horizontal</b> — two firms at the same level join (bank ATMs in petrol pumps). <b>Multichannel / omnichannel</b> — stores + app + website (Reliance Digital).</p></div>
+          </div>
+          <div class="tip"><span class="callout-title">Factors in choosing a channel</span><b>Product</b> (perishable, bulky, technical → short channel) · <b>market</b> (number and spread of buyers, order size) · <b>company</b> (finance, control wanted) · <b>intermediaries</b> (availability, cost, services) · <b>environment</b> (economy, law).</div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.4</span>Sales promotion — techniques and strategies</h4>
+          <p><strong>Sales promotion</strong> = short-term incentives to encourage the purchase or sale of a product or service. Advertising gives a <i>reason</i> to buy; sales promotion gives an <i>incentive to buy now</i>. Full detail on the <a href="advertisement-and-sales-promotion.html#m4">Advertisement and Sales Promotion page</a>.</p>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Aimed at</th><th>Techniques</th></tr></thead>
+              <tbody>
+                <tr><th>Consumers (pull)</th><td><b>Samples</b>, <b>coupons</b>, cash refunds / rebates, <b>price packs</b> (“buy 1 get 1”, 20% extra), <b>premiums</b> (free gift), contests, sweepstakes and games, <b>loyalty</b> points, point-of-purchase displays, exchange offers</td></tr>
+                <tr><th>Trade (push)</th><td>Buying allowances, display and advertising allowances, free goods, dealer contests, push money, trade shows</td></tr>
+                <tr><th>Sales force</th><td>Bonuses, sales contests, incentive trips, recognition</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Objectives</h5><ul class="tight"><li>Induce trial of new products</li><li>Increase short-term sales, clear stock</li><li>Counter competitors' offers</li><li>Reward and retain loyal customers</li><li>Win shelf space and dealer support</li></ul></div>
+            <div class="mini-card"><h5>Strategy and limitations</h5><ul class="tight"><li>Set objectives → select tools → size of incentive, duration, conditions → pre-test → implement → evaluate</li><li>Overuse cheapens the brand image</li><li>Effects are short-lived; customers wait for deals</li></ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.5</span>Personal selling</h4>
+          <p><strong>Personal selling</strong> = personal presentation by the firm's sales force for the purpose of making sales and building customer relationships. It is the most <b>effective</b> promotion tool at later stages of buying (preference, conviction, action), but also the most <b>expensive per contact</b>.</p>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Features</h5><ul class="tight">
+              <li><b>Personal, two-way</b> communication — face-to-face, phone, video</li>
+              <li><b>Flexible</b> — message adapted to each buyer</li>
+              <li><b>Immediate feedback</b> and response; objections handled on the spot</li>
+              <li><b>Relationship building</b> — long-term customer bonds (cultivation)</li>
+              <li><b>Persuasive</b> — demonstrations, explanations</li>
+              <li><b>Costly</b> — high cost per contact; needs trained staff</li>
+              <li>Best for technical, costly and industrial products, insurance</li>
+            </ul></div>
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Steps in the selling process</div>
+              <div class="flow accent" style="--mc:var(--m3)">
+                <div class="flow-step"><b>Prospecting &amp; qualifying</b></div>
+                <div class="flow-step"><b>Pre-approach</b></div>
+                <div class="flow-step"><b>Approach</b></div>
+                <div class="flow-step"><b>Presentation &amp; demonstration</b></div>
+                <div class="flow-step"><b>Handling objections</b></div>
+                <div class="flow-step"><b>Closing</b></div>
+                <div class="flow-step"><b>Follow-up</b></div>
+              </div>
+            </figure>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.6</span>Public relations (PR)</h4>
+          <p><strong>Public relations</strong> = building good relations with the company's various publics by obtaining favourable publicity, building a good corporate image, and handling or heading off unfavourable rumours, stories and events (Kotler).</p>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Functions / tools</h5><ul class="tight">
+              <li><b>Press relations</b> — news releases, press conferences</li>
+              <li><b>Product publicity</b> — media coverage of products</li>
+              <li><b>Public affairs and lobbying</b> — relations with government and the community</li>
+              <li><b>Investor relations</b> — shareholders and the financial community</li>
+              <li><b>Events and sponsorships</b> — sports, cultural events</li>
+              <li><b>Corporate identity</b> — logo, stationery, uniforms</li>
+              <li><b>Public-service activities / CSR</b> — e.g., Tata Trusts, Infosys Foundation</li>
+              <li><b>Crisis management</b></li>
+            </ul></div>
+            <div class="mini-card"><h5>Importance in marketing</h5><ul class="tight">
+              <li><b>High credibility</b> — news is believed more than ads</li>
+              <li><b>Low cost</b> — no media space is bought</li>
+              <li>Builds <b>corporate image</b> and goodwill</li>
+              <li>Reaches people who avoid ads</li>
+              <li>Supports launches and brand building</li>
+              <li><b>Crisis management</b> — e.g., Cadbury India's 2003 worm crisis: Project Vishwas, new tamper-proof packaging, and the Amitabh Bachchan campaign restored trust</li>
+            </ul></div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Basis</th><th>Advertising</th><th>Sales promotion</th><th>Personal selling</th><th>Public relations</th></tr></thead>
+              <tbody>
+                <tr><th>Nature</th><td>Paid, non-personal</td><td>Short-term incentive</td><td>Personal, two-way</td><td>Mostly unpaid publicity</td></tr>
+                <tr><th>Reach</th><td>Mass</td><td>Mass / trade</td><td>One at a time</td><td>Mass via media</td></tr>
+                <tr><th>Cost per contact</th><td>Low</td><td>Moderate</td><td>Highest</td><td>Lowest</td></tr>
+                <tr><th>Credibility</th><td>Moderate</td><td>Moderate</td><td>High</td><td>Highest</td></tr>
+                <tr><th>Effect</th><td>Long-term image</td><td>Immediate sales</td><td>Conviction and action</td><td>Goodwill, image</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE IV ========== -->
+      <article class="module m4" id="m4">
+        <div class="module-banner">
+          <div class="mnum">Module IV · 15 hours · 47 of 196 PYQ marks</div>
+          <h3>Sustainable Marketing</h3>
+          <div class="chips"><span class="chip">Meaning &amp; pillars</span><span class="chip">Sustainability concern</span><span class="chip">Waste &amp; resources</span><span class="chip">Energy</span><span class="chip">Green marketing</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“Sustainable marketing is socially and environmentally responsible marketing that meets the present needs of consumers and businesses while also preserving or enhancing the ability of future generations to meet their needs.”</blockquote>
+          <div class="g-src">— Kotler &amp; Armstrong. It follows the Brundtland Report's (1987) idea of sustainable development.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">4.1</span>Meaning and pillars of sustainable marketing</h4>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">The three pillars — the triple bottom line (John Elkington, 1994)</div>
+              <svg class="diag" viewBox="0 0 420 335" role="img" aria-label="Three overlapping circles: People (social), Planet (environmental) and Profit (economic); the overlap is sustainable marketing">
+                <circle class="c-a" cx="210" cy="125" r="95"/>
+                <circle class="c-b" cx="160" cy="205" r="95"/>
+                <circle class="c-c" cx="260" cy="205" r="95"/>
+                <text x="210" y="72" class="bold" text-anchor="middle">People</text>
+                <text x="210" y="88" class="small" text-anchor="middle">(social equity)</text>
+                <text x="126" y="252" class="bold" text-anchor="middle">Planet</text>
+                <text x="140" y="322" class="small" text-anchor="middle">(environment)</text>
+                <text x="294" y="252" class="bold" text-anchor="middle">Profit</text>
+                <text x="280" y="322" class="small" text-anchor="middle">(economic viability)</text>
+                <text x="210" y="178" class="small bold" text-anchor="middle">Sustainable</text>
+                <text x="210" y="192" class="small bold" text-anchor="middle">marketing</text>
+              </svg>
+            </figure>
+            <div>
+              <ul class="tight">
+                <li><b>People (social pillar):</b> fair wages, safe products, health, community welfare, human rights in the supply chain.</li>
+                <li><b>Planet (environmental pillar):</b> cut pollution, waste, carbon and water use; protect biodiversity.</li>
+                <li><b>Profit (economic pillar):</b> the business must stay viable. Sustainability without profit cannot last, and profit without sustainability is short-sighted.</li>
+              </ul>
+              <h5 style="margin-top:12px">Kotler's five sustainable marketing principles</h5>
+              <ol class="tight">
+                <li><b>Consumer-oriented</b> — view activities from the consumer's point of view</li>
+                <li><b>Customer-value</b> — put resources into value-building investments</li>
+                <li><b>Innovative</b> — continuously seek real product and marketing improvements</li>
+                <li><b>Sense-of-mission</b> — define the mission in broad social terms</li>
+                <li><b>Societal</b> — balance consumer wants, company needs and society's long-run interests</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.2</span>Marketing with sustainability concern</h4>
+          <p>Critics argue that some marketing practices hurt consumers, society and other businesses. Sustainable marketing answers these criticisms.</p>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Impact on consumers</h5><p>High prices, deceptive practices, high-pressure selling, shoddy or unsafe products, <b>planned obsolescence</b>, poor service to disadvantaged consumers.</p></div>
+            <div class="mini-card"><h5>Impact on society</h5><p>False wants and too much <b>materialism</b>, too few social goods, cultural pollution.</p></div>
+            <div class="mini-card"><h5>Impact on other businesses</h5><p>Acquiring competitors, barriers to entry, predatory pricing.</p></div>
+          </div>
+          <figure class="diagram">
+            <div class="diagram-title">Societal classification of products (Kotler) — aim for desirable products</div>
+            <div class="mx-wrap m4">
+              <div class="mx-y">Immediate satisfaction: low → high</div>
+              <div class="mx2">
+                <div><span class="ax">High satisfaction · low long-run benefit</span><h5>Pleasing products</h5><p>Give instant pleasure, may harm in the long run — sugary soft drinks, cigarettes.</p></div>
+                <div class="hi"><span class="ax">High satisfaction · high long-run benefit</span><h5>Desirable products ✓</h5><p>Both — tasty and nutritious breakfast foods, efficient LED lights, EVs.</p></div>
+                <div><span class="ax">Low satisfaction · low long-run benefit</span><h5>Deficient products</h5><p>Neither appeal nor benefit — poor-tasting, ineffective medicine.</p></div>
+                <div><span class="ax">Low satisfaction · high long-run benefit</span><h5>Salutary products</h5><p>Low appeal but good for you — seat belts, airbags, insurance.</p></div>
+              </div>
+              <div class="mx-x">Long-run consumer benefit: low → high</div>
+            </div>
+          </figure>
+          <div class="tip"><span class="callout-title">How firms show sustainability concern</span>Eco-design and less packaging · ethical sourcing (Fairtrade) · honest communication (no greenwashing) · CSR (mandatory 2% of average net profit under Sec 135, Companies Act 2013, for qualifying companies) · consumer education · take-back and recycling schemes · sustainability reporting (SEBI's BRSR for the top 1,000 listed companies).</div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.3</span>Environmental impact management — waste and resource depletion</h4>
+          <p><strong>Environmental impact management</strong> = identifying, measuring and reducing the harmful effects of a firm's products and operations on the environment across the whole life cycle — raw material, production, distribution, use and disposal. Tools: life-cycle assessment (LCA), environmental impact assessment (EIA), ISO 14001 environmental management system.</p>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Waste management hierarchy — most preferred at the top</div>
+              <div class="funnel">
+                <div class="funnel-row" style="--w:100%;--a:55%"><b>Reduce / prevent</b><span>Less material, lighter packs</span></div>
+                <div class="funnel-row" style="--w:88%;--a:44%"><b>Reuse</b><span>Refill packs, returnable bottles</span></div>
+                <div class="funnel-row" style="--w:76%;--a:33%"><b>Recycle</b><span>PET → fibre, paper → paperboard</span></div>
+                <div class="funnel-row" style="--w:64%;--a:22%"><b>Recover</b><span>Energy from waste, composting</span></div>
+                <div class="funnel-row" style="--w:52%;--a:12%"><b>Dispose</b><span>Safe landfill — last resort</span></div>
+              </div>
+            </figure>
+            <div class="mini-card"><h5>Waste management strategies</h5><ul class="tight">
+              <li><b>Source reduction</b> — design out waste, lightweight packaging</li>
+              <li><b>Circular economy</b> — keep materials in use (repair, refurbish, recycle)</li>
+              <li><b>Extended Producer Responsibility (EPR)</b> — producers collect back plastic and e-waste (Plastic Waste Management Rules 2016; E-Waste Rules 2022)</li>
+              <li><b>Reverse logistics</b> — take-back and exchange schemes</li>
+              <li><b>Zero-waste-to-landfill</b> targets in factories</li>
+              <li><b>Consumer education</b> — segregation at source, recycling labels</li>
+            </ul></div>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>How resource depletion affects business</h5><ul class="tight">
+              <li><b>Rising input costs</b> — water, minerals, fossil fuels</li>
+              <li><b>Supply disruption</b> — shortages, price volatility</li>
+              <li><b>Stricter regulation</b> — caps, taxes, bans</li>
+              <li><b>Reputation risk</b> — consumers and investors punish wasteful firms</li>
+              <li><b>Threat to long-run survival</b> of resource-based industries</li>
+            </ul></div>
+            <div class="mini-card"><h5>Mitigation strategies</h5><ul class="tight">
+              <li><b>Efficiency</b> — do more with less (lean, water recycling)</li>
+              <li><b>Substitution</b> — renewable or recycled inputs</li>
+              <li><b>Eco-design</b> — durable, repairable, recyclable products</li>
+              <li><b>Sustainable sourcing</b> — certified wood, responsible agriculture</li>
+              <li><b>Circular business models</b> — rental, sharing, refurbish</li>
+              <li><b>R&amp;D and innovation</b>, supplier collaboration, monitoring</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.4</span>Energy consumption</h4>
+          <p><strong>Energy consumption</strong> = the amount of energy (electricity, fuel, heat) used by a firm in production, transport, storage, offices and stores, and by customers when they use its products. Most of it still comes from fossil fuels, so it drives cost and carbon emissions.</p>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Why it matters to marketers</h5><p>Energy cost affects price; buyers compare running costs (star ratings); carbon footprint affects brand image and regulation.</p></div>
+            <div class="mini-card"><h5>Reduce it</h5><p>Energy audits; efficient machines and LED lighting; renewable power (rooftop solar); optimised logistics and routing; green buildings; ISO 50001 energy management.</p></div>
+            <div class="mini-card"><h5>Market it</h5><p><b>BEE star labels</b> (Bureau of Energy Efficiency, under the Energy Conservation Act 2001) on ACs and fridges; energy-saving claims (“5-star, saves ₹X a year”); EVs and inverter appliances.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.5</span>Green marketing — meaning, importance and strategies</h4>
+          <p><strong>Green marketing</strong> = the marketing of products that are presumed to be environmentally safe (AMA). It covers product modification, production process, packaging and advertising changes aimed at <span class="kw">reducing environmental harm while satisfying customer needs</span>. Also called environmental or ecological marketing.</p>
+          <div class="grid-4 p4">
+            <div class="mini-card"><h5><span class="big">P</span>Green product</h5><p>Recyclable, energy-efficient, non-toxic, made from renewable materials.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Green price</h5><p>Justify any premium with lower running cost, health or durability.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Green place</h5><p>Low-emission logistics, local sourcing, reverse logistics.</p></div>
+            <div class="mini-card"><h5><span class="big">P</span>Green promotion</h5><p>Honest, specific claims; eco-labels; no greenwashing.</p></div>
+          </div>
+          <figure class="diagram">
+            <div class="diagram-title">Green marketing strategy matrix (Ginsberg &amp; Bloom, 2004)</div>
+            <div class="mx-wrap m4">
+              <div class="mx-y">Size of green consumer segment: low → high</div>
+              <div class="mx2">
+                <div><span class="ax">Large segment · hard to differentiate</span><h5>Defensive green</h5><p>Green as a precaution or response to rivals or a crisis; modest promotion.</p></div>
+                <div class="hi"><span class="ax">Large segment · easy to differentiate</span><h5>Extreme green</h5><p>Green is the core of the business — The Body Shop, Patagonia.</p></div>
+                <div><span class="ax">Small segment · hard to differentiate</span><h5>Lean green</h5><p>Quietly cut costs and pollution; little publicity.</p></div>
+                <div><span class="ax">Small segment · easy to differentiate</span><h5>Shaded green</h5><p>Invest in green systems but sell on other benefits (cost saving, quality).</p></div>
+              </div>
+              <div class="mx-x">Ability to differentiate on “greenness”: low → high</div>
+            </div>
+          </figure>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Importance</h5><ul class="tight">
+              <li>Protects the environment and conserves resources</li>
+              <li>Meets the demand of eco-conscious consumers</li>
+              <li><b>Competitive advantage</b> and differentiation</li>
+              <li>Cost savings through efficiency and less waste</li>
+              <li>Compliance with environmental laws; access to green finance</li>
+              <li>Better brand image, goodwill and loyalty</li>
+              <li>Opens new markets — EVs, organic food, solar</li>
+            </ul></div>
+            <div class="mini-card"><h5>Challenges</h5><ul class="tight">
+              <li>Higher initial cost of green technology and materials</li>
+              <li>Consumer scepticism; low willingness to pay a premium</li>
+              <li><b>Greenwashing</b> — false or exaggerated green claims damage trust</li>
+              <li>Lack of standard definitions and certification</li>
+              <li>Results take time</li>
+            </ul></div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Indian / global example</th><th>Green initiative</th></tr></thead>
+              <tbody>
+                <tr><th>Tata Motors</th><td>Nexon EV and Tiago EV — electric cars for the mass market</td></tr>
+                <tr><th>ITC</th><td>Paperboards made with recycled fibre and plantation wood; water- and carbon-positive claims in its sustainability reports</td></tr>
+                <tr><th>Indian Oil / NTPC</th><td>Renewable energy and green hydrogen investments</td></tr>
+                <tr><th>The Body Shop</th><td>Cruelty-free cosmetics, refill stations</td></tr>
+                <tr><th>Ecomark (1991)</th><td>Government of India eco-label for environment-friendly products, certified through BIS</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </article>
+    </section>
+
+    <!-- ===================== 3. SOLVED PYQs ===================== -->
+    <section class="block" id="pyqs">
+      <div class="section-head">
+        <span class="sec-num">3</span>
+        <div>
+          <h2>Solved PYQs &amp; high-probability questions</h2>
+          <p>Both papers solved — University Nov 2024 (D 112407) and Amal College Nov 2025 (100042). Where the same topic was asked in both, the answer covers both wordings. Questions marked “Likely” have not been asked yet but follow the syllabus units directly.</p>
+        </div>
+      </div>
+
+      <div class="qa-toolbar no-print">
+        <div class="filter-group" role="group" aria-label="Filter questions">
+          <button class="fbtn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="fbtn" type="button" data-filter="hot" aria-pressed="false">★ Repeated</button>
+          <button class="fbtn m1" type="button" data-filter="m1" aria-pressed="false"><span class="dot"></span>I</button>
+          <button class="fbtn m2" type="button" data-filter="m2" aria-pressed="false"><span class="dot"></span>II</button>
+          <button class="fbtn m3" type="button" data-filter="m3" aria-pressed="false"><span class="dot"></span>III</button>
+          <button class="fbtn m4" type="button" data-filter="m4" aria-pressed="false"><span class="dot"></span>IV</button>
+        </div>
+        <button class="mode-btn" type="button" data-mode-toggle aria-pressed="false">Practice mode: hide answers</button>
+      </div>
+
+      <div data-qa-group id="sec-a">
+        <div class="qa-group-title"><h3>Section A — Short answers</h3><span class="chip">3 marks each</span><span class="chip">~5–6 lines · 3–4 min</span></div>
+        <p class="qa-sub">Formula: <b>definition</b> (1 mark) + <b>two or three points</b> (1 mark) + <b>example</b> (1 mark). Ten questions carry 30 marks but only 24 count, so answer all ten and let the ceiling absorb a weak one.</p>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define marketing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q1</span><span class="badge">Univ 2024 Q12 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Marketing</strong> is “the process by which companies create value for customers and build strong customer relationships in order to capture value from customers in return” (Kotler &amp; Armstrong).</p>
+<ul><li>It starts with identifying customer <b>needs</b> and ends with satisfying them at a profit.</li><li>It covers the 4Ps — product, price, place and promotion — and continues after the sale.</li></ul>
+<p><b>Example:</b> HUL researched rural buyers and launched ₹1–₹2 shampoo sachets.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is the product concept of marketing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Amal 2025 Q2 (OR)</span></span></summary>
+  <div class="ans">
+<p>The <strong>product concept</strong> holds that consumers will favour products that offer the <b>most quality, performance and innovative features</b>, so the firm should concentrate on continuous product improvement.</p>
+<ul><li>Focus is on the product, not on the customer's real need.</li><li>Danger: <b>marketing myopia</b> (Levitt) — the firm falls in love with its product and misses changing needs.</li></ul>
+<p><b>Example:</b> HMT watches were well made but lost out when buyers wanted style and quartz/digital watches.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Distinguish between marketing and selling.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Amal 2025 Q2 (OR)</span></span></summary>
+  <div class="ans">
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Selling</th><th>Marketing</th></tr></thead><tbody>
+<tr><td>Focus on the <b>product</b> and seller's need for cash</td><td>Focus on the <b>customer's needs</b></td></tr>
+<tr><td>Make first, then sell</td><td>Find needs first, then make</td></tr>
+<tr><td>Profit through <b>sales volume</b>; short-term</td><td>Profit through <b>customer satisfaction</b>; long-term</td></tr>
+<tr><td>Narrow — one part of marketing</td><td>Wide — research to after-sales service</td></tr>
+</tbody></table></div>
+<p>Levitt: “Selling focuses on the needs of the seller; marketing on the needs of the buyer.”</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Discuss the societal marketing concept. / What is societal marketing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q1</span><span class="badge">Amal 2025 Q10</span></span></summary>
+  <div class="ans">
+<p>The <strong>societal marketing concept</strong> holds that a firm should satisfy the needs and wants of target markets better than competitors <span class="kw">in a way that maintains or improves the consumer's and society's well-being</span>.</p>
+<ul><li>Balances three things: <b>consumer wants, company profits and society's welfare</b>.</li><li>Arose because satisfying short-run wants can harm people long-term (junk food, plastic, pollution).</li></ul>
+<p><b>Example:</b> Tata Tea's <i>Jaago Re</i> campaign; HUL Lifebuoy's hand-washing programme.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is marketing environment?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Univ 2024 Q2</span></span></summary>
+  <div class="ans">
+<p><strong>Marketing environment</strong> is the set of actors and forces outside marketing that affect management's ability to build and maintain successful relationships with target customers (Kotler).</p>
+<ul><li><b>Micro environment:</b> the company, suppliers, intermediaries, customers, competitors and publics.</li><li><b>Macro environment:</b> demographic, economic, natural, technological, political-legal and cultural forces (PESTLE).</li></ul>
+<p>It creates opportunities and threats. <b>Example:</b> the 2022 single-use plastic ban forced FMCG firms to change packaging.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What do you mean by brand positioning?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Univ 2024 Q3</span></span></summary>
+  <div class="ans">
+<p><strong>Brand positioning</strong> is arranging for a brand to occupy a <b>clear, distinctive and desirable place in the minds of target consumers</b> relative to competing brands (term popularised by Ries &amp; Trout).</p>
+<ul><li>Bases: attribute, benefit, price–quality, use, user, competitor.</li><li>Stated in a positioning statement: <i>to (target), our brand is (frame of reference) that (point of difference).</i></li></ul>
+<p><b>Example:</b> Volvo = safety; Colgate = cavity protection; Big Bazaar = value for money.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What do you mean by brand equity?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q3</span><span class="badge">Univ 2024 Q14 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Brand equity</strong> is the differential effect that knowing the brand name has on customer response to the product or its marketing (Kotler) — the <b>extra value a brand name adds</b> to a product.</p>
+<ul><li>Aaker's elements: <b>brand awareness, perceived quality, brand associations, brand loyalty</b> and other proprietary assets.</li><li>High equity lets a firm charge a premium, launch extensions easily and win dealer support.</li></ul>
+<p><b>Example:</b> people pay more for Apple, Amul or Tata Salt than for an unknown brand of the same product.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define warranty.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q4</span><span class="badge">Amal 2025 Q15 (6m)</span></span></summary>
+  <div class="ans">
+<p>A <strong>warranty</strong> is a <b>written assurance</b> given by the manufacturer or seller that the product is free from defects and will perform as stated, and that it will be <b>repaired or replaced</b> free if it fails within a stated period, subject to conditions.</p>
+<ul><li>Types: express (written) and implied (by law).</li><li>Reduces the buyer's risk and signals quality.</li></ul>
+<p><b>Example:</b> a 1-year manufacturer's warranty on a smartphone; extended warranty for a fee.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Define competition-based pricing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Univ 2024 Q5</span></span></summary>
+  <div class="ans">
+<p><strong>Competition-based pricing</strong> sets prices on the basis of <b>competitors' strategies, costs, prices and market offerings</b>, rather than on the firm's own cost or on demand.</p>
+<ul><li><b>Going-rate pricing</b> — price at, slightly above or below the market leader.</li><li><b>Sealed-bid pricing</b> — price set on what rivals are expected to bid in tenders.</li></ul>
+<p><b>Example:</b> petrol pumps of different companies charge almost the same price; firms bidding for a government contract.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What do you mean by value-based pricing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Amal 2025 Q9</span></span></summary>
+  <div class="ans">
+<p><strong>Value-based pricing</strong> sets the price on the basis of <b>buyers' perceived value</b> of the product, not the seller's cost. The firm assesses customer needs and value perceptions first, then sets a target price, and designs the product and costs to fit.</p>
+<ul><li><b>Good-value pricing</b> — the right combination of quality and service at a fair price (EDLP at D-Mart).</li><li><b>Value-added pricing</b> — add features and service to support a higher price.</li></ul>
+<p><b>Example:</b> branded medicines or designer clothes priced on image and perceived benefit.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Mention the objectives of pricing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Amal 2025 Q5</span></span></summary>
+  <div class="ans">
+<p>Pricing objectives are the goals a firm wants to achieve through its price decisions.</p>
+<ul><li><b>Survival</b> in bad times · <b>profit maximisation / target return</b> on investment</li><li><b>Market-share leadership</b> (low price) · <b>product-quality leadership</b> (premium price)</li><li><b>Meeting or preventing competition</b> · <b>price stability</b> · social objectives (affordable essentials)</li></ul>
+<p><b>Example:</b> Jio's low 2016 prices aimed at market share.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What are shopping goods?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q6</span><span class="badge">Amal 2025 Q12 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Shopping goods</strong> are consumer products that customers buy less often and <b>compare carefully on suitability, quality, price and style</b> before buying.</p>
+<ul><li>Buyers spend time and effort visiting shops and comparing.</li><li>Sold through fewer outlets with good sales support; higher price than convenience goods.</li></ul>
+<p><b>Examples:</b> clothes, furniture, televisions, mobile phones, major appliances.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Write a note on the product life cycle.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q8</span><span class="badge">Amal 2025 Q18 (6m)</span></span></summary>
+  <div class="ans">
+<p>The <strong>product life cycle (PLC)</strong> is the course of a product's sales and profits over its lifetime (popularised by Levitt, 1965). It has four stages:</p>
+<ul><li><b>Introduction</b> — slow sales, losses; <b>Growth</b> — rapid sales rise, profits grow.</li><li><b>Maturity</b> — sales peak and level off, heavy competition; <b>Decline</b> — sales and profits fall.</li></ul>
+<p>Each stage needs a different marketing mix. <b>Example:</b> landline phones are in decline; smartphones are mature.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is a distribution channel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 3×</span><span class="badge">Univ 2024 Q6</span><span class="badge">Univ 2024 Q15 (6m)</span><span class="badge">Amal 2025 Q13 (6m)</span></span></summary>
+  <div class="ans">
+<p>A <strong>distribution (marketing) channel</strong> is a set of interdependent organisations that help make a product or service available for use or consumption by the consumer or business user (Kotler).</p>
+<ul><li>Members: agents, wholesalers, retailers, distributors.</li><li>Levels: zero (direct), one, two and three level.</li></ul>
+<p><b>Example:</b> FMCG goods move Manufacturer → Distributor → Retailer (kirana) → Consumer.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define sales promotion. / State any two techniques of sales promotion.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q7</span><span class="badge">Amal 2025 Q4</span></span></summary>
+  <div class="ans">
+<p><strong>Sales promotion</strong> consists of <b>short-term incentives</b> to encourage the purchase or sale of a product or service now (Kotler).</p>
+<ul><li><b>Coupons</b> — certificates giving buyers a saving on a stated product.</li><li><b>Price packs / bonus packs</b> — “buy 1 get 1 free”, “20% extra”.</li><li>Others: free samples, premiums (free gift), contests, loyalty points, trade allowances.</li></ul>
+<p><b>Example:</b> free toothbrush with a Colgate pack.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is public relation?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q8</span><span class="badge">Amal 2025 Q14 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Public relations (PR)</strong> is building good relations with the company's various publics by obtaining <b>favourable publicity</b>, building a good <b>corporate image</b>, and handling unfavourable rumours, stories and events (Kotler).</p>
+<ul><li>Tools: press releases, events, sponsorships, CSR, speeches, corporate identity.</li><li>Highly credible and low-cost compared with advertising.</li></ul>
+<p><b>Example:</b> Cadbury India's “Project Vishwas” after the 2003 worm controversy.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is sustainable marketing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q9</span><span class="badge">Amal 2025 Q16 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Sustainable marketing</strong> is socially and environmentally responsible marketing that meets the present needs of consumers and businesses while also <b>preserving or enhancing the ability of future generations to meet their needs</b> (Kotler &amp; Armstrong).</p>
+<ul><li>Rests on the triple bottom line — <b>People, Planet, Profit</b>.</li><li>Principles: consumer-oriented, customer-value, innovative, sense-of-mission, societal marketing.</li></ul>
+<p><b>Example:</b> refill packs, EVs, recycled packaging.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is energy consumption?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge">Univ 2024 Q10</span></span></summary>
+  <div class="ans">
+<p><strong>Energy consumption</strong> is the amount of energy — electricity, fuel, heat — used by a business in production, transport, storage and offices, and by customers when they use its products.</p>
+<ul><li>Mostly from fossil fuels, so it drives both <b>cost</b> and <b>carbon emissions</b>.</li><li>Reduced through energy audits, efficient machines, renewables (solar) and optimised logistics.</li></ul>
+<p><b>Example:</b> BEE 5-star labels on ACs and refrigerators tell buyers about energy use.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain the term green marketing with a suitable example.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 3×</span><span class="badge">Amal 2025 Q7</span><span class="badge">Univ 2024 Q18 (6m)</span><span class="badge">Univ 2024 Q20 (10m)</span></span></summary>
+  <div class="ans">
+<p><strong>Green marketing</strong> is the marketing of products that are presumed to be <b>environmentally safe</b> (AMA). It includes product modification, cleaner production, eco-friendly packaging and honest green advertising.</p>
+<ul><li>Aims to satisfy customer needs with minimum harm to the environment.</li><li>Must avoid <b>greenwashing</b> (false green claims).</li></ul>
+<p><b>Example:</b> Tata Motors' Nexon EV; ITC's recycled-fibre paperboards; The Body Shop's refill stations.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Distinguish between skimming and penetration pricing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ul><li><b>Price skimming:</b> a high initial price for a new product to “skim” maximum revenue from buyers willing to pay, then lower it over time. Suits innovative products with a strong image — new iPhone models.</li><li><b>Penetration pricing:</b> a low initial price to enter the market quickly, attract many buyers and win a large share. Suits price-sensitive mass markets — Jio's free data in 2016.</li></ul>
+<p>Skimming builds profit per unit; penetration builds volume and market share.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is cost-plus pricing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Cost-plus (markup) pricing</strong> adds a standard markup to the cost of the product: <b>Price = unit cost + markup %</b>.</p>
+<ul><li>Example: unit cost ₹80, markup 25% → price ₹100.</li><li>Simple and seems fair, but ignores demand and competitors' prices.</li></ul>
+<p>Widely used by retailers, contractors and professionals.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is a vertical marketing system?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p>A <strong>vertical marketing system (VMS)</strong> is a channel structure in which producers, wholesalers and retailers <b>act as a unified system</b>; one member owns the others, has contracts with them, or has so much power that they cooperate.</p>
+<ul><li><b>Corporate VMS</b> — common ownership (Bata, Raymond's own shops).</li><li><b>Contractual VMS</b> — franchises (McDonald's); <b>administered VMS</b> — led by a dominant firm (HUL).</li></ul>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is the triple bottom line?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p>The <strong>triple bottom line</strong> (John Elkington, 1994) says a business should measure its performance on three dimensions, not only profit:</p>
+<ul><li><b>People</b> — social responsibility to employees, communities, customers.</li><li><b>Planet</b> — environmental responsibility.</li><li><b>Profit</b> — economic value.</li></ul>
+<p>These are the three pillars of sustainable marketing.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is greenwashing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">3 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Greenwashing</strong> is making <b>false, vague or exaggerated claims</b> about the environmental benefits of a product or company to look green without real action.</p>
+<ul><li>Signs: vague words (“eco-friendly”, “natural”) without proof, hidden trade-offs, fake labels.</li><li>It destroys consumer trust; India's CCPA guidelines (2024) restrict misleading environmental claims.</li></ul>
+<p>Genuine green marketing uses specific, verifiable claims and recognised eco-labels.</p>
+  </div>
+</details>
+      </div>
+
+      <div data-qa-group id="sec-b">
+        <div class="qa-group-title"><h3>Section B — Short essays</h3><span class="chip">6 marks each</span><span class="chip">1–1.5 pages · 6–7 min</span></div>
+        <p class="qa-sub">Formula: <b>1-line definition</b> → <b>diagram or table</b> where possible → <b>5–7 headed points</b> → <b>1-line conclusion</b>. Eight questions carry 48 marks but only 36 count.</p>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Elaborate the evolution of marketing concepts.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q11</span><span class="badge">Amal 2025 Q2 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">A marketing concept is the philosophy that guides a firm's marketing effort. Over time, firms moved from a factory-centred (inside-out) view to a customer- and society-centred (outside-in) view.</p>
+<ol>
+<li><b>Production concept</b> (till ~1920s): consumers want products that are available and cheap; focus on mass production and distribution efficiency — Ford's Model T.</li>
+<li><b>Product concept:</b> consumers want quality and features; focus on product improvement. Risk: marketing myopia.</li>
+<li><b>Selling concept</b> (~1930s–50s): after the Depression, supply exceeded demand; firms believed consumers would not buy enough unless pushed by aggressive selling and promotion.</li>
+<li><b>Marketing concept</b> (~1950s on): find out what customers need and satisfy them better than rivals; customer focus, integrated marketing, profit through satisfaction.</li>
+<li><b>Societal marketing concept</b> (~1970s on): satisfy wants while protecting consumers' and society's long-run welfare — response to pollution, consumerism and resource shortages.</li>
+<li><b>Today — holistic and sustainable marketing:</b> relationship, digital and sustainable marketing extend the societal idea.</li>
+</ol>
+<p class="concl">Marketing has evolved from “selling what we make” to “making what customers need — responsibly”.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Draw the five-step flow from Module I (1.2) as a timeline. The <b>order</b> and the <b>core assumption</b> of each concept earn most of the marks; an example for each lifts the answer.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the features of marketing concepts.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Amal 2025 Q11</span></span></summary>
+  <div class="ans">
+<p class="intro">The (modern) marketing concept holds that achieving organisational goals depends on knowing the needs and wants of target markets and delivering the desired satisfactions better than competitors. Its main features:</p>
+<ol>
+<li><b>Customer orientation:</b> the customer is the starting point — “customer is king”.</li>
+<li><b>Target market focus:</b> the firm selects segments it can serve best instead of trying to serve everyone.</li>
+<li><b>Integrated marketing:</b> all 4Ps and all departments (production, finance, HR) work together to serve customers.</li>
+<li><b>Profit through customer satisfaction:</b> profit is the reward for satisfying customers, not for sales volume alone.</li>
+<li><b>Research-based decisions:</b> marketing research finds needs before production.</li>
+<li><b>Long-term relationships:</b> focus on customer retention and loyalty, not one-off sales.</li>
+<li><b>Outside-in perspective:</b> starts with the market and works back to the factory.</li>
+<li><b>Social responsibility</b> (societal extension): concern for consumer and social welfare.</li>
+</ol>
+<p class="concl">Under the marketing concept the firm does not find the right customers for its products; it finds the right products for its customers.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Describe the important characteristics of marketing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q12</span><span class="badge">Amal 2025 Q1 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">Marketing is the process of creating, communicating and delivering value to customers and managing customer relationships profitably (Kotler). Its characteristics:</p>
+<ol>
+<li><b>Customer-oriented:</b> begins with customer needs and ends with their satisfaction.</li>
+<li><b>Exchange process:</b> goods and services are exchanged for money or other value.</li>
+<li><b>Continuous activity:</b> research, product, pricing, distribution, promotion and after-sales service go on in a cycle.</li>
+<li><b>Goal-oriented:</b> aims at customer satisfaction and the firm's profit.</li>
+<li><b>Integrated approach:</b> the 4Ps are blended into one marketing mix.</li>
+<li><b>Human and social activity:</b> it satisfies human wants and affects society's living standards.</li>
+<li><b>Both art and science:</b> creativity in advertising and selling, plus research and analysis.</li>
+<li><b>Dynamic:</b> adapts to changes in technology, competition, tastes and law.</li>
+</ol>
+<p class="concl">Marketing is therefore a customer-centred, integrated and ongoing business philosophy, not just selling.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Elaborate the concept of marketing mix.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Univ 2024 Q13</span></span></summary>
+  <div class="ans">
+<p class="intro">The <strong>marketing mix</strong> is the set of controllable, tactical marketing tools — product, price, place and promotion — that the firm blends to produce the response it wants in the target market. Borden coined the term; McCarthy grouped it into the 4Ps (1960).</p>
+<h5>The 4Ps</h5>
+<ol>
+<li><b>Product:</b> the goods-and-services combination offered — variety, quality, design, features, brand, packaging, warranty.</li>
+<li><b>Price:</b> the money customers pay — list price, discounts, allowances, credit terms.</li>
+<li><b>Place:</b> activities that make the product available — channels, coverage, inventory, transport.</li>
+<li><b>Promotion:</b> communicating merits and persuading buyers — advertising, sales promotion, personal selling, PR.</li>
+</ol>
+<h5>Extensions</h5>
+<ul><li><b>7Ps for services</b> (Booms &amp; Bitner): + People, Process, Physical evidence.</li><li><b>4Cs</b> (Lauterborn): customer solution, customer cost, convenience, communication.</li></ul>
+<p><b>Example — Maggi:</b> product = 2-minute noodles in many flavours; price = ₹14 small pack; place = every kirana and supermarket; promotion = TV ads aimed at mothers and children.</p>
+<p class="concl">A good mix is consistent and integrated — every P supports the same positioning.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Draw the 4Ps as four boxes around “target customer”. One worked brand example earns the application mark.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Discuss the various elements of brand equity.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q14</span><span class="badge">Amal 2025 Q3 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Brand equity</strong> is the extra value a brand name adds to a product — the differential effect that knowing the brand has on customer response (Kotler). David Aaker identified five elements:</p>
+<ol>
+<li><b>Brand awareness:</b> the ability of buyers to recognise or recall the brand. Top-of-mind brands are bought first — Xerox, Bisleri.</li>
+<li><b>Perceived quality:</b> customers' judgement of the brand's overall excellence; supports premium prices — Tata Salt's purity.</li>
+<li><b>Brand associations:</b> anything linked in memory to the brand — images, personality, celebrities, symbols. Royal Enfield = adventure; Amul girl = wit.</li>
+<li><b>Brand loyalty:</b> customers' commitment to rebuy despite competitors' offers; cuts marketing cost — Apple users.</li>
+<li><b>Other proprietary brand assets:</b> patents, trademarks and channel relationships that protect the brand.</li>
+</ol>
+<h5>Building and managing it</h5>
+<p>Consistent quality, a clear promise, integrated communication, customer experience, careful extensions and regular brand-health tracking.</p>
+<p class="concl">Strong brand equity brings premium pricing, easier extensions, dealer support and protection against competition.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Briefly describe the different classifications of products.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q12</span><span class="badge">Amal 2025 Q6 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">Products are classified by the type of buyer who uses them — consumers or businesses — and by durability and tangibility.</p>
+<h5>A. Consumer products</h5>
+<ol>
+<li><b>Convenience products:</b> bought frequently, immediately and with little effort; low priced — soap, toothpaste, bread.</li>
+<li><b>Shopping products:</b> compared on suitability, quality, price and style — clothes, TVs, furniture.</li>
+<li><b>Specialty products:</b> unique brand; buyers make special effort — Rolex, luxury cars.</li>
+<li><b>Unsought products:</b> buyers don't know about or don't normally think of buying — life insurance, fire extinguishers.</li>
+</ol>
+<h5>B. Industrial products</h5>
+<ol start="5">
+<li><b>Materials and parts:</b> raw materials and manufactured parts — cotton, steel, tyres.</li>
+<li><b>Capital items:</b> installations and accessory equipment — buildings, machines, computers.</li>
+<li><b>Supplies and services:</b> lubricants, stationery; repair and consulting services.</li>
+</ol>
+<h5>C. Other bases</h5>
+<p>Durable vs non-durable goods; and <b>services</b>, which are intangible, inseparable, variable and perishable.</p>
+<p class="concl">Classification guides the marketing mix — convenience goods need intensive distribution, specialty goods need exclusive outlets.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Draw the classification tree from Module II (2.2). One example per class is essential.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain warranties and guarantees with examples.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q15</span><span class="badge">Univ 2024 Q4 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">Warranties and guarantees are product-support promises that reduce the buyer's perceived risk and form part of the product decision in the marketing mix.</p>
+<h5>Warranty</h5>
+<ul><li>A written assurance that the product is free from defects and will work as stated; if it fails within the period, it will be repaired or replaced, subject to conditions.</li><li><b>Express</b> (stated) and <b>implied</b> (by law — fitness for purpose).</li><li>Can be <b>extended</b> for a fee. <b>Example:</b> a 1-year warranty on a laptop, plus 2 years extended.</li></ul>
+<h5>Guarantee</h5>
+<ul><li>A broader promise, often of satisfaction, usually offering a refund or replacement, and generally free.</li><li><b>Example:</b> “7-day money-back guarantee” on online purchases; Domino's “30 minutes or free” promise.</li></ul>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Basis</th><th>Warranty</th><th>Guarantee</th></tr></thead><tbody>
+<tr><th>Scope</th><td>Defects in product or parts</td><td>Overall satisfaction or performance</td></tr>
+<tr><th>Remedy</th><td>Repair or replacement</td><td>Usually refund or replacement</td></tr>
+<tr><th>Cost</th><td>Basic is free; extended is paid</td><td>Generally free</td></tr>
+<tr><th>Conditions</th><td>Many — proper use, no tampering</td><td>Fewer</td></tr>
+</tbody></table></div>
+<p class="concl">Both build buyer confidence, signal quality and support sales; consumers are also protected by the Consumer Protection Act, 2019.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain the different methods of pricing with examples.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q17</span><span class="badge">Univ 2024 Q19 (10m)</span></span></summary>
+  <div class="ans">
+<p class="intro">A pricing method is the procedure used to arrive at a price. Product costs set the <b>floor</b>, customers' perceived value sets the <b>ceiling</b>, and competitors' prices set the range in between (Kotler).</p>
+<h5>A. Cost-based</h5>
+<ol>
+<li><b>Cost-plus / markup:</b> price = unit cost + standard markup. Cost ₹80, markup 25% → ₹100.</li>
+<li><b>Break-even / target-return:</b> price set to break even or earn a target return. BEP units = fixed cost ÷ (price − variable cost per unit).</li>
+</ol>
+<h5>B. Value-based</h5>
+<ol start="3">
+<li><b>Perceived-value pricing:</b> price set on what buyers think the product is worth — luxury brands.</li>
+<li><b>Good-value / EDLP:</b> quality at a fair price every day — D-Mart.</li>
+</ol>
+<h5>C. Competition-based</h5>
+<ol start="5">
+<li><b>Going-rate:</b> follow the market price — petrol, steel.</li>
+<li><b>Sealed-bid:</b> price set on expected rival bids — government tenders.</li>
+</ol>
+<p><b>Strategies used with these:</b> skimming, penetration, psychological (₹999), discount and bundle pricing.</p>
+<p class="concl">No single method suits all firms; most combine cost, value and competition considerations.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>This was the university's 10-mark question too. For 6 marks, give the three groups with one numerical or real example each. For 10, add objectives, factors and merits/limitations.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Give practical strategies adopted in the different stages of the PLC of a product.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q18</span><span class="badge">Amal 2025 Q8 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">The product life cycle has four stages; each needs a different marketing strategy. (Draw the PLC curve from Module II, 2.4.)</p>
+<h5>1. Introduction</h5>
+<ul><li>Build awareness and trial: free samples, launch advertising, introductory offers.</li><li>Skimming (premium tech) or penetration (FMCG) pricing; selective distribution; basic product.</li></ul>
+<h5>2. Growth</h5>
+<ul><li>Improve quality; add features, models and warranties.</li><li>Enter new segments and channels — intensive distribution; lower prices to attract price-sensitive buyers.</li><li>Shift advertising from awareness to preference.</li></ul>
+<h5>3. Maturity</h5>
+<ul><li><b>Modify the market:</b> new users and uses (Dettol from first-aid to floors).</li><li><b>Modify the product:</b> new variants, packaging, features.</li><li><b>Modify the mix:</b> price cuts, sales promotion, new channels (online).</li></ul>
+<h5>4. Decline</h5>
+<ul><li><b>Maintain</b> (hoping rivals exit), <b>harvest</b> (cut costs, milk the brand), or <b>drop</b> the product.</li><li>Possible repositioning or revival — e.g., nostalgic relaunches.</li></ul>
+<p class="concl">Knowing the stage helps a firm choose the right mix and extend the product's profitable life.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Analyse the role of distribution channels in distributing products. / What are the functions of distribution channels?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 3×</span><span class="badge">Univ 2024 Q15</span><span class="badge">Amal 2025 Q13</span><span class="badge">Univ 2024 Q6 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">A distribution channel is the set of interdependent organisations — agents, wholesalers, retailers — that make a product available to consumers. Channels bridge the gaps of time, place and possession between producer and consumer.</p>
+<h5>Role (why channels are needed)</h5>
+<ul><li><b>Contact efficiency:</b> 3 producers × 3 customers need 9 contacts; through one distributor, only 6.</li><li><b>Assortment:</b> producers make large quantities of a few items; consumers want small quantities of many.</li><li><b>Wide market coverage</b>, local knowledge and feedback.</li></ul>
+<h5>Functions (Kotler)</h5>
+<ol>
+<li><b>Information</b> — collect and share market data.</li>
+<li><b>Promotion</b> — persuasive communication, displays.</li>
+<li><b>Contact</b> — find and reach prospective buyers.</li>
+<li><b>Matching</b> — sorting, grading, assembling, packaging to suit buyers.</li>
+<li><b>Negotiation</b> — agree on price and terms.</li>
+<li><b>Physical distribution</b> — transport and storage.</li>
+<li><b>Financing</b> — stock holding and credit to retailers.</li>
+<li><b>Risk-taking</b> — bear the risk of loss, price fall, bad debts.</li>
+</ol>
+<p class="concl">Intermediaries perform these functions more efficiently than producers could alone, cutting cost and widening reach.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>The contact-efficiency diagram (Module III, 3.1) is a quick, high-value addition. “Role” and “functions” were asked separately in the two papers — this answer covers both.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Describe the features of personal selling.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge">Univ 2024 Q16</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Personal selling</strong> is the personal presentation by the firm's sales force for the purpose of making sales and building customer relationships (Kotler).</p>
+<ol>
+<li><b>Personal, face-to-face (or phone/video) contact</b> between seller and buyer.</li>
+<li><b>Two-way communication:</b> the buyer can ask questions; the seller gets instant feedback.</li>
+<li><b>Flexibility:</b> the message is adapted to each buyer's needs and reactions.</li>
+<li><b>Relationship building (cultivation):</b> long-term bonds, especially in B2B and insurance.</li>
+<li><b>Persuasion and demonstration:</b> the product can be shown and explained.</li>
+<li><b>Handling objections and closing</b> the sale on the spot.</li>
+<li><b>Costly:</b> the most expensive promotion tool per contact; needs trained salespeople.</li>
+<li><b>Best for</b> technical, high-value and industrial products, and the later stages of buying (conviction, purchase).</li>
+</ol>
+<p><b>Process:</b> prospecting → pre-approach → approach → presentation → handling objections → closing → follow-up.</p>
+<p class="concl">Personal selling is the most persuasive and relationship-oriented element of the promotion mix.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Discuss the importance of public relations in marketing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q14</span><span class="badge">Univ 2024 Q8 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">Public relations is building good relations with the company's publics through favourable publicity, a good corporate image and handling unfavourable events (Kotler).</p>
+<ol>
+<li><b>High credibility:</b> news stories and features are believed more than paid ads.</li>
+<li><b>Low cost:</b> media space is not bought, so reach is cheap.</li>
+<li><b>Builds corporate image and goodwill</b> with customers, investors, government and community.</li>
+<li><b>Supports product launches</b> through press coverage, events and influencers.</li>
+<li><b>Reaches people who avoid advertising.</b></li>
+<li><b>Crisis management:</b> protects reputation in bad times. Cadbury India's 2003 worm crisis was handled through Project Vishwas, tamper-proof packaging and an Amitabh Bachchan campaign.</li>
+<li><b>Investor and government relations:</b> lobbying and financial communication.</li>
+<li><b>CSR communication:</b> showcases social work (Tata, Infosys Foundation).</li>
+</ol>
+<p class="concl">PR complements advertising — advertising buys attention; PR earns trust.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">How does resource depletion affect businesses, and what strategies can companies adopt to mitigate this issue?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q17</span><span class="badge">Amal 2025 Q20 (10m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Resource depletion</strong> is the using up of natural resources — water, minerals, forests, fossil fuels — faster than they can be replaced.</p>
+<h5>Effects on business</h5>
+<ol>
+<li><b>Rising input costs</b> and price volatility.</li>
+<li><b>Supply disruption</b> and shortages (e.g., water shortages hitting beverage plants).</li>
+<li><b>Stricter regulation</b> — caps, taxes, bans, EPR obligations.</li>
+<li><b>Reputation and investor pressure</b> on wasteful firms.</li>
+<li><b>Threat to long-term survival</b> of resource-dependent industries.</li>
+</ol>
+<h5>Mitigation strategies</h5>
+<ol start="6">
+<li><b>Resource efficiency</b> — lean production, water recycling, less material.</li>
+<li><b>Substitution</b> — renewable and recycled inputs (recycled PET, solar power).</li>
+<li><b>Eco-design</b> — durable, repairable, recyclable products.</li>
+<li><b>Circular business models</b> — take-back, refurbish, rent, share.</li>
+<li><b>Sustainable sourcing</b> and supplier partnerships; R&amp;D for alternatives.</li>
+</ol>
+<p class="concl">Firms that cut resource dependence lower costs and risks and gain a sustainability edge.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define green marketing and discuss its importance.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q18</span><span class="badge">Amal 2025 Q7 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Green marketing</strong> is the marketing of products that are presumed to be environmentally safe (AMA). It covers eco-friendly product design, clean production, green packaging and honest environmental communication.</p>
+<h5>Importance</h5>
+<ol>
+<li><b>Protects the environment</b> — less pollution, waste and resource use.</li>
+<li><b>Meets growing green demand</b> — eco-conscious consumers, especially the young.</li>
+<li><b>Competitive advantage</b> — differentiation and a new basis for positioning.</li>
+<li><b>Cost savings</b> — energy, water and material efficiency.</li>
+<li><b>Legal compliance</b> — plastic ban, EPR rules, emission norms.</li>
+<li><b>Brand image and loyalty</b> — trust and goodwill.</li>
+<li><b>New markets and green finance</b> — EVs, solar, organic food; access to ESG investors.</li>
+</ol>
+<p><b>Examples:</b> Tata Motors EVs, ITC paperboards, The Body Shop.</p>
+<p class="concl">Green marketing turns environmental responsibility into a source of value for customers, society and the firm.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Describe the pillars of sustainable marketing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q16</span><span class="badge">Univ 2024 Q9 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro">Sustainable marketing meets present needs while preserving the ability of future generations to meet theirs. It rests on three pillars — the <b>triple bottom line</b> (John Elkington, 1994). (Draw the three-circle diagram from Module IV, 4.1.)</p>
+<h5>1. People — the social pillar</h5>
+<ul><li>Fair wages and safe working conditions; no child labour in the supply chain.</li><li>Safe, honest products; consumer health and welfare; community development and CSR.</li></ul>
+<h5>2. Planet — the environmental pillar</h5>
+<ul><li>Cut emissions, waste, water and energy use; eco-friendly packaging.</li><li>Protect biodiversity; responsible sourcing and recycling.</li></ul>
+<h5>3. Profit — the economic pillar</h5>
+<ul><li>The business must remain financially viable to continue doing good.</li><li>Long-term value instead of short-term gain; efficient use of resources.</li></ul>
+<p><b>Supporting principles (Kotler):</b> consumer-oriented, customer-value, innovative, sense-of-mission and societal marketing.</p>
+<p class="concl">Sustainable marketing succeeds only where all three pillars overlap.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the marketing environment and its impact on business strategy.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">The marketing environment is the set of actors and forces outside marketing that affect a firm's ability to serve its customers (Kotler). It creates opportunities and threats, so strategy must adapt.</p>
+<h5>Micro environment</h5>
+<p>The company, suppliers, marketing intermediaries, customers, competitors and publics — close to the firm and partly influenceable.</p>
+<h5>Macro environment (PESTLE + demographic)</h5>
+<ol>
+<li><b>Political-legal:</b> GST, plastic ban, consumer laws → new pricing and packaging.</li>
+<li><b>Economic:</b> incomes, inflation, interest rates → price and product decisions.</li>
+<li><b>Social-cultural:</b> health awareness → sugar-free and millet products.</li>
+<li><b>Technological:</b> UPI, e-commerce, AI → digital marketing, D2C brands.</li>
+<li><b>Natural:</b> climate change, resource scarcity → green products.</li>
+<li><b>Demographic:</b> a young, urbanising population → youth-focused brands.</li>
+</ol>
+<p class="concl">Firms scan the environment (SWOT/PESTLE) to seize opportunities and defend against threats.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the factors determining the price of a product.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Price lies between the floor set by costs and the ceiling set by customer value; many internal and external factors decide where.</p>
+<h5>Internal factors</h5>
+<ol>
+<li><b>Marketing objectives</b> — survival, profit, market share, quality leadership.</li>
+<li><b>Costs</b> — fixed and variable; the price floor.</li>
+<li><b>Marketing-mix strategy</b> — price must fit product, place and promotion decisions.</li>
+<li><b>Stage in the PLC</b> and organisational considerations.</li>
+</ol>
+<h5>External factors</h5>
+<ol start="5">
+<li><b>Demand</b> — price elasticity and perceived value; the price ceiling.</li>
+<li><b>Competition</b> — rivals' prices, costs and likely reactions.</li>
+<li><b>Economic conditions</b> — inflation, recession, incomes.</li>
+<li><b>Government regulation</b> — GST, MRP rules, drug price control.</li>
+<li><b>Channel members</b> — margins expected by dealers.</li>
+</ol>
+<p class="concl">Good pricing balances all these factors with the firm's objectives.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the different types of distribution channels.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Channels are classified by the number of intermediary levels and by how members are organised.</p>
+<h5>By levels (consumer goods)</h5>
+<ol>
+<li><b>Zero-level (direct):</b> Manufacturer → Consumer — company website, door-to-door (Eureka Forbes).</li>
+<li><b>One-level:</b> M → Retailer → C — cars through dealers.</li>
+<li><b>Two-level:</b> M → Wholesaler → Retailer → C — most FMCG goods.</li>
+<li><b>Three-level:</b> M → Agent → Wholesaler → Retailer → C — agricultural and imported goods.</li>
+</ol>
+<h5>Industrial channels</h5>
+<p>Direct to industrial users, or through industrial distributors, manufacturer's representatives or sales branches.</p>
+<h5>By organisation</h5>
+<ul><li><b>Conventional</b> — independent members.</li><li><b>Vertical (VMS)</b> — corporate, contractual (franchise), administered.</li><li><b>Horizontal</b> — firms at one level join forces.</li><li><b>Multichannel / omnichannel</b> — stores, app and website together.</li></ul>
+<p class="concl">The right channel depends on the product, market, company resources, intermediaries and environment.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is sales promotion? Explain consumer and trade promotion techniques.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Sales promotion consists of short-term incentives to encourage the purchase or sale of a product now (Kotler).</p>
+<h5>Consumer promotions (pull)</h5>
+<ol>
+<li><b>Samples</b> — free trial quantity.</li>
+<li><b>Coupons</b> — savings certificates.</li>
+<li><b>Cash refunds / rebates.</b></li>
+<li><b>Price packs</b> — “buy 1 get 1 free”, “20% extra”.</li>
+<li><b>Premiums</b> — free gift with purchase.</li>
+<li><b>Contests, sweepstakes and games.</b></li>
+<li><b>Loyalty programmes</b> and point-of-purchase displays.</li>
+</ol>
+<h5>Trade promotions (push)</h5>
+<p>Price-off and buying allowances, display and advertising allowances, free goods, dealer contests, trade shows.</p>
+<p class="concl">Used well, sales promotion boosts short-term sales and trial; overused, it cheapens the brand.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the waste management strategies of a sustainable business.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Waste management is the collection, reduction, reuse, recycling and safe disposal of waste. Sustainable firms follow the <b>waste hierarchy</b>: Reduce → Reuse → Recycle → Recover → Dispose.</p>
+<ol>
+<li><b>Source reduction:</b> design out waste; lighter, minimal packaging.</li>
+<li><b>Reuse:</b> refill packs, returnable bottles and crates.</li>
+<li><b>Recycling:</b> recycled inputs; recycling labels for consumers.</li>
+<li><b>Recovery:</b> waste-to-energy, composting organic waste.</li>
+<li><b>Extended Producer Responsibility:</b> collect back plastic and e-waste (Plastic Waste Management Rules 2016; E-Waste Rules 2022).</li>
+<li><b>Reverse logistics</b> and exchange offers.</li>
+<li><b>Zero-waste-to-landfill</b> targets and waste audits.</li>
+</ol>
+<p class="concl">Good waste management lowers cost, meets the law and strengthens a green brand image.</p>
+  </div>
+</details>
+      </div>
+
+      <div data-qa-group id="sec-c">
+        <div class="qa-group-title"><h3>Section C — Long essays</h3><span class="chip">10 marks · answer 1 of 2</span><span class="chip">3–4 pages · ~22 min</span></div>
+        <p class="qa-sub">Formula: <b>introduction with definition</b> → <b>diagram or table</b> → <b>2–3 sub-headings with 8–12 points</b> → <b>Indian examples</b> → <b>evaluation and conclusion</b>.</p>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is pricing? Explain in detail the various methods of pricing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q19</span><span class="badge">Amal 2025 Q17 (6m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Price</strong> is the amount of money charged for a product or service — the sum of the values customers exchange for the benefits of having or using it. <strong>Pricing</strong> is the process of deciding that amount. Price is the only element of the marketing mix that produces revenue; all the others are costs.</p>
+<h5>A. Pricing objectives and factors (brief)</h5>
+<ol>
+<li><b>Objectives:</b> survival, profit maximisation, target return, market-share leadership, quality leadership, meeting competition, price stability.</li>
+<li><b>Factors:</b> internal — costs, objectives, marketing mix, PLC stage; external — demand and perceived value, competition, economic conditions, government regulation (GST, MRP, DPCO).</li>
+<li><b>The three anchors:</b> costs set the floor, customer value sets the ceiling, competitors' prices set the range in between.</li>
+</ol>
+<h5>B. Cost-based methods</h5>
+<ol start="4">
+<li><b>Cost-plus / markup pricing:</b> price = unit cost + standard markup. Unit cost ₹80 + 25% → ₹100. Simple and fair-seeming, but ignores demand and competition.</li>
+<li><b>Break-even and target-return pricing:</b> BEP (units) = fixed cost ÷ (price − variable cost per unit). With FC ₹2,00,000, VC ₹60 and price ₹100, BEP = 5,000 units. Shows the volume needed at each price.</li>
+<li><b>Marginal-cost pricing:</b> price covers variable cost plus some contribution — useful for spare capacity or export orders.</li>
+</ol>
+<h5>C. Value-based methods</h5>
+<ol start="7">
+<li><b>Perceived-value pricing:</b> price set on buyers' perception of value; the product and costs are designed to fit the target price — premium brands, branded medicines.</li>
+<li><b>Good-value pricing / EDLP:</b> the right quality at a fair price every day — D-Mart.</li>
+<li><b>Value-added pricing:</b> add features and services to justify higher prices instead of cutting price.</li>
+</ol>
+<h5>D. Competition-based methods</h5>
+<ol start="10">
+<li><b>Going-rate pricing:</b> price at, above or below the leader — petrol, steel, cement.</li>
+<li><b>Sealed-bid (tender) pricing:</b> price set on expected rival bids — government contracts.</li>
+</ol>
+<h5>E. Pricing strategies used alongside</h5>
+<p>Skimming (new iPhones) · penetration (Jio, 2016) · psychological (₹999) · discounts and allowances · product-line and bundle pricing · geographical pricing · dynamic pricing (airlines, Uber).</p>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Method</th><th>Based on</th><th>Strength</th><th>Weakness</th></tr></thead><tbody>
+<tr><th>Cost-based</th><td>Seller's costs</td><td>Simple, covers costs</td><td>Ignores buyers and rivals</td></tr>
+<tr><th>Value-based</th><td>Buyer's perceived value</td><td>Captures willingness to pay</td><td>Value is hard to measure</td></tr>
+<tr><th>Competition-based</th><td>Rivals' prices</td><td>Avoids price wars</td><td>Ignores own costs and value</td></tr>
+</tbody></table></div>
+<p class="concl">No single method is best. Sound pricing starts from customer value, checks costs for a floor, and positions the price against competitors to meet the firm's objectives.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>“Explain in detail” means at least three groups of methods, each with a definition, a numerical or real example, and a merit or limitation. The BEP formula and a worked figure impress examiners in a commerce paper.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Analyse the concept of green marketing. What strategies can businesses implement to effectively promote environmentally friendly products and practices while maintaining profitability?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 3×</span><span class="badge">Univ 2024 Q20</span><span class="badge">Univ 2024 Q18 (6m)</span><span class="badge">Amal 2025 Q7 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Green marketing</strong> is the marketing of products that are presumed to be environmentally safe (AMA). It covers eco-friendly product design, cleaner production, green packaging, responsible distribution and honest environmental communication. It is a practical application of the societal and sustainable marketing concepts.</p>
+<h5>A. The concept analysed</h5>
+<ol>
+<li><b>Why it arose:</b> climate change, pollution, resource depletion, stricter laws and eco-aware consumers.</li>
+<li><b>Green 4Ps:</b> green product (recyclable, energy-efficient), green price (justified by value), green place (low-emission logistics), green promotion (verifiable claims, eco-labels such as Ecomark).</li>
+<li><b>Benefits:</b> environmental protection, differentiation, cost savings, compliance, brand loyalty, new markets.</li>
+<li><b>Challenges:</b> higher initial costs, consumer scepticism, low willingness to pay a premium, <b>greenwashing</b> risk, lack of standards.</li>
+</ol>
+<h5>B. Strategies to promote green products and practices</h5>
+<ol start="5">
+<li><b>Eco-design and life-cycle thinking:</b> design for durability, repair and recycling; use LCA to cut impact at every stage.</li>
+<li><b>Green packaging:</b> less material, recycled or compostable packs, refill stations.</li>
+<li><b>Credible communication:</b> specific, verifiable claims (“30% less water”), third-party certification, eco-labels; avoid greenwashing (CCPA greenwashing guidelines, 2024).</li>
+<li><b>Consumer education and engagement:</b> explain benefits — savings, health — not only the environment; take-back and recycling drives.</li>
+<li><b>Green supply chain:</b> sustainable sourcing, local suppliers, electric or optimised logistics, reverse logistics.</li>
+<li><b>Partnerships and cause marketing:</b> NGOs, governments, tree-planting or clean-up campaigns.</li>
+<li><b>Choose the right strategy level</b> (Ginsberg &amp; Bloom matrix): lean, defensive, shaded or extreme green, depending on the size of the green segment and the ability to differentiate.</li>
+</ol>
+<h5>C. Maintaining profitability</h5>
+<ol start="12">
+<li><b>Cost savings:</b> energy, water and material efficiency pay back investment (LEDs, solar).</li>
+<li><b>Premium pricing where value is real:</b> lower running costs (EVs, 5-star appliances), health benefits (organic food).</li>
+<li><b>Market expansion and loyalty:</b> new eco-segments; loyal, less price-sensitive customers.</li>
+<li><b>Risk reduction and finance:</b> fewer penalties, access to green bonds and ESG investors; government incentives (FAME/PM E-DRIVE for EVs).</li>
+</ol>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Firm</th><th>Green strategy</th><th>Profit link</th></tr></thead><tbody>
+<tr><th>Tata Motors</th><td>Nexon / Tiago EV</td><td>Leadership in India's growing EV market</td></tr>
+<tr><th>ITC</th><td>Recycled-fibre paperboards; sustainability reporting</td><td>Cost savings, premium B2B customers</td></tr>
+<tr><th>The Body Shop</th><td>Cruelty-free products, refill stations</td><td>Brand loyalty, premium price</td></tr>
+</tbody></table></div>
+<p class="concl">Green marketing is profitable when it is genuine, communicated credibly and built into the whole mix — not a slogan. Firms that align environmental value with customer value gain a lasting competitive advantage.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>The question has two parts — “analyse the concept” and “strategies… while maintaining profitability”. Use separate sub-headings, and end with the profitability link; many students forget that half.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Discuss the process of new product development and strategies in the competitive market.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Amal 2025 Q19</span></span></summary>
+  <div class="ans">
+<p class="intro">A <strong>new product</strong> is an original product, product improvement, product modification or new brand developed through the firm's own R&amp;D (Kotler). New products are vital for growth, but most fail, so firms follow a systematic process and a clear strategy.</p>
+<h5>A. The NPD process (draw the eight-box flow)</h5>
+<ol>
+<li><b>Idea generation:</b> internal R&amp;D and employees; customers, competitors, dealers, suppliers; crowdsourcing.</li>
+<li><b>Idea screening:</b> drop poor ideas early using criteria — market size, fit with company, cost. Avoid drop-errors and go-errors.</li>
+<li><b>Concept development and testing:</b> turn the idea into a detailed consumer concept; test with target buyers.</li>
+<li><b>Marketing strategy development:</b> target market, positioning, sales and profit goals; planned price, distribution and budget; long-run goals.</li>
+<li><b>Business analysis:</b> estimate demand, costs and profits to see if objectives are met.</li>
+<li><b>Product development:</b> build prototypes; functional and consumer testing.</li>
+<li><b>Test marketing:</b> try the product and programme in a realistic market setting (a few cities).</li>
+<li><b>Commercialisation:</b> full launch — decide when, where, to whom and how.</li>
+</ol>
+<h5>B. NPD strategies in a competitive market</h5>
+<ol start="9">
+<li><b>First-mover / innovation strategy:</b> be first, build brand leadership and patents — Apple iPhone.</li>
+<li><b>Fast-follower / imitation:</b> enter after the pioneer with an improved or cheaper version — lower risk.</li>
+<li><b>Line and brand extension:</b> new variants under a strong brand — Maggi Atta Noodles, Amul ice creams.</li>
+<li><b>Product modification and improvement:</b> new features, quality, design.</li>
+<li><b>Acquisition and licensing:</b> buy companies, patents or licences.</li>
+<li><b>Customer-centred and team-based NPD:</b> co-create with customers; cross-functional teams cut time to market.</li>
+<li><b>Systematic innovation management:</b> an idea manager, idea portals and stage-gate reviews.</li>
+</ol>
+<h5>C. Why new products fail and how to avoid it</h5>
+<p>Overestimated market, poor design, wrong positioning, wrong price, weak launch promotion, higher costs, competitors' retaliation. New Coke (1985) was withdrawn within months. Remedies: research, test marketing and a strong launch plan.</p>
+<p class="concl">A disciplined NPD process combined with the right competitive strategy turns ideas into profitable products and keeps a firm ahead of rivals.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Draw the eight-stage flow first — it carries the structure of the answer. “Strategies in the competitive market” needs at least four named strategies with examples.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Critically examine environmental impact management in the context of sustainable marketing.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 3×</span><span class="badge">Amal 2025 Q20</span><span class="badge">Univ 2024 Q17 (6m)</span><span class="badge">Univ 2024 Q10 (3m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Environmental impact management (EIM)</strong> is the process of identifying, measuring and reducing the harmful effects of a firm's products and operations on the environment across the whole life cycle — sourcing, production, distribution, use and disposal. In sustainable marketing it is the “Planet” pillar put into practice.</p>
+<h5>A. Components of EIM</h5>
+<ol>
+<li><b>Assessment tools:</b> Environmental Impact Assessment (EIA) for projects; Life-Cycle Assessment (LCA) for products; carbon and water footprints; ISO 14001 environmental management systems.</li>
+<li><b>Waste management:</b> the hierarchy reduce → reuse → recycle → recover → dispose; EPR under the Plastic Waste Management Rules 2016 and E-Waste Rules 2022; reverse logistics.</li>
+<li><b>Resource depletion mitigation:</b> efficiency, renewable and recycled inputs, eco-design, circular business models, sustainable sourcing.</li>
+<li><b>Energy consumption management:</b> energy audits, efficient equipment, renewables, ISO 50001, BEE star-labelled products.</li>
+<li><b>Pollution control:</b> emission and effluent treatment, cleaner technology.</li>
+<li><b>Green marketing:</b> communicating real improvements to customers through credible claims and eco-labels.</li>
+</ol>
+<h5>B. Role in sustainable marketing — the case for</h5>
+<ol start="7">
+<li>Meets present needs without harming future generations.</li>
+<li>Cuts costs, reduces regulatory and supply risk.</li>
+<li>Builds brand trust and loyalty; attracts ESG investors; supports BRSR reporting.</li>
+<li>Creates new markets — EVs, solar, recycled products.</li>
+</ol>
+<h5>C. Critical examination — limitations</h5>
+<ol start="11">
+<li><b>High cost</b> of clean technology; hard for small firms.</li>
+<li><b>Measurement problems:</b> LCA and carbon data are complex and often estimated.</li>
+<li><b>Greenwashing:</b> firms may publicise small actions while the core business stays polluting.</li>
+<li><b>Rebound effect:</b> efficient products can increase total consumption.</li>
+<li><b>Weak enforcement</b> and consumer unwillingness to pay more.</li>
+</ol>
+<p class="concl">EIM is essential to sustainable marketing, but it works only when it is measured honestly, built into strategy and backed by regulation and informed consumers — otherwise it becomes mere image-building.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>“Critically examine” means both sides — the benefits <i>and</i> the limitations. Cover the three syllabus units (waste, resource depletion, energy) as sub-points, and finish with a balanced judgement.</div>
+  </div>
+</details>
+
+        <div class="qa-group-title"><h3>Section C — High-probability essays: blueprints</h3><span class="chip">10 marks</span></div>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Trace the evolution of marketing concepts. How does marketing differ from selling? (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> definition of marketing (Kotler, AMA 2017); what a marketing philosophy is.</li>
+<li><b>Five concepts</b> in order — production, product, selling, marketing, societal — with era, assumption and an Indian example each; draw the timeline.</li>
+<li><b>Modern extensions:</b> relationship, holistic and sustainable marketing.</li>
+<li><b>Marketing vs selling:</b> Levitt's quote, the inside-out vs outside-in diagram, and a 6-row comparison table.</li>
+<li><b>Conclusion:</b> from “sell what we make” to “make what customers need — responsibly”.</li>
+</ol>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is a channel of distribution? Explain its functions, types and the factors influencing the choice of channel. (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> Kotler's definition; place in the 4Ps; contact-efficiency diagram.</li>
+<li><b>Functions:</b> information, promotion, contact, matching, negotiation, physical distribution, financing, risk-taking.</li>
+<li><b>Types:</b> zero-, one-, two-, three-level chains (draw them); industrial channels; conventional vs vertical (corporate, contractual, administered), horizontal and omnichannel systems.</li>
+<li><b>Factors:</b> product, market, company, intermediaries, environment — with an example each.</li>
+<li><b>Conclusion:</b> the right channel cuts cost and widens reach; e-commerce and quick commerce are changing channels in India.</li>
+</ol>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the elements of the promotion mix with special reference to sales promotion, personal selling and public relations. (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> promotion mix = advertising, sales promotion, personal selling, PR, direct/digital marketing.</li>
+<li><b>Sales promotion:</b> definition, consumer and trade techniques, objectives, limitations.</li>
+<li><b>Personal selling:</b> definition, features, the seven-step selling process.</li>
+<li><b>Public relations:</b> definition, tools, importance, the Cadbury crisis example.</li>
+<li><b>Comparison table</b> of all four tools (nature, reach, cost, credibility, effect).</li>
+<li><b>Conclusion:</b> integrated marketing communication — one consistent message across tools.</li>
+</ol>
+  </div>
+</details>
+      </div>
+    </section>
+
+    <!-- ===================== 4. STRATEGY ===================== -->
+    <section class="block" id="strategy">
+      <div class="section-head">
+        <span class="sec-num">4</span>
+        <div>
+          <h2>Exam strategy &amp; answer formatting</h2>
+          <p>How to write this 2-hour marketing paper for maximum marks.</p>
+        </div>
+      </div>
+
+      <ol class="strategy-list">
+        <li>
+          <h4>Exploit the ceilings — attempt every question in Sections A and B</h4>
+          <p>Section A offers 30 marks against a ceiling of 24; Section B offers 48 against 36. Answering everything gives a <b>6-mark and a 12-mark buffer</b>. Section C has no buffer, so choose the essay where you can draw a diagram or table.</p>
+        </li>
+        <li>
+          <h4>Budget your 120 minutes</h4>
+          <div class="time-bar" role="img" aria-label="Section A 35 minutes, Section C 22 minutes, Section B 55 minutes, review 8 minutes">
+            <div style="flex:35"><span class="lbl-long">A · 35 min</span><span class="lbl-short">A</span></div>
+            <div class="tb-c" style="flex:22"><span class="lbl-long">C · 22 min</span><span class="lbl-short">C</span></div>
+            <div style="flex:55"><span class="lbl-long">B · 55 min</span><span class="lbl-short">B</span></div>
+            <div style="flex:8" title="Review 8 min"><span class="lbl-long">8</span><span class="lbl-short">R</span></div>
+          </div>
+          <p class="small muted" style="margin-top:-2px">Section A 35 min → Section C 22 min → Section B 55 min → review 8 min</p>
+        </li>
+        <li>
+          <h4>Prioritise Module II and Module IV</h4>
+          <p>Product and pricing supplied 80 of 196 marks across the two papers, and sustainable/green marketing appeared in every section of both. <b>Pricing methods, PLC, brand equity, green marketing and environmental impact</b> are the five topics most likely to decide your grade.</p>
+        </li>
+        <li>
+          <h4>Draw something in every 6- and 10-mark answer</h4>
+          <p>Marketing answers become memorable with a visual: the <b>PLC curve</b>, <b>channel levels</b>, the <b>NPD flow</b>, the <b>4Ps boxes</b>, the <b>selling vs marketing chains</b>, the <b>triple-bottom-line circles</b>, the <b>waste hierarchy</b>, or a comparison table. Keep each to under a minute.</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Marks</th><th>Length</th><th>Structure</th></tr></thead>
+              <tbody>
+                <tr><th>3</th><td>5–6 lines</td><td>Definition with author → 2–3 points → one example</td></tr>
+                <tr><th>6</th><td>1–1.5 pages</td><td>Definition → diagram/table → 5–7 headed points → conclusion</td></tr>
+                <tr><th>10</th><td>3–4 pages</td><td>Introduction → diagram → 2–3 sub-headings with 8–12 points → Indian examples → evaluation → conclusion</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li>
+          <h4>Quote authors and use Indian brands</h4>
+          <p><b>Names:</b> Philip Kotler, AMA, Theodore Levitt (myopia, PLC), E. J. McCarthy (4Ps), David Aaker (brand equity), Ries &amp; Trout (positioning), John Elkington (triple bottom line). <b>Brands:</b> HUL sachets, Maggi, Amul, Tata Tea <i>Jaago Re</i>, Jio, D-Mart, Tata Motors EVs, ITC, Cadbury. Underline key terms.</p>
+        </li>
+      </ol>
+
+      <div class="warn">
+        <span class="callout-title">Night-before checklist</span>
+        <ul class="tight">
+          <li>Can you list the five marketing concepts in order, with one assumption each?</li>
+          <li>Can you draw the PLC curve and state a strategy for each stage?</li>
+          <li>Can you give the three groups of pricing methods with a numerical example?</li>
+          <li>Can you list the eight NPD stages and the eight channel functions?</li>
+          <li>Can you explain the triple bottom line, the waste hierarchy and three green marketing strategies?</li>
+        </ul>
+      </div>
     </section>
 
     <footer class="site-footer" style="margin-top:40px">
-      <p><b>Sources.</b> Syllabus: University of Calicut CUFYUGP B.Com Honours syllabus (2024 admission onwards), Minor group D Marketing · Group 7 Digital Marketing — COM1MN107 Essentials of Marketing. Question papers from the Amal College library folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 112407); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100042).</p>
+      <p><b>Sources used to build these notes.</b> Syllabus: University of Calicut CUFYUGP B.Com Honours syllabus (2024 admission onwards), Minor group D Marketing · Group 7 Digital Marketing — COM1MN107 Essentials of Marketing. Question papers, from the Amal College library's 1st Semester folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 112407); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100042). Syllabus references: Kotler &amp; Armstrong, <em>Principles of Marketing</em>; Sherlekar, <em>Marketing Management</em>; Stanton, <em>Fundamentals of Marketing</em>; Ramaswamy &amp; Namakumari, <em>Marketing Management</em>.</p>
       <p><a href="../#semester-1">← Back to all Semester 1 subjects</a></p>
     </footer>
   </main>
