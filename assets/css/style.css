@@ -399,7 +399,7 @@ figure.diagram figcaption { font-size: .82rem; color: var(--muted); margin-top: 
 .flow.accent .flow-step { background: color-mix(in srgb, var(--mc, var(--accent)) 10%, var(--surface)); border-color: color-mix(in srgb, var(--mc, var(--accent)) 35%, var(--line)); }
 @media (max-width: 640px) {
   .flow { flex-direction: column; align-items: stretch; gap: 22px; }
-  .flow-step { max-width: none; }
+  .flow-step { max-width: none; flex: 0 0 auto; }
   .flow-step:not(:last-child)::after { content: "↓"; right: 50%; top: auto; bottom: -21px; transform: translateX(50%); }
 }
 
@@ -648,4 +648,5 @@ details.qa[open] > summary .chev { transform: rotate(90deg); }
 .arc { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; align-items: end; }
 .arc > div { border-radius: 8px 8px 4px 4px; padding: 8px 6px; font-size: .78rem; text-align: center; background: color-mix(in srgb, var(--m4) calc(var(--h) * 9%), var(--surface-2)); border: 1px solid var(--line); min-width: 0; color: var(--ink); }
 .arc > div b { display: block; font-size: .84rem; }
-@media (max-width: 640px) { .arc { grid-template-columns: 1fr; } .arc > div { height: auto !important; text-align: left; } }
+@media (max-width: 640px) { .arc { grid-template-columns: 1fr; } .arc > div { min-height: 0 !important; text-align: left; } }
+.text-meta .chip { white-space: normal; line-height: 1.3; }
