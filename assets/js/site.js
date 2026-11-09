@@ -6,18 +6,17 @@
 
   /* ---------- Theme toggle (persisted per viewer) ---------- */
   function storedTheme() {
-    try { return localStorage.getItem("examnotes-theme"); } catch (e) { return null; }
+    try { return localStorage.getItem("examnotes-theme-v2"); } catch (e) { return null; }
   }
   function saveTheme(t) {
-    try { localStorage.setItem("examnotes-theme", t); } catch (e) { /* storage unavailable */ }
+    try { localStorage.setItem("examnotes-theme-v2", t); } catch (e) { /* storage unavailable */ }
   }
   var initial = storedTheme();
   if (initial === "light" || initial === "dark") root.setAttribute("data-theme", initial);
 
+  // Light green is the default; dark only when the reader picks it.
   function currentTheme() {
-    var t = root.getAttribute("data-theme");
-    if (t) return t;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
   function paintToggle() {
     var dark = currentTheme() === "dark";
@@ -42,6 +41,7 @@
 
     initTabs();
     initToc();
+    initBottomNav();
     initQa();
     initTooltips();
     initToTop();
@@ -107,6 +107,29 @@
       current = activeId;
       links.forEach(function (a) { a.classList.remove("active"); });
       if (map[activeId]) map[activeId].classList.add("active");
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
+  /* ---------- Bottom section bar (phones): highlight the section in view ---------- */
+  function initBottomNav() {
+    var links = Array.prototype.slice.call(document.querySelectorAll(".bottom-nav a[href^='#']"));
+    if (!links.length) return;
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); });
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var line = window.innerHeight * 0.35;
+      var active = -1;
+      targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) active = i; });
+      links.forEach(function (a, i) {
+        a.classList.toggle("active", i === active);
+        if (i === active) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+      });
     }
     window.addEventListener("scroll", function () {
       if (!ticking) { ticking = true; window.requestAnimationFrame(update); }

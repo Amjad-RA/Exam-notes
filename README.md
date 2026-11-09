@@ -20,7 +20,7 @@ Each subject page follows the same four-part structure:
 3. **Past questions with answers**: every past question answered in examiner format, grouped by mark value. Answers start hidden — tap a question to see its answer, or open them all. You can filter by module or show only repeated questions.
 4. **Exam tips**: time plan, answer templates, diagrams to practise, and keywords.
 
-The site has a light/dark theme toggle and a print / save-as-PDF button. Every answer opens automatically when printing.
+The site is designed for phones first, with a soft green light theme. On a phone, a bar at the bottom of every subject page jumps to the cheat sheet, notes, questions or tips. A moon button switches to a dark theme if you prefer it, and a print / save-as-PDF button opens every answer automatically.
 
 ## Publish on GitHub Pages
 
@@ -45,8 +45,8 @@ In `index.html`, add a `<button class="tab" role="tab" …>` inside the tab list
 ```
 index.html                     Home page with semester tabs and subject sections
 semester-1/                    One HTML page per subject
-assets/css/style.css           Shared design system (light and dark themes, components, print)
-assets/js/site.js              Tabs, theme toggle, contents highlighting, question filters, chart tooltips
+assets/css/style.css           Shared design system (mobile-first, soft green theme, optional dark theme, print)
+assets/js/site.js              Tabs, theme toggle, contents and bottom-bar highlighting, question filters, chart tooltips
 ```
 
 Definitions follow standard academic sources (AMA, Kotler, Colley). If your prescribed textbook words a definition differently, use the textbook's wording in the exam.
