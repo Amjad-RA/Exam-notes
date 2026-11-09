@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spreadsheet Data Analysis</title>
+  <meta name="description" content="CSC1FM105 Data Analysis and Visualization Through Spreadsheets — 10-minute cheat sheet, module notes with worked Excel grids (referencing, VLOOKUP, pivot tables, Goal Seek, charts), solved PYQs (Univ Nov 2024, Amal College Nov 2025) and exam strategy.">
+  <script>try{var t=localStorage.getItem("examnotes-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* Spreadsheet mock-ups, themed with the site tokens */
+    .xl-wrap { overflow-x: auto; margin: 10px 0; }
+    table.xl { border-collapse: collapse; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .8rem; background: var(--surface); }
+    table.xl th { background: var(--surface-2); color: var(--ink-2); font-weight: 600; border: 1px solid var(--line-strong); padding: 3px 8px; text-align: center; min-width: 26px; }
+    table.xl td { border: 1px solid var(--line); padding: 3px 8px; white-space: nowrap; color: var(--ink); }
+    table.xl td.num { text-align: right; }
+    table.xl td.hl { background: color-mix(in srgb, var(--mc, var(--m1)) 18%, var(--surface)); box-shadow: inset 0 0 0 2px var(--mc, var(--m1)); }
+    table.xl td.soft { background: color-mix(in srgb, var(--mc, var(--m1)) 9%, var(--surface)); }
+    table.xl td.res { font-weight: 700; background: color-mix(in srgb, var(--m3) 16%, var(--surface)); }
+    table.xl td.bad { background: color-mix(in srgb, var(--m2) 20%, var(--surface)); }
+    table.xl th.idx { background: color-mix(in srgb, var(--mc, var(--m1)) 14%, var(--surface)); color: var(--ink); }
+    table.xl caption { caption-side: bottom; font-family: var(--font-sans); font-size: .78rem; color: var(--ink-2); padding-top: 6px; text-align: left; }
+    .fbar { display: flex; align-items: center; gap: 0; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .82rem; background: var(--surface); max-width: 100%; margin: 6px 0; }
+    .fbar .nb { padding: 4px 10px; border-right: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink-2); min-width: 44px; text-align: center; }
+    .fbar .fx { padding: 4px 8px; border-right: 1px solid var(--line-strong); color: var(--ink-2); font-style: italic; font-family: Georgia, serif; }
+    .fbar code { padding: 4px 10px; background: none; color: var(--ink); white-space: pre-wrap; word-break: break-all; }
+    code.f { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; white-space: nowrap; }
+    kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78em; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--surface-2); white-space: nowrap; }
+    .path { font-weight: 650; }
+    .path::before { content: "▸ "; color: var(--mc, var(--accent)); }
+    .xl-pair { display: grid; grid-template-columns: auto auto 1fr; gap: 12px; align-items: center; }
+    .xl-pair .arrow { font-size: 1.6rem; color: var(--ink-2); text-align: center; }
+    @media (max-width: 760px) { .xl-pair { grid-template-columns: 1fr; } .xl-pair .arrow { transform: rotate(90deg); } }
+    .areas { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .areas > div { border: 1px dashed var(--line-strong); border-radius: 10px; padding: 10px 12px; font-size: .88rem; background: var(--surface-2); min-width: 0; }
+    .areas > div b { display: block; }
+    .areas > div span.tag { display: inline-block; font-family: ui-monospace, Menlo, monospace; font-size: .76rem; background: color-mix(in srgb, var(--mc, var(--m3)) 16%, var(--surface)); border: 1px solid color-mix(in srgb, var(--mc, var(--m3)) 40%, var(--line)); border-radius: 6px; padding: 1px 6px; margin-top: 4px; }
+    svg.diag { width: 100%; height: auto; max-width: 640px; display: block; margin: 0 auto; font-family: var(--font-sans); }
+    svg.diag text { fill: var(--ink); font-size: 12px; }
+    svg.diag text.small { fill: var(--ink-2); font-size: 10.5px; }
+    svg.diag text.bold { font-weight: 700; }
+    svg.diag .frame { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
+    svg.diag .bar { fill: var(--surface-2); stroke: var(--line); }
+    svg.diag .grid { stroke: var(--line); stroke-width: 1; }
+    svg.diag .acc { fill: color-mix(in srgb, var(--m1) 20%, var(--surface)); stroke: var(--m1); stroke-width: 2; }
+    svg.diag .badge-c { fill: var(--ink); }
+    svg.diag text.badge-t { fill: var(--surface); font-size: 11px; font-weight: 700; }
+    svg.diag .s1 { fill: var(--m1); } svg.diag .s2 { fill: var(--m2); } svg.diag .s3 { fill: var(--m3); } svg.diag .s4 { fill: var(--m4); }
+    svg.diag .ln1 { stroke: var(--m1); stroke-width: 2.5; fill: none; }
+    svg.diag .ln2 { stroke: var(--m2); stroke-width: 2.5; fill: none; }
+    svg.diag .axis { stroke: var(--ink-2); stroke-width: 1.5; fill: none; }
+    svg.diag .wedge { stroke: var(--surface); stroke-width: 2; }
+    ol.key { columns: 2; column-gap: 24px; font-size: .88rem; margin-top: 10px; }
+    ol.key li { break-inside: avoid; }
+    @media (max-width: 640px) { ol.key { columns: 1; } }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../#semester-1" aria-label="Back to all subjects">
+      <span class="brand-mark" aria-hidden="true">←</span>
+      <span class="brand-text">Data Analysis &amp; Visualization<small>Semester 1 · CSC1FM105</small></span>
+    </a>
+    <span class="spacer"></span>
+    <button class="icon-btn no-print" type="button" data-print aria-label="Print or save as PDF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>
+      <span class="hide-sm">PDF</span>
+    </button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span class="label hide-sm">Dark</span>
+    </button>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="toc" aria-label="On this page">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#overview">Overview &amp; hot topics</a></li>
+      <li><a href="#cheat-sheet">1 · 10-minute cheat sheet</a></li>
+      <li><a href="#modules">2 · Chapter breakdown</a>
+        <ol>
+          <li><a href="#m1"><span class="dot m1"></span>Module I · Spreadsheet basics</a></li>
+          <li><a href="#m2"><span class="dot m2"></span>Module II · Data cleansing</a></li>
+          <li><a href="#m3"><span class="dot m3"></span>Module III · Pivot tables &amp; what-if</a></li>
+          <li><a href="#m4"><span class="dot m4"></span>Module IV · Data visualization</a></li>
+        </ol>
+      </li>
+      <li><a href="#pyqs">3 · Solved PYQs</a>
+        <ol>
+          <li><a href="#sec-a">Section A · 2 marks</a></li>
+          <li><a href="#sec-b">Section B · 6 marks</a></li>
+          <li><a href="#sec-c">Section C · 10 marks</a></li>
+        </ol>
+      </li>
+      <li><a href="#strategy">4 · Exam strategy</a></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="top">
+    <details class="mobile-toc">
+      <summary>Contents</summary>
+      <ol>
+        <li><a href="#overview">Overview &amp; hot topics</a></li>
+        <li><a href="#cheat-sheet">10-minute cheat sheet</a></li>
+        <li><a href="#m1">Module I · Spreadsheet basics</a></li>
+        <li><a href="#m2">Module II · Data cleansing</a></li>
+        <li><a href="#m3">Module III · Pivot tables &amp; what-if</a></li>
+        <li><a href="#m4">Module IV · Data visualization</a></li>
+        <li><a href="#sec-a">Solved PYQs · 2 marks</a></li>
+        <li><a href="#sec-b">Solved PYQs · 6 marks</a></li>
+        <li><a href="#sec-c">Solved PYQs · 10 marks</a></li>
+        <li><a href="#strategy">Exam strategy</a></li>
+      </ol>
+    </details>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section class="s-hero" id="overview">
+      <div class="chips">
+        <span class="chip dark">CSC1FM105</span>
+        <span class="chip">Multi-disciplinary course (MDC) · Semester 1</span>
+        <span class="chip">3 credits · 45 hrs</span>
+        <span class="chip">Excel &amp; Google Sheets</span>
+      </div>
+      <h1>Data Analysis and Visualization Through Spreadsheets</h1>
+      <p class="lede">Spreadsheet basics and functions, cleaning data, pivot tables and what-if analysis, then charts and dashboards. Every “how do you…” answer has its menu path, and formulas are shown in mock Excel grids so you can see what happens to each cell.</p>
+
+      <div class="stat-grid" aria-label="Exam pattern">
+        <div class="stat"><div class="label">Duration · total</div><div class="value">1½ hrs · 50</div><div class="sub">The Nov 2024 paper wrongly prints “70”</div></div>
+        <div class="stat"><div class="label">Section A</div><div class="value">10 × 2</div><div class="sub">Answer all · ceiling 16</div></div>
+        <div class="stat"><div class="label">Section B</div><div class="value">5 × 6</div><div class="sub">Answer all · ceiling 24</div></div>
+        <div class="stat"><div class="label">Section C</div><div class="value">1 of 2 × 10</div><div class="sub">Essay · no ceiling buffer</div></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Where the marks come from — both papers combined</h3>
+        <div class="chart-sub">Marks offered per module (70 per paper, 140 in all, before ceilings). Modules I and III supplied two-thirds; Module IV, charts, gave only 18 despite its 15-mark syllabus weight.</div>
+        <div class="segbar" role="img" aria-label="Module I 46 marks, Module II 30, Module III 46, Module IV 18">
+          <div class="segbar-part m1 fill-mc" style="flex:46" tabindex="0" data-tip="<b>Module I · Spreadsheet basics</b><br>46 marks offered · syllabus 9 hrs, 15 marks<br>Univ 2024: 24 · Amal 2025: 22">46</div>
+          <div class="segbar-part m2 fill-mc" style="flex:30" tabindex="0" data-tip="<b>Module II · Data cleansing</b><br>30 marks offered · syllabus 9 hrs, 10 marks<br>Univ 2024: 10 · Amal 2025: 20">30</div>
+          <div class="segbar-part m3 fill-mc" style="flex:46" tabindex="0" data-tip="<b>Module III · Pivot tables &amp; what-if</b><br>46 marks offered · syllabus 8 hrs, 10 marks<br>Univ 2024: 26 · Amal 2025: 20">46</div>
+          <div class="segbar-part m4 fill-mc" style="flex:18" tabindex="0" data-tip="<b>Module IV · Data visualization</b><br>18 marks offered · syllabus 10 hrs, 15 marks<br>Univ 2024: 10 · Amal 2025: 8">18</div>
+        </div>
+        <ul class="legend">
+          <li class="m1"><span class="sw"></span>I · Spreadsheet basics (9 hrs)</li>
+          <li class="m2"><span class="sw"></span>II · Data cleansing (9 hrs)</li>
+          <li class="m3"><span class="sw"></span>III · Pivot tables &amp; what-if (8 hrs)</li>
+          <li class="m4"><span class="sw"></span>IV · Data visualization (10 hrs)</li>
+        </ul>
+      </div>
+
+      <div class="chart-card">
+        <h3>PYQ hot topics — times asked across 2 papers</h3>
+        <div class="chart-sub">Papers analysed: University exam Nov 2024 (QP D 113387) and Amal College (Autonomous) end-semester Nov 2025 (QP 100044), from the college library's question-paper folder. Hover or tap a bar for the exact questions.</div>
+        <div class="hbar-chart" role="list">
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Pivot tables: features, creation, importance, Module III, asked 4 times" data-tip="&lt;b&gt;Pivot tables: features, creation, importance&lt;/b&gt;&lt;br&gt;Module III · asked 4×&lt;br&gt;Univ 2024 Q6 (2m)&lt;br&gt;Univ 2024 Q17 (10m)&lt;br&gt;Amal 2025 Q5 (2m)&lt;br&gt;Amal 2025 Q16 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">Pivot tables: features, creation, importance</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(4/4 * (100% - 28px))"></span><span class="hbar-val">4</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Watch Window &amp; formula auditing, Module III, asked 3 times" data-tip="&lt;b&gt;Watch Window &amp;amp; formula auditing&lt;/b&gt;&lt;br&gt;Module III · asked 3×&lt;br&gt;Univ 2024 Q13 (6m)&lt;br&gt;Amal 2025 Q10 (2m)&lt;br&gt;Amal 2025 Q15 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Watch Window &amp; formula auditing</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Sorting &amp; filtering, Module II, asked 3 times" data-tip="&lt;b&gt;Sorting &amp;amp; filtering&lt;/b&gt;&lt;br&gt;Module II · asked 3×&lt;br&gt;Univ 2024 Q5 (2m)&lt;br&gt;Amal 2025 Q7 (2m)&lt;br&gt;Amal 2025 Q17B (5m)"><span class="hbar-label"><span class="dot"></span><span class="t">Sorting &amp; filtering</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Charts: purpose, types, creating, Module IV, asked 3 times" data-tip="&lt;b&gt;Charts: purpose, types, creating&lt;/b&gt;&lt;br&gt;Module IV · asked 3×&lt;br&gt;Univ 2024 Q8 (2m)&lt;br&gt;Amal 2025 Q6 (2m)&lt;br&gt;Amal 2025 Q13 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Charts: purpose, types, creating</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Relative, absolute &amp; mixed referencing, Module I, asked 2 times" data-tip="&lt;b&gt;Relative, absolute &amp;amp; mixed referencing&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q11 (6m)&lt;br&gt;Amal 2025 Q11 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Relative, absolute &amp; mixed referencing</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="ROUND, CEILING, FLOOR, SUM, Module I, asked 2 times" data-tip="&lt;b&gt;ROUND, CEILING, FLOOR, SUM&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q3 (2m)&lt;br&gt;Amal 2025 Q14 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">ROUND, CEILING, FLOOR, SUM</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="VLOOKUP, Module I, asked 2 times" data-tip="&lt;b&gt;VLOOKUP&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Amal 2025 Q4 (2m)&lt;br&gt;Amal 2025 Q9 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">VLOOKUP</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Inserting &amp; deleting cells, rows, columns, Module I, asked 2 times" data-tip="&lt;b&gt;Inserting &amp;amp; deleting cells, rows, columns&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q1 (2m)&lt;br&gt;Amal 2025 Q2 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Inserting &amp; deleting cells, rows, columns</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Data validation &amp; removing duplicates, Module II, asked 2 times" data-tip="&lt;b&gt;Data validation &amp;amp; removing duplicates&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q12 (6m)&lt;br&gt;Amal 2025 Q3 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Data validation &amp; removing duplicates</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Linking data between worksheets, Module I, asked 1 times" data-tip="&lt;b&gt;Linking data between worksheets&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Univ 2024 Q16 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">Linking data between worksheets</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Data cleansing — importance, Module II, asked 1 times" data-tip="&lt;b&gt;Data cleansing — importance&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Amal 2025 Q17A (5m)"><span class="hbar-label"><span class="dot"></span><span class="t">Data cleansing — importance</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Conditional formatting (duplicates), Module II, asked 1 times" data-tip="&lt;b&gt;Conditional formatting (duplicates)&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Amal 2025 Q12 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Conditional formatting (duplicates)</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Dashboards &amp; form controls, Module IV, asked 1 times" data-tip="&lt;b&gt;Dashboards &amp;amp; form controls&lt;/b&gt;&lt;br&gt;Module IV · asked 1×&lt;br&gt;Univ 2024 Q14 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Dashboards &amp; form controls</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Excel add-ins, Module III, asked 1 times" data-tip="&lt;b&gt;Excel add-ins&lt;/b&gt;&lt;br&gt;Module III · asked 1×&lt;br&gt;Univ 2024 Q15 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Excel add-ins</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Goal Seek vs What-If Analysis, Module III, asked 1 times" data-tip="&lt;b&gt;Goal Seek vs What-If Analysis&lt;/b&gt;&lt;br&gt;Module III · asked 1×&lt;br&gt;Univ 2024 Q7 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Goal Seek vs What-If Analysis</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Pivot Chart, Module IV, asked 1 times" data-tip="&lt;b&gt;Pivot Chart&lt;/b&gt;&lt;br&gt;Module IV · asked 1×&lt;br&gt;Univ 2024 Q9 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Pivot Chart</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="IF function, Module I, asked 1 times" data-tip="&lt;b&gt;IF function&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Univ 2024 Q2 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">IF function</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="MIN &amp; MAX, Module I, asked 1 times" data-tip="&lt;b&gt;MIN &amp;amp; MAX&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Amal 2025 Q8 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">MIN &amp; MAX</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Cell &amp; range, Module I, asked 1 times" data-tip="&lt;b&gt;Cell &amp;amp; range&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Amal 2025 Q1 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Cell &amp; range</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Split vs Freeze Panes, Module I, asked 1 times" data-tip="&lt;b&gt;Split vs Freeze Panes&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Univ 2024 Q10 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Split vs Freeze Panes</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Importing external data, Module II, asked 1 times" data-tip="&lt;b&gt;Importing external data&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Univ 2024 Q4 (2m)"><span class="hbar-label"><span class="dot"></span><span class="t">Importing external data</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+        </div>
+        <div class="hbar-axis" aria-hidden="true"><span></span><span class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></span></div>
+        <details class="table-toggle">
+          <summary>Show as table (all topics)</summary>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Topic</th><th>Module</th><th>Times</th><th>Where it was asked</th></tr></thead>
+              <tbody>
+                <tr><td>Pivot tables: features, creation, importance</td><td><span class="dot m3"></span> Module III</td><td>4</td><td>Univ 2024 Q6 (2m) · Univ 2024 Q17 (10m) · Amal 2025 Q5 (2m) · Amal 2025 Q16 (10m)</td></tr>
+                <tr><td>Watch Window &amp; formula auditing</td><td><span class="dot m3"></span> Module III</td><td>3</td><td>Univ 2024 Q13 (6m) · Amal 2025 Q10 (2m) · Amal 2025 Q15 (6m)</td></tr>
+                <tr><td>Sorting &amp; filtering</td><td><span class="dot m2"></span> Module II</td><td>3</td><td>Univ 2024 Q5 (2m) · Amal 2025 Q7 (2m) · Amal 2025 Q17B (5m)</td></tr>
+                <tr><td>Charts: purpose, types, creating</td><td><span class="dot m4"></span> Module IV</td><td>3</td><td>Univ 2024 Q8 (2m) · Amal 2025 Q6 (2m) · Amal 2025 Q13 (6m)</td></tr>
+                <tr><td>Relative, absolute &amp; mixed referencing</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q11 (6m) · Amal 2025 Q11 (6m)</td></tr>
+                <tr><td>ROUND, CEILING, FLOOR, SUM</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q3 (2m) · Amal 2025 Q14 (6m)</td></tr>
+                <tr><td>VLOOKUP</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Amal 2025 Q4 (2m) · Amal 2025 Q9 (2m)</td></tr>
+                <tr><td>Inserting &amp; deleting cells, rows, columns</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q1 (2m) · Amal 2025 Q2 (2m)</td></tr>
+                <tr><td>Data validation &amp; removing duplicates</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q12 (6m) · Amal 2025 Q3 (2m)</td></tr>
+                <tr><td>Linking data between worksheets</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Univ 2024 Q16 (10m)</td></tr>
+                <tr><td>Data cleansing — importance</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Amal 2025 Q17A (5m)</td></tr>
+                <tr><td>Conditional formatting (duplicates)</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Amal 2025 Q12 (6m)</td></tr>
+                <tr><td>Dashboards &amp; form controls</td><td><span class="dot m4"></span> Module IV</td><td>1</td><td>Univ 2024 Q14 (6m)</td></tr>
+                <tr><td>Excel add-ins</td><td><span class="dot m3"></span> Module III</td><td>1</td><td>Univ 2024 Q15 (6m)</td></tr>
+                <tr><td>Goal Seek vs What-If Analysis</td><td><span class="dot m3"></span> Module III</td><td>1</td><td>Univ 2024 Q7 (2m)</td></tr>
+                <tr><td>Pivot Chart</td><td><span class="dot m4"></span> Module IV</td><td>1</td><td>Univ 2024 Q9 (2m)</td></tr>
+                <tr><td>IF function</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Univ 2024 Q2 (2m)</td></tr>
+                <tr><td>MIN &amp; MAX</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Amal 2025 Q8 (2m)</td></tr>
+                <tr><td>Cell &amp; range</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Amal 2025 Q1 (2m)</td></tr>
+                <tr><td>Split vs Freeze Panes</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Univ 2024 Q10 (2m)</td></tr>
+                <tr><td>Importing external data</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Univ 2024 Q4 (2m)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <div class="note">
+        <span class="callout-title">💡 What the two papers tell you</span>
+        <ul class="tight">
+          <li><strong>Both papers set the same 10-mark essay:</strong> “Discuss the key features of Pivot Tables and their importance, with an example.” Learn this answer first.</li>
+          <li><strong>Two 6-mark questions repeated almost word for word:</strong> relative/absolute/mixed referencing and the Watch Window.</li>
+          <li><strong>Nearly every question is a “how do you…” or “what is the difference…” question.</strong> Marks go to the menu path (Data ▸ Sort ▸ Add Level), a formula with its result, and a tiny example table.</li>
+          <li>Functions keep coming back: IF, VLOOKUP, MIN/MAX, ROUND/CEILING/FLOOR. Know the syntax and one worked example for each.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== 1. CHEAT SHEET ===================== -->
+    <section class="block" id="cheat-sheet">
+      <div class="section-head">
+        <span class="sec-num">1</span>
+        <div>
+          <h2>The 10-minute exam cheat sheet</h2>
+          <p>Every definition, menu path and function syntax that earns marks — scan this outside the hall.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card cheat-card m1">
+          <h3><span class="mtag fill-mc">MODULE I</span>Spreadsheet basics &amp; functions</h3>
+          <ul>
+            <li><strong>Spreadsheet:</strong> an electronic grid of <b>rows</b> (1, 2, 3…) and <b>columns</b> (A, B, C…) for storing, calculating and analysing data. <b>Workbook</b> = file; <b>worksheet</b> = one sheet (tab). Excel: 1,048,576 rows × 16,384 columns (A to XFD).</li>
+            <li><strong>Cell</strong> = intersection of a row and a column, named by its address (<code class="f">C5</code>). <strong>Range</strong> = a group of adjacent cells (<code class="f">A1:D10</code>).</li>
+            <li><strong>Window:</strong> title bar · Quick Access Toolbar · Ribbon (tabs) · Name Box · Formula Bar · column/row headings · active cell · sheet tabs · status bar.</li>
+            <li><strong>Insert/delete:</strong> right-click ▸ Insert / Delete (shift cells, entire row, entire column) · Home ▸ Cells ▸ Insert / Delete · <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> / <kbd>Ctrl</kbd>+<kbd>-</kbd>.</li>
+            <li><strong>Referencing:</strong> relative <code class="f">A1</code> (changes when copied) · absolute <code class="f">$A$1</code> (fixed) · mixed <code class="f">$A1</code> / <code class="f">A$1</code>. <kbd>F4</kbd> cycles through them.</li>
+            <li><strong>Link sheets:</strong> <code class="f">=Sheet2!B5</code> · other file: <code class="f">=[Sales.xlsx]Jan!$C$4</code>.</li>
+            <li><strong>Functions:</strong> <code class="f">=IF(B2&gt;=40,"Pass","Fail")</code> · <code class="f">=ROUND(3.146,2)</code>→3.15 · <code class="f">=CEILING(23,5)</code>→25 · <code class="f">=FLOOR(23,5)</code>→20 · <code class="f">=COUNTIF(C2:C11,"&gt;=60")</code> · <code class="f">=SUMIF(A:A,"East",C:C)</code> · <code class="f">=VLOOKUP(value, table, col_index, FALSE)</code>.</li>
+            <li><strong>Freeze Panes</strong> keeps headings visible while scrolling; <strong>Split</strong> makes up to 4 separately scrollable panes (View tab).</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m2">
+          <h3><span class="mtag fill-mc">MODULE II</span>Data cleansing</h3>
+          <ul>
+            <li><strong>Data cleansing:</strong> detecting and correcting <b>errors, duplicates, blanks and inconsistencies</b> so the data is accurate and ready for analysis. “Garbage in, garbage out.”</li>
+            <li><strong>Tools:</strong> Remove Duplicates · TRIM / PROPER / UPPER · Find &amp; Replace · Text to Columns · Flash Fill · data validation · spell check.</li>
+            <li><strong>Import:</strong> Data ▸ Get Data ▸ From Text/CSV / Web / Database ▸ Load or Transform (Power Query). <strong>Export:</strong> File ▸ Save As ▸ CSV / PDF.</li>
+            <li><strong>Sort</strong> rearranges rows in order (A→Z, smallest→largest). Multiple columns: Data ▸ Sort ▸ <b>Add Level</b>. <strong>Filter</strong> <i>hides</i> rows that don't meet a condition (Data ▸ Filter, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>).</li>
+            <li><strong>Data validation:</strong> restricts what can be entered — Data ▸ Data Validation ▸ Allow (whole number, decimal, list, date, time, text length, custom) + input message + error alert (Stop, Warning, Information).</li>
+            <li><strong>Remove duplicates:</strong> Data ▸ Remove Duplicates ▸ choose columns.</li>
+            <li><strong>Group / Subtotal:</strong> Data ▸ Group (outline +/−); Data ▸ Subtotal — sort first, then “At each change in / Use function / Add subtotal to”.</li>
+            <li><strong>Conditional formatting:</strong> Home ▸ Conditional Formatting ▸ <b>Highlight Cells Rules</b> (greater than, between, text contains, <b>duplicate values</b>) · <b>Top/Bottom Rules</b> (top 10, bottom 10%, above average).</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m3">
+          <h3><span class="mtag fill-mc">MODULE III</span>Pivot tables &amp; what-if analysis</h3>
+          <ul>
+            <li><strong>Pivot table:</strong> an interactive tool that <span class="kw">summarises large data</span> — sum, count, average — by dragging fields into <b>Rows, Columns, Values, Filters</b>, without formulas or changing the source.</li>
+            <li><strong>Create:</strong> click in the data ▸ Insert ▸ PivotTable ▸ choose range and location ▸ drag fields. <b>Refresh</b> after the source changes.</li>
+            <li><strong>Features:</strong> summarise · group (dates, numbers) · sort and filter · slicers and timelines · Value Field Settings (Sum, Count, Average, % of total) · drill-down (double-click) · Pivot Chart.</li>
+            <li><strong>What-If Analysis</strong> (Data ▸ What-If Analysis): <b>Scenario Manager</b> (several input sets), <b>Goal Seek</b> (one input to reach a target result), <b>Data Table</b> (one or two variables, many results).</li>
+            <li><strong>Goal Seek:</strong> Set cell (formula) ▸ To value (target) ▸ By changing cell (input). It works <b>backwards</b> from the answer.</li>
+            <li><strong>Watch Window:</strong> Formulas ▸ Formula Auditing ▸ Watch Window ▸ Add Watch. It shows Book, Sheet, Name, Cell, <b>Value</b> and <b>Formula</b> of chosen cells while you work elsewhere.</li>
+            <li><strong>Formula auditing:</strong> Trace Precedents · Trace Dependents · Remove Arrows · Show Formulas (<kbd>Ctrl</kbd>+<kbd>`</kbd>) · Error Checking · Evaluate Formula · Watch Window.</li>
+            <li><strong>Add-ins:</strong> File ▸ Options ▸ Add-ins ▸ Manage Excel Add-ins ▸ Go — Analysis ToolPak, Solver, Power Pivot.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m4">
+          <h3><span class="mtag fill-mc">MODULE IV</span>Data visualization</h3>
+          <ul>
+            <li><strong>Chart:</strong> a graphical representation of data that shows trends, comparisons and proportions at a glance.</li>
+            <li><strong>Create:</strong> select data ▸ Insert ▸ Charts (or Recommended Charts) ▸ choose type. <kbd>Alt</kbd>+<kbd>F1</kbd> = chart on the same sheet; <kbd>F11</kbd> = new chart sheet.</li>
+            <li><strong>Types:</strong> <b>Column/Bar</b> — compare categories · <b>Line</b> — trends over time · <b>Pie</b> — parts of a whole (one series) · Area, Scatter (XY), Combo, Histogram.</li>
+            <li><strong>Format:</strong> Chart Elements (+) — chart title, axis titles, <b>legend</b>, data labels, gridlines, <b>data table</b> · Chart Design ▸ <b>Change Chart Type</b> · Format pane for colours and styles.</li>
+            <li><strong>Pivot Chart:</strong> select the pivot table ▸ PivotTable Analyze ▸ PivotChart. It is linked to the pivot table and has field buttons.</li>
+            <li><strong>Dashboard:</strong> one screen combining KPIs, pivot charts, slicers and tables to give a <b>global picture</b> of the data.</li>
+            <li><strong>Form controls</strong> (Developer ▸ Insert): combo box, list box, check box, option button, spin button, scroll bar, button. Format Control ▸ <b>Cell link</b> connects them to formulas.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4>Syntax you must write from memory</h4>
+          <div class="tbl-wrap" style="margin:0">
+            <table class="tbl compact">
+              <tbody>
+                <tr><th>IF</th><td><code class="f">=IF(logical_test, value_if_true, value_if_false)</code></td></tr>
+                <tr><th>VLOOKUP</th><td><code class="f">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code></td></tr>
+                <tr><th>COUNTIF</th><td><code class="f">=COUNTIF(range, criteria)</code></td></tr>
+                <tr><th>SUMIF</th><td><code class="f">=SUMIF(range, criteria, [sum_range])</code></td></tr>
+                <tr><th>ROUND</th><td><code class="f">=ROUND(number, num_digits)</code></td></tr>
+                <tr><th>CEILING / FLOOR</th><td><code class="f">=CEILING(number, significance)</code> · <code class="f">=FLOOR(number, significance)</code></td></tr>
+                <tr><th>AND / OR</th><td><code class="f">=AND(cond1, cond2…)</code> · <code class="f">=OR(cond1, cond2…)</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h4>If you revise only ten things</h4>
+          <ol class="tight">
+            <li>Pivot table — features, steps, importance, an example (10 marks, both papers)</li>
+            <li>Relative, absolute and mixed referencing with an example grid</li>
+            <li>Watch Window and the formula auditing tools</li>
+            <li>Sorting (multi-level) vs filtering</li>
+            <li>Data validation and Remove Duplicates; data cleansing</li>
+            <li>Conditional formatting — highlighting duplicates</li>
+            <li>IF, VLOOKUP, MIN/MAX, ROUND/CEILING/FLOOR, COUNTIF/SUMIF</li>
+            <li>Goal Seek vs What-If; linking worksheets</li>
+            <li>Chart types (bar, line, pie) and steps to create; Pivot Chart</li>
+            <li>Dashboards, form controls, add-ins</li>
+          </ol>
+          <div class="mnemonic">
+            <span class="callout-title">Memory hooks</span>
+            <ul class="tight">
+              <li><b>“$ = stay”</b> — the dollar sign freezes whatever follows it: <code class="f">$A</code> freezes the column, <code class="f">$1</code> the row.</li>
+              <li><b>“RCVF”</b> — pivot areas: Rows, Columns, Values, Filters.</li>
+              <li><b>“Sort shuffles, filter hides.”</b></li>
+              <li><b>“CEILING goes up, FLOOR goes down”</b> — both to the nearest multiple of the significance.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="modules">
+      <div class="section-head">
+        <span class="sec-num">2</span>
+        <div>
+          <h2>Module breakdown, solved PYQs &amp; strategy</h2>
+          <p>Being added next: module notes with worked Excel grids for referencing, VLOOKUP, pivot tables and Goal Seek, both papers solved, and the exam plan.</p>
+        </div>
+      </div>
+      <div class="tip"><span class="callout-title">Coming shortly</span>Until then, the cheat sheet above covers every definition, menu path and function syntax you need, and the overview shows which topics are asked most.</div>
+      <span id="m1"></span><span id="m2"></span><span id="m3"></span><span id="m4"></span>
+      <span id="pyqs"></span><span id="sec-a"></span><span id="sec-b"></span><span id="sec-c"></span><span id="strategy"></span>
+    </section>
+
+    <footer class="site-footer" style="margin-top:40px">
+      <p><b>Sources.</b> Syllabus: University of Calicut CUFYUGP B.Sc. Computer Science Honours — CSC1FM105 Data Analysis and Visualization Through Spreadsheets (MDC; St. Thomas College, Thrissur copy, 2024 admission onwards). Question papers from the Amal College library folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 113387); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100044).</p>
+      <p><a href="../#semester-1">← Back to all Semester 1 subjects</a></p>
+    </footer>
+  </main>
+</div>
+
+<a class="icon-btn to-top no-print" href="#top" aria-label="Back to top">↑</a>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
