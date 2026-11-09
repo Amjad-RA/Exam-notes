@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Essentials of Marketing</title>
+  <meta name="description" content="COM1MN107 Essentials of Marketing — 10-minute cheat sheet, module notes with PLC, channel-level and pricing diagrams, solved PYQs (Univ Nov 2024, Amal College Nov 2025) and exam strategy.">
+  <script>try{var t=localStorage.getItem("examnotes-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* Marketing diagrams (inline SVG), themed with the site tokens */
+    svg.diag { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; font-family: var(--font-sans); }
+    svg.diag .axis { stroke: var(--ink-2); stroke-width: 2; fill: none; }
+    svg.diag .curve { stroke: var(--mc, var(--m2)); stroke-width: 3; fill: none; }
+    svg.diag .curve2 { stroke: var(--ink-2); stroke-width: 2; fill: none; stroke-dasharray: 6 5; }
+    svg.diag .guide { stroke: var(--line-strong); stroke-width: 1; fill: none; stroke-dasharray: 4 4; }
+    svg.diag .band { fill: color-mix(in srgb, var(--mc, var(--m2)) 8%, transparent); }
+    svg.diag .band2 { fill: color-mix(in srgb, var(--mc, var(--m2)) 16%, transparent); }
+    svg.diag .pt { fill: var(--ink); }
+    svg.diag text { fill: var(--ink); font-size: 13px; }
+    svg.diag text.small { fill: var(--ink-2); font-size: 11.5px; }
+    svg.diag text.bold { font-weight: 700; }
+    svg.diag .box { fill: var(--surface-2); stroke: var(--ink-2); stroke-width: 1.5; }
+    svg.diag .box-acc { fill: color-mix(in srgb, var(--mc, var(--m3)) 14%, var(--surface)); stroke: var(--mc, var(--m3)); stroke-width: 1.5; }
+    svg.diag .link { stroke: var(--ink-2); stroke-width: 2; fill: none; }
+    svg.diag .ah-ink { fill: var(--ink-2); }
+    .svg-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; font-size: .84rem; color: var(--ink-2); margin-top: 8px; list-style: none; padding: 0; }
+    .svg-legend li { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+    .svg-legend .ln { width: 26px; height: 0; border-top: 3px solid var(--m2); }
+    .svg-legend .ln.dash { border-top: 3px dashed var(--ink-2); }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../#semester-1" aria-label="Back to all subjects">
+      <span class="brand-mark" aria-hidden="true">←</span>
+      <span class="brand-text">Essentials of Marketing<small>Semester 1 · COM1MN107</small></span>
+    </a>
+    <span class="spacer"></span>
+    <button class="icon-btn no-print" type="button" data-print aria-label="Print or save as PDF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>
+      <span class="hide-sm">PDF</span>
+    </button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span class="label hide-sm">Dark</span>
+    </button>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="toc" aria-label="On this page">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#overview">Overview &amp; hot topics</a></li>
+      <li><a href="#cheat-sheet">1 · 10-minute cheat sheet</a></li>
+      <li><a href="#modules">2 · Chapter breakdown</a>
+        <ol>
+          <li><a href="#m1"><span class="dot m1"></span>Module I · Introduction to marketing</a></li>
+          <li><a href="#m2"><span class="dot m2"></span>Module II · Product &amp; pricing</a></li>
+          <li><a href="#m3"><span class="dot m3"></span>Module III · Distribution &amp; promotion</a></li>
+          <li><a href="#m4"><span class="dot m4"></span>Module IV · Sustainable marketing</a></li>
+        </ol>
+      </li>
+      <li><a href="#pyqs">3 · Solved PYQs</a>
+        <ol>
+          <li><a href="#sec-a">Section A · 3 marks</a></li>
+          <li><a href="#sec-b">Section B · 6 marks</a></li>
+          <li><a href="#sec-c">Section C · 10 marks</a></li>
+        </ol>
+      </li>
+      <li><a href="#strategy">4 · Exam strategy</a></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="top">
+    <details class="mobile-toc">
+      <summary>Contents</summary>
+      <ol>
+        <li><a href="#overview">Overview &amp; hot topics</a></li>
+        <li><a href="#cheat-sheet">10-minute cheat sheet</a></li>
+        <li><a href="#m1">Module I · Introduction to marketing</a></li>
+        <li><a href="#m2">Module II · Product &amp; pricing</a></li>
+        <li><a href="#m3">Module III · Distribution &amp; promotion</a></li>
+        <li><a href="#m4">Module IV · Sustainable marketing</a></li>
+        <li><a href="#sec-a">Solved PYQs · 3 marks</a></li>
+        <li><a href="#sec-b">Solved PYQs · 6 marks</a></li>
+        <li><a href="#sec-c">Solved PYQs · 10 marks</a></li>
+        <li><a href="#strategy">Exam strategy</a></li>
+      </ol>
+    </details>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section class="s-hero" id="overview">
+      <div class="chips">
+        <span class="chip dark">COM1MN107</span>
+        <span class="chip">Minor · Semester 1</span>
+        <span class="chip">4 credits · 75 hrs</span>
+        <span class="chip">Minor group: Marketing → Digital Marketing</span>
+      </div>
+      <h1>Essentials of Marketing</h1>
+      <p class="lede">Marketing concepts, the 4Ps — product, price, place, promotion — and sustainable and green marketing. The product life cycle, channel levels and pricing methods are drawn the way you should reproduce them, and both papers are solved in examiner format. Main references: Kotler &amp; Armstrong, <em>Principles of Marketing</em>; Sherlekar, <em>Marketing Management</em>; Ramaswamy &amp; Namakumari.</p>
+
+      <div class="stat-grid" aria-label="Exam pattern">
+        <div class="stat"><div class="label">Duration · total</div><div class="value">2 hrs · 70</div><div class="sub">End-semester written exam</div></div>
+        <div class="stat"><div class="label">Section A</div><div class="value">10 × 3</div><div class="sub">Answer all · ceiling 24</div></div>
+        <div class="stat"><div class="label">Section B</div><div class="value">8 × 6</div><div class="sub">Answer all · ceiling 36</div></div>
+        <div class="stat"><div class="label">Section C</div><div class="value">1 of 2 × 10</div><div class="sub">Essay · no ceiling buffer</div></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Where the marks actually come from — both papers combined</h3>
+        <div class="chart-sub">Marks of questions set per module (98 per paper, 196 in all). Module II, product and pricing, supplied 80 of 196 — two marks in every five.</div>
+        <div class="segbar" role="img" aria-label="Module I 33 marks, Module II 80, Module III 36, Module IV 47">
+          <div class="segbar-part m1 fill-mc" style="flex:33" tabindex="0" data-tip="<b>Module I · Introduction to marketing</b><br>33 marks set · syllabus 8 hrs<br>Univ 2024: 18 · Amal 2025: 15">33</div>
+          <div class="segbar-part m2 fill-mc" style="flex:80" tabindex="0" data-tip="<b>Module II · Product &amp; pricing</b><br>80 marks set · syllabus 12 hrs<br>Univ 2024: 31 · Amal 2025: 49">80</div>
+          <div class="segbar-part m3 fill-mc" style="flex:36" tabindex="0" data-tip="<b>Module III · Distribution &amp; promotion</b><br>36 marks set · syllabus 10 hrs<br>Univ 2024: 21 · Amal 2025: 15">36</div>
+          <div class="segbar-part m4 fill-mc" style="flex:47" tabindex="0" data-tip="<b>Module IV · Sustainable marketing</b><br>47 marks set · syllabus 15 hrs<br>Univ 2024: 28 · Amal 2025: 19">47</div>
+        </div>
+        <ul class="legend">
+          <li class="m1"><span class="sw"></span>I · Introduction to marketing (8 hrs)</li>
+          <li class="m2"><span class="sw"></span>II · Product &amp; pricing (12 hrs)</li>
+          <li class="m3"><span class="sw"></span>III · Distribution &amp; promotion (10 hrs)</li>
+          <li class="m4"><span class="sw"></span>IV · Sustainable marketing (15 hrs)</li>
+        </ul>
+      </div>
+
+      <div class="chart-card">
+        <h3>PYQ hot topics — times asked across 2 papers</h3>
+        <div class="chart-sub">Papers analysed: University exam Nov 2024 (QP D 112407) and Amal College (Autonomous) end-semester Nov 2025 (QP 100042), from the college library's question-paper folder. Hover or tap a bar for the exact questions.</div>
+        <div class="hbar-chart" role="list">
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Pricing methods (cost / value / competition-based), Module II, asked 4 times" data-tip="&lt;b&gt;Pricing methods (cost / value / competition-based)&lt;/b&gt;&lt;br&gt;Module II · asked 4×&lt;br&gt;Univ 2024 Q5 (3m)&lt;br&gt;Univ 2024 Q19 (10m)&lt;br&gt;Amal 2025 Q9 (3m)&lt;br&gt;Amal 2025 Q17 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Pricing methods (cost / value / competition-based)</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(4/4 * (100% - 28px))"></span><span class="hbar-val">4</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Green marketing, Module IV, asked 3 times" data-tip="&lt;b&gt;Green marketing&lt;/b&gt;&lt;br&gt;Module IV · asked 3×&lt;br&gt;Univ 2024 Q18 (6m)&lt;br&gt;Univ 2024 Q20 (10m)&lt;br&gt;Amal 2025 Q7 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Green marketing</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Marketing concepts &amp; their evolution, Module I, asked 3 times" data-tip="&lt;b&gt;Marketing concepts &amp;amp; their evolution&lt;/b&gt;&lt;br&gt;Module I · asked 3×&lt;br&gt;Univ 2024 Q11 (6m)&lt;br&gt;Amal 2025 Q2 (3m)&lt;br&gt;Amal 2025 Q11 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Marketing concepts &amp; their evolution</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Distribution channels: meaning, role, functions, Module III, asked 3 times" data-tip="&lt;b&gt;Distribution channels: meaning, role, functions&lt;/b&gt;&lt;br&gt;Module III · asked 3×&lt;br&gt;Univ 2024 Q6 (3m)&lt;br&gt;Univ 2024 Q15 (6m)&lt;br&gt;Amal 2025 Q13 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Distribution channels: meaning, role, functions</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Environmental impact: resources, energy, waste, Module IV, asked 3 times" data-tip="&lt;b&gt;Environmental impact: resources, energy, waste&lt;/b&gt;&lt;br&gt;Module IV · asked 3×&lt;br&gt;Univ 2024 Q10 (3m)&lt;br&gt;Univ 2024 Q17 (6m)&lt;br&gt;Amal 2025 Q20 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">Environmental impact: resources, energy, waste</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Societal marketing concept, Module I, asked 2 times" data-tip="&lt;b&gt;Societal marketing concept&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q1 (3m)&lt;br&gt;Amal 2025 Q10 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Societal marketing concept</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Definition &amp; characteristics of marketing, Module I, asked 2 times" data-tip="&lt;b&gt;Definition &amp;amp; characteristics of marketing&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q12 (6m)&lt;br&gt;Amal 2025 Q1 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Definition &amp; characteristics of marketing</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Brand equity, Module II, asked 2 times" data-tip="&lt;b&gt;Brand equity&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q14 (6m)&lt;br&gt;Amal 2025 Q3 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Brand equity</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Warranties &amp; guarantees, Module II, asked 2 times" data-tip="&lt;b&gt;Warranties &amp;amp; guarantees&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q4 (3m)&lt;br&gt;Amal 2025 Q15 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Warranties &amp; guarantees</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Product life cycle, Module II, asked 2 times" data-tip="&lt;b&gt;Product life cycle&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Amal 2025 Q8 (3m)&lt;br&gt;Amal 2025 Q18 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Product life cycle</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Classification of products, Module II, asked 2 times" data-tip="&lt;b&gt;Classification of products&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Amal 2025 Q6 (3m)&lt;br&gt;Amal 2025 Q12 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Classification of products</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Sales promotion, Module III, asked 2 times" data-tip="&lt;b&gt;Sales promotion&lt;/b&gt;&lt;br&gt;Module III · asked 2×&lt;br&gt;Univ 2024 Q7 (3m)&lt;br&gt;Amal 2025 Q4 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Sales promotion</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Public relations, Module III, asked 2 times" data-tip="&lt;b&gt;Public relations&lt;/b&gt;&lt;br&gt;Module III · asked 2×&lt;br&gt;Univ 2024 Q8 (3m)&lt;br&gt;Amal 2025 Q14 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Public relations</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Sustainable marketing &amp; its pillars, Module IV, asked 2 times" data-tip="&lt;b&gt;Sustainable marketing &amp;amp; its pillars&lt;/b&gt;&lt;br&gt;Module IV · asked 2×&lt;br&gt;Univ 2024 Q9 (3m)&lt;br&gt;Amal 2025 Q16 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Sustainable marketing &amp; its pillars</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="New product development, Module II, asked 1 times" data-tip="&lt;b&gt;New product development&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Amal 2025 Q19 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">New product development</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Marketing mix (4Ps), Module II, asked 1 times" data-tip="&lt;b&gt;Marketing mix (4Ps)&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Univ 2024 Q13 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Marketing mix (4Ps)</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Brand positioning, Module II, asked 1 times" data-tip="&lt;b&gt;Brand positioning&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Univ 2024 Q3 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Brand positioning</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Pricing objectives, Module II, asked 1 times" data-tip="&lt;b&gt;Pricing objectives&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Amal 2025 Q5 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Pricing objectives</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Personal selling, Module III, asked 1 times" data-tip="&lt;b&gt;Personal selling&lt;/b&gt;&lt;br&gt;Module III · asked 1×&lt;br&gt;Univ 2024 Q16 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Personal selling</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Marketing environment, Module I, asked 1 times" data-tip="&lt;b&gt;Marketing environment&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Univ 2024 Q2 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Marketing environment</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Marketing vs selling, Module I, asked 1 times" data-tip="&lt;b&gt;Marketing vs selling&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Amal 2025 Q2 (3m, OR)"><span class="hbar-label"><span class="dot"></span><span class="t">Marketing vs selling</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+        </div>
+        <div class="hbar-axis" aria-hidden="true"><span></span><span class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></span></div>
+        <details class="table-toggle">
+          <summary>Show as table (all topics)</summary>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Topic</th><th>Module</th><th>Times</th><th>Where it was asked</th></tr></thead>
+              <tbody>
+                <tr><td>Pricing methods (cost / value / competition-based)</td><td><span class="dot m2"></span> Module II</td><td>4</td><td>Univ 2024 Q5 (3m) · Univ 2024 Q19 (10m) · Amal 2025 Q9 (3m) · Amal 2025 Q17 (6m)</td></tr>
+                <tr><td>Green marketing</td><td><span class="dot m4"></span> Module IV</td><td>3</td><td>Univ 2024 Q18 (6m) · Univ 2024 Q20 (10m) · Amal 2025 Q7 (3m)</td></tr>
+                <tr><td>Marketing concepts &amp; their evolution</td><td><span class="dot m1"></span> Module I</td><td>3</td><td>Univ 2024 Q11 (6m) · Amal 2025 Q2 (3m) · Amal 2025 Q11 (6m)</td></tr>
+                <tr><td>Distribution channels: meaning, role, functions</td><td><span class="dot m3"></span> Module III</td><td>3</td><td>Univ 2024 Q6 (3m) · Univ 2024 Q15 (6m) · Amal 2025 Q13 (6m)</td></tr>
+                <tr><td>Environmental impact: resources, energy, waste</td><td><span class="dot m4"></span> Module IV</td><td>3</td><td>Univ 2024 Q10 (3m) · Univ 2024 Q17 (6m) · Amal 2025 Q20 (10m)</td></tr>
+                <tr><td>Societal marketing concept</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q1 (3m) · Amal 2025 Q10 (3m)</td></tr>
+                <tr><td>Definition &amp; characteristics of marketing</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q12 (6m) · Amal 2025 Q1 (3m)</td></tr>
+                <tr><td>Brand equity</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q14 (6m) · Amal 2025 Q3 (3m)</td></tr>
+                <tr><td>Warranties &amp; guarantees</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q4 (3m) · Amal 2025 Q15 (6m)</td></tr>
+                <tr><td>Product life cycle</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Amal 2025 Q8 (3m) · Amal 2025 Q18 (6m)</td></tr>
+                <tr><td>Classification of products</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Amal 2025 Q6 (3m) · Amal 2025 Q12 (6m)</td></tr>
+                <tr><td>Sales promotion</td><td><span class="dot m3"></span> Module III</td><td>2</td><td>Univ 2024 Q7 (3m) · Amal 2025 Q4 (3m)</td></tr>
+                <tr><td>Public relations</td><td><span class="dot m3"></span> Module III</td><td>2</td><td>Univ 2024 Q8 (3m) · Amal 2025 Q14 (6m)</td></tr>
+                <tr><td>Sustainable marketing &amp; its pillars</td><td><span class="dot m4"></span> Module IV</td><td>2</td><td>Univ 2024 Q9 (3m) · Amal 2025 Q16 (6m)</td></tr>
+                <tr><td>New product development</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Amal 2025 Q19 (10m)</td></tr>
+                <tr><td>Marketing mix (4Ps)</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Univ 2024 Q13 (6m)</td></tr>
+                <tr><td>Brand positioning</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Univ 2024 Q3 (3m)</td></tr>
+                <tr><td>Pricing objectives</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Amal 2025 Q5 (3m)</td></tr>
+                <tr><td>Personal selling</td><td><span class="dot m3"></span> Module III</td><td>1</td><td>Univ 2024 Q16 (6m)</td></tr>
+                <tr><td>Marketing environment</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Univ 2024 Q2 (3m)</td></tr>
+                <tr><td>Marketing vs selling</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Amal 2025 Q2 (3m, OR)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <div class="note">
+        <span class="callout-title">💡 What the two papers tell you</span>
+        <ul class="tight">
+          <li><strong>Pricing is the single most-asked topic</strong>: pricing methods were a 10-mark essay (Univ) and a 6-mark question (Amal), plus competition-based and value-based pricing as 3-markers.</li>
+          <li><strong>Green and sustainable marketing appeared in every section of both papers.</strong> Module IV has the most syllabus hours (15), and both 10-mark sets included a Module IV essay.</li>
+          <li><strong>Marketing concepts</strong> (production → product → selling → marketing → societal) were asked in both papers, and societal marketing came up twice as a 3-marker.</li>
+          <li>The university paper spreads marks evenly across modules. <strong>Your college paper leaned hard on Module II</strong>: brand equity, product classification, PLC, warranties, pricing and new product development (NPD) together made up half the paper.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== 1. CHEAT SHEET ===================== -->
+    <section class="block" id="cheat-sheet">
+      <div class="section-head">
+        <span class="sec-num">1</span>
+        <div>
+          <h2>The 10-minute exam cheat sheet</h2>
+          <p>Every definition, list and framework that earns marks — scan this outside the hall.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card cheat-card m1">
+          <h3><span class="mtag fill-mc">MODULE I</span>Introduction to marketing</h3>
+          <ul>
+            <li><strong>Marketing (Kotler):</strong> “the process by which companies <span class="kw">create value for customers and build strong customer relationships</span> in order to capture value from customers in return.”</li>
+            <li><strong>AMA (2017):</strong> “the activity, set of institutions, and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society at large.”</li>
+            <li><strong>Five concepts (in historical order):</strong> <b>Production</b> (make it cheap and available) → <b>Product</b> (make it better) → <b>Selling</b> (push it hard) → <b>Marketing</b> (find needs, satisfy them better than rivals) → <b>Societal</b> (satisfy needs <i>and</i> protect society's long-run welfare).</li>
+            <li><strong>Selling vs marketing (Levitt):</strong> selling focuses on the <b>seller's need</b> to convert product into cash; marketing focuses on the <b>buyer's need</b> to be satisfied. Selling: factory → product → push → <b>profit through volume</b>. Marketing: market → needs → integrated marketing → <b>profit through satisfaction</b>.</li>
+            <li><strong>Marketing environment:</strong> <b>Micro</b> = company, suppliers, intermediaries, customers, competitors, publics. <b>Macro</b> = <b>PESTLE</b> (political, economic, social, technological, legal, environmental) + demographic.</li>
+            <li><strong>Characteristics:</strong> customer-oriented · exchange process · human activity · continuous · goal-oriented (satisfaction + profit) · integrated · both art and science · dynamic.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m2">
+          <h3><span class="mtag fill-mc">MODULE II</span>Product &amp; pricing</h3>
+          <ul>
+            <li><strong>Marketing mix (McCarthy 4Ps, 1960):</strong> Product, Price, Place, Promotion. Services add People, Process, Physical evidence → <b>7Ps</b> (Booms &amp; Bitner).</li>
+            <li><strong>Consumer products:</strong> <b>convenience</b> (soap, bread) · <b>shopping</b> (clothes, TV — compared on price, quality, style) · <b>specialty</b> (Rolex — special effort) · <b>unsought</b> (insurance). <strong>Industrial:</strong> materials &amp; parts · capital items · supplies &amp; services. <strong>Services:</strong> intangible, inseparable, variable, perishable.</li>
+            <li><strong>NPD (8 steps):</strong> idea generation → screening → concept development &amp; testing → marketing strategy → business analysis → product development → test marketing → commercialisation.</li>
+            <li><strong>PLC:</strong> Introduction → Growth → Maturity → Decline (profits peak in growth / early maturity).</li>
+            <li><strong>Brand equity</strong> = the value a brand adds to a product. <b>Aaker's elements:</b> brand awareness, perceived quality, brand associations, brand loyalty, other proprietary assets. <strong>Positioning</strong> = the place a brand occupies in the consumer's mind relative to rivals.</li>
+            <li><strong>Warranty</strong> = seller's written promise to repair/replace if the product fails within a period (conditions apply). <strong>Guarantee</strong> = broader assurance, often money-back, usually free of charge.</li>
+            <li><strong>Pricing objectives:</strong> survival · profit maximisation / target return · market-share leadership · quality leadership · meeting competition · stabilising prices. <strong>Factors:</strong> demand, competition, costs, objectives, government regulation, product stage.</li>
+            <li><strong>Pricing methods:</strong> <b>Cost-based</b> (cost-plus, markup, break-even/target return) · <b>Value-based</b> (price set on perceived value to the buyer) · <b>Competition-based</b> (going-rate, sealed-bid). Tactics: skimming, penetration, psychological (₹99), discount, bundle.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m3">
+          <h3><span class="mtag fill-mc">MODULE III</span>Distribution &amp; promotion</h3>
+          <ul>
+            <li><strong>Channel of distribution:</strong> a set of interdependent organisations (intermediaries) that make a product available for use or consumption by the consumer.</li>
+            <li><strong>Channel levels:</strong> zero-level (direct: M → C) · one-level (M → R → C) · two-level (M → W → R → C) · three-level (M → Agent → W → R → C).</li>
+            <li><strong>Functions:</strong> information · promotion · contact · matching (sorting, grading, packing) · negotiation · physical distribution (transport, storage) · financing · risk-taking.</li>
+            <li><strong>Promotion mix:</strong> advertising · <b>sales promotion</b> · <b>personal selling</b> · <b>public relations</b> · direct/digital marketing.</li>
+            <li><strong>Sales promotion:</strong> short-term incentives to encourage purchase now. Consumer: samples, coupons, cash refunds, premiums, contests, price packs (buy 1 get 1), loyalty points, POP displays. Trade: allowances, dealer contests, free goods.</li>
+            <li><strong>Personal selling:</strong> face-to-face, two-way presentation by the sales force to make sales and build relationships. Features: personal confrontation, cultivation, response, flexibility.</li>
+            <li><strong>Public relations:</strong> building good relations with the company's publics — favourable publicity, good corporate image, handling unfavourable rumours. Tools: press releases, events, sponsorships, CSR, websites.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m4">
+          <h3><span class="mtag fill-mc">MODULE IV</span>Sustainable marketing</h3>
+          <ul>
+            <li><strong>Sustainable marketing (Kotler):</strong> socially and environmentally responsible marketing that <span class="kw">meets the present needs of consumers and businesses while preserving or enhancing the ability of future generations to meet their needs</span>.</li>
+            <li><strong>Pillars:</strong> the <b>triple bottom line</b> — <b>People</b> (social), <b>Planet</b> (environmental), <b>Profit</b> (economic).</li>
+            <li><strong>Kotler's five principles:</strong> consumer-oriented · customer-value · innovative · sense-of-mission · societal marketing.</li>
+            <li><strong>Waste hierarchy:</strong> Reduce → Reuse → Recycle → Recover → Dispose. Extended Producer Responsibility (EPR), circular economy.</li>
+            <li><strong>Resource depletion</strong> → higher input costs, supply risk, regulation. <strong>Mitigation:</strong> efficiency, renewables, recycled inputs, eco-design, circular models, sustainable sourcing.</li>
+            <li><strong>Energy consumption:</strong> energy used in production, transport, storage and product use. Cut it with efficient equipment, renewables, logistics optimisation, BEE star labels.</li>
+            <li><strong>Green marketing:</strong> marketing products and practices on the basis of environmental benefits — eco-friendly product, green packaging, honest green claims, eco-labels. Avoid <b>greenwashing</b>. Examples: Tata Motors EVs, ITC paperboards, Body Shop.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4>Diagrams &amp; frameworks you must be able to draw</h4>
+          <div class="tbl-wrap" style="margin:0">
+            <table class="tbl compact">
+              <tbody>
+                <tr><th>PLC curve</th><td>Sales (S-curve) and profit over 4 stages; profit negative in introduction</td></tr>
+                <tr><th>Channel levels</th><td>Zero, one, two, three level chains from manufacturer to consumer</td></tr>
+                <tr><th>4Ps wheel</th><td>Customer at centre, Product, Price, Place, Promotion around</td></tr>
+                <tr><th>NPD flow</th><td>8 boxes from idea to commercialisation</td></tr>
+                <tr><th>Selling vs marketing</th><td>Starting point → focus → means → ends (Levitt)</td></tr>
+                <tr><th>Triple bottom line</th><td>People, Planet, Profit — overlap = sustainability</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h4>If you revise only ten things</h4>
+          <ol class="tight">
+            <li>Definition of marketing + its characteristics</li>
+            <li>Five marketing concepts and their evolution</li>
+            <li>Marketing vs selling; societal marketing</li>
+            <li>Marketing mix (4Ps → 7Ps)</li>
+            <li>Product classification; shopping goods</li>
+            <li>PLC stages with strategies; NPD process</li>
+            <li>Brand equity, positioning; warranty vs guarantee</li>
+            <li>Pricing objectives, factors, methods (cost / value / competition)</li>
+            <li>Channels: meaning, levels, functions; sales promotion, personal selling, PR</li>
+            <li>Sustainable marketing pillars, resource depletion, energy, green marketing</li>
+          </ol>
+          <div class="mnemonic">
+            <span class="callout-title">Memory hooks</span>
+            <ul class="tight">
+              <li><b>“PPSMS”</b> → Production, Product, Selling, Marketing, Societal — “Please Put Some Money Safely”</li>
+              <li><b>“IGMD”</b> → PLC: Introduction, Growth, Maturity, Decline</li>
+              <li><b>“I-S-C-M-B-P-T-C”</b> → NPD: Idea, Screening, Concept, Marketing strategy, Business analysis, Product development, Test marketing, Commercialisation — “I Sell Cool Mangoes; Buyers Pay To Collect”</li>
+              <li><b>“3 Ps of sustainability”</b> → People, Planet, Profit</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="modules">
+      <div class="section-head">
+        <span class="sec-num">2</span>
+        <div>
+          <h2>Module breakdown, solved PYQs &amp; strategy</h2>
+          <p>Being added next: module notes with PLC, channel-level and pricing diagrams, both papers solved, and the exam plan.</p>
+        </div>
+      </div>
+      <div class="tip"><span class="callout-title">Coming shortly</span>Until then, the cheat sheet above covers every definition, list and framework you need, and the overview shows which topics are asked most.</div>
+      <span id="m1"></span><span id="m2"></span><span id="m3"></span><span id="m4"></span>
+      <span id="pyqs"></span><span id="sec-a"></span><span id="sec-b"></span><span id="sec-c"></span><span id="strategy"></span>
+    </section>
+
+    <footer class="site-footer" style="margin-top:40px">
+      <p><b>Sources.</b> Syllabus: University of Calicut CUFYUGP B.Com Honours syllabus (2024 admission onwards), Minor group D Marketing · Group 7 Digital Marketing — COM1MN107 Essentials of Marketing. Question papers from the Amal College library folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 112407); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100042).</p>
+      <p><a href="../#semester-1">← Back to all Semester 1 subjects</a></p>
+    </footer>
+  </main>
+</div>
+
+<a class="icon-btn to-top no-print" href="#top" aria-label="Back to top">↑</a>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
