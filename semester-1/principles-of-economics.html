@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Principles of Economics</title>
+  <meta name="description" content="ECO1CJ101 Principles of Economics — 10-minute cheat sheet, module notes with PPF, circular-flow and Phillips-curve diagrams, solved PYQs (Univ Nov 2024, Amal College Nov 2025) and exam strategy.">
+  <script>try{var t=localStorage.getItem("examnotes-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* Economic diagrams (inline SVG), themed with the site tokens */
+    svg.econ { width: 100%; height: auto; max-width: 560px; display: block; margin: 0 auto; font-family: var(--font-sans); }
+    svg.econ .axis { stroke: var(--ink-2); stroke-width: 2; fill: none; }
+    svg.econ .curve { stroke: var(--mc, var(--m2)); stroke-width: 3; fill: none; }
+    svg.econ .curve2 { stroke: var(--mc, var(--m2)); stroke-width: 2; fill: none; stroke-dasharray: 6 5; opacity: .8; }
+    svg.econ .guide { stroke: var(--line-strong); stroke-width: 1; fill: none; stroke-dasharray: 4 4; }
+    svg.econ .pt { fill: var(--ink); }
+    svg.econ .pt-bad { fill: var(--surface); stroke: var(--ink); stroke-width: 2; }
+    svg.econ text { fill: var(--ink); font-size: 13px; }
+    svg.econ text.small { fill: var(--ink-2); font-size: 11.5px; }
+    svg.econ text.bold { font-weight: 700; }
+    svg.econ .box { fill: var(--surface-2); stroke: var(--ink-2); stroke-width: 1.5; }
+    svg.econ .box-gov { fill: color-mix(in srgb, var(--m2) 14%, var(--surface)); stroke: var(--m2); stroke-width: 1.5; }
+    svg.econ .real { stroke: var(--m1); stroke-width: 2.5; fill: none; }
+    svg.econ .money { stroke: var(--m2); stroke-width: 2.5; fill: none; stroke-dasharray: 7 4; }
+    svg.econ .gov { stroke: var(--m3); stroke-width: 2; fill: none; }
+    svg.econ .ah-real { fill: var(--m1); }
+    svg.econ .ah-money { fill: var(--m2); }
+    svg.econ .ah-gov { fill: var(--m3); }
+    svg.econ .ah-ink { fill: var(--ink-2); }
+    .svg-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; font-size: .84rem; color: var(--ink-2); margin-top: 8px; list-style: none; padding: 0; }
+    .svg-legend li { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+    .svg-legend .ln { width: 26px; height: 0; border-top: 3px solid var(--m1); }
+    .svg-legend .ln.money { border-top: 3px dashed var(--m2); }
+    .svg-legend .ln.gov { border-top: 3px solid var(--m3); }
+  </style>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0b'/%3E%3Ctext x='16' y='22' font-family='Georgia' font-size='17' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../#semester-1" aria-label="Back to all subjects">
+      <span class="brand-mark" aria-hidden="true">←</span>
+      <span class="brand-text">Principles of Economics<small>Semester 1 · ECO1CJ101</small></span>
+    </a>
+    <span class="spacer"></span>
+    <button class="icon-btn no-print" type="button" data-print aria-label="Print or save as PDF">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9V2h12v7"/><rect x="6" y="14" width="12" height="8"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/></svg>
+      <span class="hide-sm">PDF</span>
+    </button>
+    <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span class="label hide-sm">Dark</span>
+    </button>
+  </div>
+</header>
+
+<div class="page">
+  <nav class="toc" aria-label="On this page">
+    <div class="toc-title">On this page</div>
+    <ol>
+      <li><a href="#overview">Overview &amp; hot topics</a></li>
+      <li><a href="#cheat-sheet">1 · 10-minute cheat sheet</a></li>
+      <li><a href="#modules">2 · Chapter breakdown</a>
+        <ol>
+          <li><a href="#m1"><span class="dot m1"></span>Module I · Ten principles</a></li>
+          <li><a href="#m2"><span class="dot m2"></span>Module II · Thinking like an economist</a></li>
+          <li><a href="#m3"><span class="dot m3"></span>Module III · Limits &amp; choices</a></li>
+          <li><a href="#m4"><span class="dot m4"></span>Module IV · The market system</a></li>
+        </ol>
+      </li>
+      <li><a href="#pyqs">3 · Solved PYQs</a>
+        <ol>
+          <li><a href="#sec-a">Section A · 3 marks</a></li>
+          <li><a href="#sec-b">Section B · 6 marks</a></li>
+          <li><a href="#sec-c">Section C · 10 marks</a></li>
+        </ol>
+      </li>
+      <li><a href="#strategy">4 · Exam strategy</a></li>
+    </ol>
+  </nav>
+
+  <main class="content" id="top">
+    <details class="mobile-toc">
+      <summary>Contents</summary>
+      <ol>
+        <li><a href="#overview">Overview &amp; hot topics</a></li>
+        <li><a href="#cheat-sheet">10-minute cheat sheet</a></li>
+        <li><a href="#m1">Module I · Ten principles</a></li>
+        <li><a href="#m2">Module II · Thinking like an economist</a></li>
+        <li><a href="#m3">Module III · Limits &amp; choices</a></li>
+        <li><a href="#m4">Module IV · The market system</a></li>
+        <li><a href="#sec-a">Solved PYQs · 3 marks</a></li>
+        <li><a href="#sec-b">Solved PYQs · 6 marks</a></li>
+        <li><a href="#sec-c">Solved PYQs · 10 marks</a></li>
+        <li><a href="#strategy">Exam strategy</a></li>
+      </ol>
+    </details>
+
+    <!-- ===================== OVERVIEW ===================== -->
+    <section class="s-hero" id="overview">
+      <div class="chips">
+        <span class="chip dark">ECO1CJ101</span>
+        <span class="chip">Major (core) · Semester 1</span>
+        <span class="chip">4 credits · 75 hrs</span>
+        <span class="chip">FYUGP · Calicut University syllabus</span>
+      </div>
+      <h1>Principles of Economics</h1>
+      <p class="lede">Mankiw's ten principles, thinking like an economist, scarcity and choice, and the market system. Diagrams you must draw — the PPF, the circular flow, the Phillips curve — are built in, and both papers are solved in examiner format. Textbooks: Mankiw, <em>Principles of Economics</em> (Modules I–II); McConnell, Brue &amp; Flynn, <em>Economics</em> (Modules III–IV).</p>
+
+      <div class="stat-grid" aria-label="Exam pattern">
+        <div class="stat"><div class="label">Duration · total</div><div class="value">2 hrs · 70</div><div class="sub">End-semester written exam</div></div>
+        <div class="stat"><div class="label">Section A</div><div class="value">10 × 3</div><div class="sub">Answer all · ceiling 24</div></div>
+        <div class="stat"><div class="label">Section B</div><div class="value">8 × 6</div><div class="sub">Answer all · ceiling 36</div></div>
+        <div class="stat"><div class="label">Section C</div><div class="value">1 of 2 × 10</div><div class="sub">Essay · no ceiling buffer</div></div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Syllabus weight by module (question-setting marks)</h3>
+        <div class="chart-sub">Module IV, the market system, carries the most — 35 of 98 marks of questions are set from it.</div>
+        <div class="segbar" role="img" aria-label="Module I 21, Module II 21, Module III 21, Module IV 35">
+          <div class="segbar-part m1 fill-mc" style="flex:21" tabindex="0" data-tip="<b>Module I · Basic principles</b><br>21 marks · 10 hours">21</div>
+          <div class="segbar-part m2 fill-mc" style="flex:21" tabindex="0" data-tip="<b>Module II · Thinking like an economist</b><br>21 marks · 10 hours">21</div>
+          <div class="segbar-part m3 fill-mc" style="flex:21" tabindex="0" data-tip="<b>Module III · Limits, alternatives &amp; choices</b><br>21 marks · 10 hours">21</div>
+          <div class="segbar-part m4 fill-mc" style="flex:35" tabindex="0" data-tip="<b>Module IV · The market system</b><br>35 marks · 15 hours">35</div>
+        </div>
+        <ul class="legend">
+          <li class="m1"><span class="sw"></span>I · Ten principles (Mankiw)</li>
+          <li class="m2"><span class="sw"></span>II · Thinking like an economist</li>
+          <li class="m3"><span class="sw"></span>III · Limits, alternatives &amp; choices</li>
+          <li class="m4"><span class="sw"></span>IV · The market system</li>
+        </ul>
+      </div>
+
+      <div class="chart-card">
+        <h3>PYQ hot topics — times asked across 2 papers</h3>
+        <div class="chart-sub">Papers analysed: University exam Nov 2024 (QP D 112287) and Amal College (Autonomous) end-semester Nov 2025 (QP 100132), from the college library's question-paper folder. Hover or tap a bar for the exact questions.</div>
+        <div class="hbar-chart" role="list">
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Economic models, assumptions &amp; scientific method, Module II, asked 4 times" data-tip="&lt;b&gt;Economic models, assumptions &amp;amp; scientific method&lt;/b&gt;&lt;br&gt;Module II · asked 4×&lt;br&gt;Univ 2024 Q16 (6m)&lt;br&gt;Amal 2025 Q5 (3m)&lt;br&gt;Amal 2025 Q6 (3m)&lt;br&gt;Amal 2025 Q16 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Economic models, assumptions &amp; scientific method</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(4/4 * (100% - 28px))"></span><span class="hbar-val">4</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Marginal thinking / marginal analysis, Module I, asked 3 times" data-tip="&lt;b&gt;Marginal thinking / marginal analysis&lt;/b&gt;&lt;br&gt;Module I · asked 3×&lt;br&gt;Univ 2024 Q5 (3m)&lt;br&gt;Univ 2024 Q8 (3m)&lt;br&gt;Amal 2025 Q12 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Marginal thinking / marginal analysis</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Markets &amp; the invisible hand, Module IV, asked 3 times" data-tip="&lt;b&gt;Markets &amp;amp; the invisible hand&lt;/b&gt;&lt;br&gt;Module IV · asked 3×&lt;br&gt;Univ 2024 Q7 (3m)&lt;br&gt;Univ 2024 Q12 (6m)&lt;br&gt;Amal 2025 Q9 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Markets &amp; the invisible hand</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Growth, present choices &amp; international trade, Module III, asked 3 times" data-tip="&lt;b&gt;Growth, present choices &amp;amp; international trade&lt;/b&gt;&lt;br&gt;Module III · asked 3×&lt;br&gt;Univ 2024 Q2 (3m)&lt;br&gt;Univ 2024 Q11 (6m)&lt;br&gt;Amal 2025 Q8 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Growth, present choices &amp; international trade</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(3/4 * (100% - 28px))"></span><span class="hbar-val">3</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Trade-offs, Module I, asked 2 times" data-tip="&lt;b&gt;Trade-offs&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q1 (3m)&lt;br&gt;Amal 2025 Q1 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Trade-offs</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Inflation–unemployment trade-off / Phillips curve, Module I, asked 2 times" data-tip="&lt;b&gt;Inflation–unemployment trade-off / Phillips curve&lt;/b&gt;&lt;br&gt;Module I · asked 2×&lt;br&gt;Univ 2024 Q15 (6m)&lt;br&gt;Amal 2025 Q4 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Inflation–unemployment trade-off / Phillips curve</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Production possibilities frontier, Module II, asked 2 times" data-tip="&lt;b&gt;Production possibilities frontier&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q10 (3m)&lt;br&gt;Amal 2025 Q14 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Production possibilities frontier</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Circular-flow diagram, Module II, asked 2 times" data-tip="&lt;b&gt;Circular-flow diagram&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q14 (6m)&lt;br&gt;Amal 2025 Q13 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Circular-flow diagram</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Why economists disagree, Module II, asked 2 times" data-tip="&lt;b&gt;Why economists disagree&lt;/b&gt;&lt;br&gt;Module II · asked 2×&lt;br&gt;Univ 2024 Q17 (6m)&lt;br&gt;Amal 2025 Q15 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Why economists disagree</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Scarcity &amp; the economizing problem, Module III, asked 2 times" data-tip="&lt;b&gt;Scarcity &amp;amp; the economizing problem&lt;/b&gt;&lt;br&gt;Module III · asked 2×&lt;br&gt;Univ 2024 Q20 (10m)&lt;br&gt;Amal 2025 Q17 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Scarcity &amp; the economizing problem</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Laissez-faire capitalism, Module IV, asked 2 times" data-tip="&lt;b&gt;Laissez-faire capitalism&lt;/b&gt;&lt;br&gt;Module IV · asked 2×&lt;br&gt;Univ 2024 Q9 (3m)&lt;br&gt;Amal 2025 Q3 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Laissez-faire capitalism</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Command vs market system, Module IV, asked 2 times" data-tip="&lt;b&gt;Command vs market system&lt;/b&gt;&lt;br&gt;Module IV · asked 2×&lt;br&gt;Univ 2024 Q19 (10m)&lt;br&gt;Amal 2025 Q10 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Command vs market system</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Five fundamental questions, Module IV, asked 2 times" data-tip="&lt;b&gt;Five fundamental questions&lt;/b&gt;&lt;br&gt;Module IV · asked 2×&lt;br&gt;Univ 2024 Q13 (6m)&lt;br&gt;Amal 2025 Q18 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Five fundamental questions</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m4" role="listitem" tabindex="0" aria-label="Business risk &amp; the market system, Module IV, asked 2 times" data-tip="&lt;b&gt;Business risk &amp;amp; the market system&lt;/b&gt;&lt;br&gt;Module IV · asked 2×&lt;br&gt;Univ 2024 Q3 (3m)&lt;br&gt;Amal 2025 Q20 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">Business risk &amp; the market system</span><span class="mtxt">M IV</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(2/4 * (100% - 28px))"></span><span class="hbar-val">2</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Ten principles (overall), Module I, asked 1 times" data-tip="&lt;b&gt;Ten principles (overall)&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Amal 2025 Q19 (10m)"><span class="hbar-label"><span class="dot"></span><span class="t">Ten principles (overall)</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Printing money → inflation, Module I, asked 1 times" data-tip="&lt;b&gt;Printing money → inflation&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Univ 2024 Q18 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Printing money → inflation</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m1" role="listitem" tabindex="0" aria-label="Market failure / government, Module I, asked 1 times" data-tip="&lt;b&gt;Market failure / government&lt;/b&gt;&lt;br&gt;Module I · asked 1×&lt;br&gt;Amal 2025 Q2 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Market failure / government</span><span class="mtxt">M I</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Positive vs normative (value judgement), Module II, asked 1 times" data-tip="&lt;b&gt;Positive vs normative (value judgement)&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Univ 2024 Q4 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Positive vs normative (value judgement)</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m2" role="listitem" tabindex="0" aria-label="Micro vs macroeconomics, Module II, asked 1 times" data-tip="&lt;b&gt;Micro vs macroeconomics&lt;/b&gt;&lt;br&gt;Module II · asked 1×&lt;br&gt;Univ 2024 Q6 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Micro vs macroeconomics</span><span class="mtxt">M II</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Purposeful behaviour, Module III, asked 1 times" data-tip="&lt;b&gt;Purposeful behaviour&lt;/b&gt;&lt;br&gt;Module III · asked 1×&lt;br&gt;Amal 2025 Q7 (3m)"><span class="hbar-label"><span class="dot"></span><span class="t">Purposeful behaviour</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+          <div class="hbar-row m3" role="listitem" tabindex="0" aria-label="Why study economics, Module III, asked 1 times" data-tip="&lt;b&gt;Why study economics&lt;/b&gt;&lt;br&gt;Module III · asked 1×&lt;br&gt;Amal 2025 Q11 (6m)"><span class="hbar-label"><span class="dot"></span><span class="t">Why study economics</span><span class="mtxt">M III</span></span><span class="hbar-track"><span class="hbar-fill" style="width:calc(1/4 * (100% - 28px))"></span><span class="hbar-val">1</span></span></div>
+        </div>
+        <div class="hbar-axis" aria-hidden="true"><span></span><span class="ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></span></div>
+        <details class="table-toggle">
+          <summary>Show as table (all topics)</summary>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Topic</th><th>Module</th><th>Times</th><th>Where it was asked</th></tr></thead>
+              <tbody>
+                <tr><td>Economic models, assumptions &amp; scientific method</td><td><span class="dot m2"></span> Module II</td><td>4</td><td>Univ 2024 Q16 (6m) · Amal 2025 Q5 (3m) · Amal 2025 Q6 (3m) · Amal 2025 Q16 (6m)</td></tr>
+                <tr><td>Marginal thinking / marginal analysis</td><td><span class="dot m1"></span> Module I</td><td>3</td><td>Univ 2024 Q5 (3m) · Univ 2024 Q8 (3m) · Amal 2025 Q12 (6m)</td></tr>
+                <tr><td>Markets &amp; the invisible hand</td><td><span class="dot m4"></span> Module IV</td><td>3</td><td>Univ 2024 Q7 (3m) · Univ 2024 Q12 (6m) · Amal 2025 Q9 (3m)</td></tr>
+                <tr><td>Growth, present choices &amp; international trade</td><td><span class="dot m3"></span> Module III</td><td>3</td><td>Univ 2024 Q2 (3m) · Univ 2024 Q11 (6m) · Amal 2025 Q8 (3m)</td></tr>
+                <tr><td>Trade-offs</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q1 (3m) · Amal 2025 Q1 (3m)</td></tr>
+                <tr><td>Inflation–unemployment trade-off / Phillips curve</td><td><span class="dot m1"></span> Module I</td><td>2</td><td>Univ 2024 Q15 (6m) · Amal 2025 Q4 (3m)</td></tr>
+                <tr><td>Production possibilities frontier</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q10 (3m) · Amal 2025 Q14 (6m)</td></tr>
+                <tr><td>Circular-flow diagram</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q14 (6m) · Amal 2025 Q13 (6m)</td></tr>
+                <tr><td>Why economists disagree</td><td><span class="dot m2"></span> Module II</td><td>2</td><td>Univ 2024 Q17 (6m) · Amal 2025 Q15 (6m)</td></tr>
+                <tr><td>Scarcity &amp; the economizing problem</td><td><span class="dot m3"></span> Module III</td><td>2</td><td>Univ 2024 Q20 (10m) · Amal 2025 Q17 (6m)</td></tr>
+                <tr><td>Laissez-faire capitalism</td><td><span class="dot m4"></span> Module IV</td><td>2</td><td>Univ 2024 Q9 (3m) · Amal 2025 Q3 (3m)</td></tr>
+                <tr><td>Command vs market system</td><td><span class="dot m4"></span> Module IV</td><td>2</td><td>Univ 2024 Q19 (10m) · Amal 2025 Q10 (3m)</td></tr>
+                <tr><td>Five fundamental questions</td><td><span class="dot m4"></span> Module IV</td><td>2</td><td>Univ 2024 Q13 (6m) · Amal 2025 Q18 (6m)</td></tr>
+                <tr><td>Business risk &amp; the market system</td><td><span class="dot m4"></span> Module IV</td><td>2</td><td>Univ 2024 Q3 (3m) · Amal 2025 Q20 (10m)</td></tr>
+                <tr><td>Ten principles (overall)</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Amal 2025 Q19 (10m)</td></tr>
+                <tr><td>Printing money → inflation</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Univ 2024 Q18 (6m)</td></tr>
+                <tr><td>Market failure / government</td><td><span class="dot m1"></span> Module I</td><td>1</td><td>Amal 2025 Q2 (3m)</td></tr>
+                <tr><td>Positive vs normative (value judgement)</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Univ 2024 Q4 (3m)</td></tr>
+                <tr><td>Micro vs macroeconomics</td><td><span class="dot m2"></span> Module II</td><td>1</td><td>Univ 2024 Q6 (3m)</td></tr>
+                <tr><td>Purposeful behaviour</td><td><span class="dot m3"></span> Module III</td><td>1</td><td>Amal 2025 Q7 (3m)</td></tr>
+                <tr><td>Why study economics</td><td><span class="dot m3"></span> Module III</td><td>1</td><td>Amal 2025 Q11 (6m)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+
+      <div class="note">
+        <span class="callout-title">💡 What the two papers tell you</span>
+        <ul class="tight">
+          <li><strong>Diagrams are examined directly</strong>: the PPF and the circular flow were asked in both papers. Practise drawing them in under a minute.</li>
+          <li><strong>Every Section C option so far has been an “explain + evaluate” essay</strong>: scarcity and the economizing problem, command vs market, the ten principles, and how markets deal with risk.</li>
+          <li><strong>Module IV has the heaviest weight</strong> — laissez-faire, command systems, the five fundamental questions, the invisible hand and business risk were all asked.</li>
+          <li>The university paper likes <strong>application</strong> (India's growth choices, the Indian economy's five questions); your college paper likes <strong>definitions plus diagrams</strong>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== 1. CHEAT SHEET ===================== -->
+    <section class="block" id="cheat-sheet">
+      <div class="section-head">
+        <span class="sec-num">1</span>
+        <div>
+          <h2>The 10-minute exam cheat sheet</h2>
+          <p>Every definition, list and diagram name that earns marks — scan this outside the hall.</p>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <article class="card cheat-card m1">
+          <h3><span class="mtag fill-mc">MODULE I</span>Ten principles (Mankiw)</h3>
+          <ul>
+            <li><strong>Economics (Mankiw):</strong> “the study of how <span class="kw">society manages its scarce resources</span>.”</li>
+            <li><strong>How people make decisions:</strong> (1) people face <b>trade-offs</b> · (2) the cost of something is what you give up — <b>opportunity cost</b> · (3) rational people <b>think at the margin</b> · (4) people respond to <b>incentives</b>.</li>
+            <li><strong>How people interact:</strong> (5) <b>trade</b> can make everyone better off · (6) <b>markets</b> are usually a good way to organise activity — the <b>invisible hand</b> · (7) <b>governments</b> can sometimes improve outcomes — <b>market failure</b> (externality, market power).</li>
+            <li><strong>How the economy works:</strong> (8) living standards depend on <b>productivity</b> · (9) prices rise when government <b>prints too much money</b> · (10) short-run <b>trade-off between inflation and unemployment</b> — <b>Phillips curve</b> (A. W. Phillips, 1958).</li>
+            <li><strong>Efficiency vs equality:</strong> the classic trade-off — bigger pie vs fairer slices.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m2">
+          <h3><span class="mtag fill-mc">MODULE II</span>Thinking like an economist</h3>
+          <ul>
+            <li><strong>Scientific method:</strong> observation → theory (hypothesis) → more observation (test with data) → accept / revise.</li>
+            <li><strong>Assumptions</strong> simplify the world (e.g., <i>ceteris paribus</i>, two goods). <strong>Model</strong> = simplified representation of reality, often a diagram or equation. <strong>Function</strong> = Y = f(X), dependent vs independent variables.</li>
+            <li><strong>Circular flow:</strong> households ↔ firms through <b>goods &amp; services market</b> and <b>factor market</b>; real flow one way, money flow the other. 3-sector adds <b>government</b> (taxes, purchases, transfers).</li>
+            <li><strong>PPF:</strong> combinations of two goods producible with given resources &amp; technology. Shows <b>scarcity</b> (beyond = unattainable), <b>choice</b> (points on it), <b>opportunity cost</b> (slope = <b>MRT</b>), <b>efficiency</b> (on it) vs inefficiency (inside), <b>growth</b> (outward shift). Bowed out → increasing opportunity cost.</li>
+            <li><strong>Micro</strong> = households, firms, markets · <strong>Macro</strong> = economy-wide (inflation, unemployment, growth).</li>
+            <li><strong>Positive</strong> (what is — testable) vs <strong>normative</strong> (what ought to be — value judgement).</li>
+            <li><strong>Why economists disagree:</strong> different <b>scientific judgements</b> · different <b>values</b> · <b>perception vs reality</b> (they agree more than it seems).</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m3">
+          <h3><span class="mtag fill-mc">MODULE III</span>Limits, alternatives &amp; choices</h3>
+          <ul>
+            <li><strong>Economics (McConnell):</strong> “the social science concerned with how individuals, institutions and society make optimal <span class="kw">choices under conditions of scarcity</span>.”</li>
+            <li><strong>Economic perspective:</strong> scarcity &amp; choice · <b>purposeful behaviour</b> (people seek utility/profit; decisions are deliberate, not random) · <b>marginal analysis</b> (compare MB with MC; act while MB ≥ MC).</li>
+            <li><strong>Individual's economizing problem:</strong> limited income, unlimited wants → <b>budget line</b>; attainable vs unattainable; trade-offs; opportunity cost = slope.</li>
+            <li><strong>Society's economizing problem:</strong> scarce resources — <b>land, labour, capital, entrepreneurship</b> (rent, wages, interest, profit) — vs unlimited wants → PPF; full employment &amp; full production assumed.</li>
+            <li><strong>Growth &amp; the future:</strong> more resources or better technology shift the PPF out; <b>present choices</b> (more capital goods now) → <b>future possibilities</b>; <b>international trade</b> lets a nation consume beyond its PPF.</li>
+            <li><strong>Why study economics:</strong> economics for citizenship, personal decisions, business, policy.</li>
+          </ul>
+        </article>
+
+        <article class="card cheat-card m4">
+          <h3><span class="mtag fill-mc">MODULE IV</span>The market system</h3>
+          <ul>
+            <li><strong>Economic systems:</strong> <b>laissez-faire capitalism</b> (no government role beyond property &amp; law; “let it be”) · <b>command system</b> (public ownership, central planning — former USSR, North Korea) · <b>market system</b> (private ownership, markets &amp; prices; limited government).</li>
+            <li><strong>9 characteristics of the market system:</strong> private property · freedom of enterprise &amp; choice · self-interest · competition · markets &amp; prices · technology &amp; capital goods · specialization · use of money · active but limited government.</li>
+            <li><strong>5 fundamental questions:</strong> What will be produced? How? Who gets the output? How will the system accommodate change? How will it promote progress?</li>
+            <li><strong>Invisible hand</strong> (Adam Smith, <i>Wealth of Nations</i>, 1776): self-interest guided by competition promotes society's interest.</li>
+            <li><strong>Demise of command systems:</strong> the <b>coordination problem</b> &amp; the <b>incentive problem</b>.</li>
+            <li><strong>Risk:</strong> the <b>profit system</b> rewards risk-bearing owners; firms <b>shield employees and suppliers</b> (fixed wages, prices); restricting risk to owners lets workers and suppliers focus, encourages enterprise and investment.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h4>Diagrams you must be able to draw</h4>
+          <div class="tbl-wrap" style="margin:0">
+            <table class="tbl compact">
+              <tbody>
+                <tr><th>PPF</th><td>Concave curve; points on / inside / outside; outward shift = growth</td></tr>
+                <tr><th>Circular flow</th><td>Households, firms (+ government); real flow vs money flow</td></tr>
+                <tr><th>Phillips curve</th><td>Inflation (y) vs unemployment (x), downward sloping</td></tr>
+                <tr><th>Budget line</th><td>Two goods, income ÷ prices; slope = opportunity cost</td></tr>
+                <tr><th>MB = MC</th><td>Falling MB, rising MC; optimum where they cross</td></tr>
+                <tr><th>Economic systems</th><td>Spectrum: command ← mixed → laissez-faire</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <h4>If you revise only ten things</h4>
+          <ol class="tight">
+            <li>Mankiw's ten principles in three groups</li>
+            <li>Trade-offs and opportunity cost with real examples</li>
+            <li>Marginal thinking (MB vs MC)</li>
+            <li>PPF: scarcity, choice, opportunity cost, MRT, growth</li>
+            <li>Circular flow — 2-sector and 3-sector</li>
+            <li>Scientific method, assumptions, models</li>
+            <li>Why economists disagree</li>
+            <li>Society's economizing problem</li>
+            <li>Command vs market system; 9 characteristics; 5 questions</li>
+            <li>Invisible hand; how markets handle risk</li>
+          </ol>
+          <div class="mnemonic">
+            <span class="callout-title">Memory hooks</span>
+            <ul class="tight">
+              <li><b>“TOMI · TMG · PPI”</b> → Trade-offs, Opportunity cost, Margin, Incentives · Trade, Markets, Government · Productivity, Printing money, Inflation–unemployment</li>
+              <li><b>“WHO-CP”</b> → What, How, Output (who gets it), Change, Progress</li>
+              <li><b>“LLCE”</b> → Land, Labour, Capital, Entrepreneurship</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="modules">
+      <div class="section-head">
+        <span class="sec-num">2</span>
+        <div>
+          <h2>Text-by-text breakdown, solved PYQs &amp; strategy</h2>
+          <p>Being added next: module notes with PPF, circular-flow and Phillips-curve diagrams, both papers solved, and the exam plan.</p>
+        </div>
+      </div>
+      <div class="tip"><span class="callout-title">Coming shortly</span>Until then, the cheat sheet above covers every definition, list and diagram you need, and the overview shows which topics are asked most.</div>
+      <span id="m1"></span><span id="m2"></span><span id="m3"></span><span id="m4"></span>
+      <span id="pyqs"></span><span id="sec-a"></span><span id="sec-b"></span><span id="sec-c"></span><span id="strategy"></span>
+    </section>
+
+    <footer class="site-footer" style="margin-top:40px">
+      <p><b>Sources.</b> Syllabus: University of Calicut CUFYUGP B.A. Economics Honours — ECO1CJ101 Principles of Economics (St. Thomas College copy). Question papers from the Amal College library folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 112287); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100132).</p>
+      <p><a href="../#semester-1">← Back to all Semester 1 subjects</a></p>
+    </footer>
+  </main>
+</div>
+
+<a class="icon-btn to-top no-print" href="#top" aria-label="Back to top">↑</a>
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
