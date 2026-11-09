@@ -27,7 +27,7 @@
     .fbar .nb { padding: 4px 10px; border-right: 1px solid var(--line-strong); background: var(--surface-2); color: var(--ink-2); min-width: 44px; text-align: center; }
     .fbar .fx { padding: 4px 8px; border-right: 1px solid var(--line-strong); color: var(--ink-2); font-style: italic; font-family: Georgia, serif; }
     .fbar code { padding: 4px 10px; background: none; color: var(--ink); white-space: pre-wrap; word-break: break-all; }
-    code.f { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; white-space: nowrap; }
+    code.f { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; background: var(--surface-2); border: 1px solid var(--line); border-radius: 5px; padding: 1px 5px; white-space: normal; overflow-wrap: anywhere; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
     kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .78em; border: 1px solid var(--line-strong); border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; background: var(--surface-2); white-space: nowrap; }
     .path { font-weight: 650; }
     .path::before { content: "▸ "; color: var(--mc, var(--accent)); }
@@ -39,7 +39,7 @@
     .areas > div b { display: block; }
     .areas > div span.tag { display: inline-block; font-family: ui-monospace, Menlo, monospace; font-size: .76rem; background: color-mix(in srgb, var(--mc, var(--m3)) 16%, var(--surface)); border: 1px solid color-mix(in srgb, var(--mc, var(--m3)) 40%, var(--line)); border-radius: 6px; padding: 1px 6px; margin-top: 4px; }
     svg.diag { width: 100%; height: auto; max-width: 640px; display: block; margin: 0 auto; font-family: var(--font-sans); }
-    svg.diag text { fill: var(--ink); font-size: 12px; }
+    svg.diag text { fill: var(--ink); font-size: 12px; white-space: pre; }
     svg.diag text.small { fill: var(--ink-2); font-size: 10.5px; }
     svg.diag text.bold { font-weight: 700; }
     svg.diag .frame { fill: var(--surface); stroke: var(--line-strong); stroke-width: 1.5; }
@@ -338,21 +338,1423 @@
       </div>
     </section>
 
+    <!-- ===================== 2. MODULE BREAKDOWN ===================== -->
     <section class="block" id="modules">
       <div class="section-head">
         <span class="sec-num">2</span>
         <div>
-          <h2>Module breakdown, solved PYQs &amp; strategy</h2>
-          <p>Being added next: module notes with worked Excel grids for referencing, VLOOKUP, pivot tables and Goal Seek, both papers solved, and the exam plan.</p>
+          <h2>Chapter-by-chapter core breakdown</h2>
+          <p>Golden definition, menu paths, and a worked spreadsheet grid for every function and tool. Menu paths are for Microsoft Excel (365/2019); Google Sheets equivalents are noted where the syllabus mentions them. Module V (household-expense model, real-world analysis) is practical work and is not examined in the written paper.</p>
         </div>
       </div>
-      <div class="tip"><span class="callout-title">Coming shortly</span>Until then, the cheat sheet above covers every definition, menu path and function syntax you need, and the overview shows which topics are asked most.</div>
-      <span id="m1"></span><span id="m2"></span><span id="m3"></span><span id="m4"></span>
-      <span id="pyqs"></span><span id="sec-a"></span><span id="sec-b"></span><span id="sec-c"></span><span id="strategy"></span>
+
+      <!-- ========== MODULE I ========== -->
+      <article class="module m1" id="m1">
+        <div class="module-banner">
+          <div class="mnum">Module I · 9 hours · 15 syllabus marks · 46 of 140 PYQ marks</div>
+          <h3>Introduction to Spreadsheets</h3>
+          <div class="chips"><span class="chip">Features &amp; window</span><span class="chip">Insert / delete</span><span class="chip">Formatting</span><span class="chip">Referencing</span><span class="chip">Linking sheets</span><span class="chip">Functions</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“A spreadsheet is an electronic worksheet made of rows and columns of cells, used to store, organise, calculate and analyse data with formulas and functions, which recalculate automatically when the data changes.”</blockquote>
+          <div class="g-src">Examples: Microsoft Excel, Google Sheets, LibreOffice Calc, Apple Numbers. A <b>workbook</b> is the file; each <b>worksheet</b> is one tab inside it.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">1.1</span>Features of a spreadsheet</h4>
+          <div class="grid-4">
+            <div class="mini-card"><h5>Grid of cells</h5><p>Rows × columns; each cell has an address such as <code class="f">B4</code>.</p></div>
+            <div class="mini-card"><h5>Formulas &amp; functions</h5><p>Built-in SUM, IF, VLOOKUP…; results <b>recalculate automatically</b>.</p></div>
+            <div class="mini-card"><h5>Data management</h5><p>Sort, filter, validation, remove duplicates, conditional formatting.</p></div>
+            <div class="mini-card"><h5>Analysis tools</h5><p>Pivot tables, Goal Seek, Scenario Manager, add-ins.</p></div>
+            <div class="mini-card"><h5>Charts</h5><p>Column, line, pie and more, linked to the data.</p></div>
+            <div class="mini-card"><h5>Multiple sheets</h5><p>Many worksheets in one workbook, linked by formulas.</p></div>
+            <div class="mini-card"><h5>Collaboration</h5><p>Google Sheets: real-time co-editing, comments, version history.</p></div>
+            <div class="mini-card"><h5>Import / export</h5><p>CSV, text, web, databases; save as PDF or CSV.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.2</span>Parts of the spreadsheet window</h4>
+          <figure class="diagram">
+            <div class="diagram-title">Excel window — numbered parts</div>
+            <svg class="diag" viewBox="0 0 640 330" role="img" aria-label="Excel window showing title bar, ribbon tabs, ribbon, name box, formula bar, column headings, row headings, active cell, sheet tabs and status bar, each numbered">
+              <rect class="frame" x="10" y="10" width="620" height="310" rx="8"/>
+              <rect class="bar" x="10" y="10" width="620" height="26" rx="8"/>
+              <text x="320" y="28" text-anchor="middle" class="small">Book1 — Excel</text>
+              <rect class="bar" x="10" y="36" width="620" height="22"/>
+              <text x="24" y="51" class="small">File   Home   Insert   Page Layout   Formulas   Data   Review   View</text>
+              <rect class="bar" x="10" y="58" width="620" height="40"/>
+              <text x="24" y="82" class="small">Clipboard · Font · Alignment · Number · Styles · Cells · Editing</text>
+              <rect class="frame" x="18" y="104" width="54" height="20" rx="3"/><text x="28" y="118" class="small">C3</text>
+              <rect class="frame" x="78" y="104" width="544" height="20" rx="3"/><text x="88" y="118" class="small"><tspan font-style="italic">fx</tspan>   =A3*B3</text>
+              <rect class="bar" x="18" y="130" width="604" height="18"/>
+              <g class="small">
+                <text x="70" y="143" text-anchor="middle" class="small">A</text><text x="170" y="143" text-anchor="middle" class="small">B</text><text x="270" y="143" text-anchor="middle" class="small">C</text><text x="370" y="143" text-anchor="middle" class="small">D</text><text x="470" y="143" text-anchor="middle" class="small">E</text><text x="570" y="143" text-anchor="middle" class="small">F</text>
+              </g>
+              <rect class="bar" x="18" y="148" width="22" height="120"/>
+              <text x="29" y="162" text-anchor="middle" class="small">1</text><text x="29" y="182" text-anchor="middle" class="small">2</text><text x="29" y="202" text-anchor="middle" class="small">3</text><text x="29" y="222" text-anchor="middle" class="small">4</text><text x="29" y="242" text-anchor="middle" class="small">5</text><text x="29" y="262" text-anchor="middle" class="small">6</text>
+              <path class="grid" d="M40,168 H622 M40,188 H622 M40,208 H622 M40,228 H622 M40,248 H622 M120,130 V268 M220,130 V268 M320,130 V268 M420,130 V268 M520,130 V268"/>
+              <rect class="acc" x="220" y="188" width="100" height="20"/>
+              <rect class="bar" x="18" y="272" width="604" height="20"/>
+              <rect class="frame" x="40" y="273" width="58" height="18" rx="2"/><text x="69" y="286" text-anchor="middle" class="small">Sheet1</text><text x="130" y="286" text-anchor="middle" class="small">Sheet2  ⊕</text>
+              <rect class="bar" x="10" y="296" width="620" height="22"/>
+              <text x="24" y="311" class="small">Ready</text><text x="440" y="311" class="small">Average · Count · Sum     − ▬ + 100%</text>
+              <g>
+                <circle class="badge-c" cx="600" cy="23" r="9"/><text class="badge-t" x="600" y="27" text-anchor="middle">1</text>
+                <circle class="badge-c" cx="600" cy="47" r="9"/><text class="badge-t" x="600" y="51" text-anchor="middle">2</text>
+                <circle class="badge-c" cx="600" cy="78" r="9"/><text class="badge-t" x="600" y="82" text-anchor="middle">3</text>
+                <circle class="badge-c" cx="60" cy="114" r="9"/><text class="badge-t" x="60" y="118" text-anchor="middle">4</text>
+                <circle class="badge-c" cx="200" cy="114" r="9"/><text class="badge-t" x="200" y="118" text-anchor="middle">5</text>
+                <circle class="badge-c" cx="420" cy="139" r="9"/><text class="badge-t" x="420" y="143" text-anchor="middle">6</text>
+                <circle class="badge-c" cx="54" cy="238" r="9"/><text class="badge-t" x="54" y="242" text-anchor="middle">7</text>
+                <circle class="badge-c" cx="330" cy="198" r="9"/><text class="badge-t" x="330" y="202" text-anchor="middle">8</text>
+                <circle class="badge-c" cx="175" cy="282" r="9"/><text class="badge-t" x="175" y="286" text-anchor="middle">9</text>
+                <circle class="badge-c" cx="410" cy="307" r="9"/><text class="badge-t" x="410" y="311" text-anchor="middle">10</text>
+              </g>
+            </svg>
+            <ol class="key">
+              <li><b>Title bar</b> — file name and app; Quick Access Toolbar (Save, Undo)</li>
+              <li><b>Ribbon tabs</b> — File, Home, Insert, Page Layout, Formulas, Data, Review, View</li>
+              <li><b>Ribbon</b> — commands in groups (Font, Alignment, Number…)</li>
+              <li><b>Name Box</b> — shows the active cell's address or a named range</li>
+              <li><b>Formula Bar</b> — shows and edits the cell's content or formula</li>
+              <li><b>Column headings</b> — A, B, C … XFD</li>
+              <li><b>Row headings</b> — 1, 2, 3 … 1,048,576</li>
+              <li><b>Active cell</b> — the selected cell (C3), with a bold border</li>
+              <li><b>Sheet tabs</b> — switch, add (⊕), rename worksheets</li>
+              <li><b>Status bar</b> — Ready/Edit mode; Sum, Average, Count of the selection; zoom</li>
+            </ol>
+          </figure>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Insert and delete cells, rows, columns</h5><ul class="tight">
+              <li><b>Right-click</b> a cell ▸ <b>Insert…</b> ▸ Shift cells right / Shift cells down / Entire row / Entire column.</li>
+              <li><b>Right-click a row number or column letter</b> ▸ Insert (adds above / to the left) or Delete.</li>
+              <li><span class="path">Home ▸ Cells ▸ Insert / Delete</span> ▸ Insert Sheet Rows / Columns.</li>
+              <li>Shortcuts: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> insert · <kbd>Ctrl</kbd>+<kbd>-</kbd> delete.</li>
+            </ul></div>
+            <div class="mini-card"><h5>Split vs Freeze Panes (View tab)</h5><ul class="tight">
+              <li><b>Freeze Panes</b> locks rows above and columns left of the selected cell so <b>headings stay visible</b> while you scroll. Options: Freeze Panes, Freeze Top Row, Freeze First Column.</li>
+              <li><b>Split</b> divides the window into up to <b>four panes that scroll independently</b>, to compare distant parts of one sheet.</li>
+              <li>Use Freeze for long lists with headers; use Split to compare row 5 with row 900.</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.3</span>Formatting (Google Sheets and Excel)</h4>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Format</th><th>What it does</th><th>Google Sheets</th><th>Excel</th></tr></thead>
+              <tbody>
+                <tr><th>Merge</th><td>Joins cells into one — titles across columns</td><td>Format ▸ Merge cells</td><td>Home ▸ Merge &amp; Center</td></tr>
+                <tr><th>Wrap</th><td>Shows long text on several lines inside a cell</td><td>Format ▸ Wrapping ▸ Wrap (or Overflow, Clip)</td><td>Home ▸ Wrap Text</td></tr>
+                <tr><th>Font</th><td>Font, size, bold, italic, colour</td><td>Toolbar / Format ▸ Text</td><td>Home ▸ Font</td></tr>
+                <tr><th>Number</th><td>Currency ₹, percentage, date, decimals</td><td>Format ▸ Number</td><td>Home ▸ Number / <kbd>Ctrl</kbd>+<kbd>1</kbd></td></tr>
+                <tr><th>Borders &amp; shading</th><td>Lines around cells; fill colour</td><td>Borders and Fill colour icons</td><td>Home ▸ Font ▸ Borders / Fill Color</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Range</h5><p>A rectangular group of cells written <code class="f">first:last</code> — <code class="f">B2:D8</code>. Can be named (Formulas ▸ Define Name).</p></div>
+            <div class="mini-card"><h5>AutoFill</h5><p>Drag the <b>fill handle</b> (small square at the corner) to copy a formula or continue a series — Mon, Tue…; 1, 2, 3…</p></div>
+            <div class="mini-card"><h5>AutoSum</h5><p><span class="path">Home ▸ Editing ▸ AutoSum</span> (Σ) or <kbd>Alt</kbd>+<kbd>=</kbd> inserts <code class="f">=SUM(…)</code> for the adjacent range.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.4</span>Relative, absolute and mixed referencing</h4>
+          <p>A <strong>cell reference</strong> tells a formula where to find its data. When a formula is <b>copied</b>, Excel adjusts the references. The <b>$ sign</b> stops the adjustment for the column, the row, or both. Press <kbd>F4</kbd> while editing to cycle <code class="f">A1 → $A$1 → A$1 → $A1</code>.</p>
+          <div class="grid-3">
+            <div>
+              <div class="diagram-title">Relative — <code class="f">=B2*C2</code> copied down</div>
+              <div class="xl-wrap"><table class="xl"><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+                <tr><th>1</th><td>Item</td><td>Qty</td><td>Rate</td><td>Amount</td></tr>
+                <tr><th>2</th><td>Pen</td><td class="num">10</td><td class="num">5</td><td class="hl">=B2*C2 → 50</td></tr>
+                <tr><th>3</th><td>Book</td><td class="num">4</td><td class="num">40</td><td class="soft">=B3*C3 → 160</td></tr>
+                <tr><th>4</th><td>Bag</td><td class="num">1</td><td class="num">350</td><td class="soft">=B4*C4 → 350</td></tr>
+              </table></div>
+              <p class="small">Row numbers change with each row — exactly what we want here.</p>
+            </div>
+            <div>
+              <div class="diagram-title">Absolute — <code class="f">=D2*$F$1</code> copied down</div>
+              <div class="xl-wrap"><table class="xl"><tr><th></th><th>D</th><th>E</th><th>F</th></tr>
+                <tr><th>1</th><td>Amount</td><td>GST →</td><td class="res">18%</td></tr>
+                <tr><th>2</th><td class="num">50</td><td class="hl">=D2*$F$1 → 9</td><td></td></tr>
+                <tr><th>3</th><td class="num">160</td><td class="soft">=D3*$F$1 → 28.8</td><td></td></tr>
+                <tr><th>4</th><td class="num">350</td><td class="soft">=D4*$F$1 → 63</td><td></td></tr>
+              </table></div>
+              <p class="small"><code class="f">$F$1</code> stays fixed. Without $, row 3 would use F2 (empty) and give 0 — the classic error.</p>
+            </div>
+            <div>
+              <div class="diagram-title">Mixed — <code class="f">=$A2*B$1</code> filled across and down</div>
+              <div class="xl-wrap"><table class="xl"><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+                <tr><th>1</th><td>×</td><td class="res">1</td><td class="res">2</td><td class="res">3</td></tr>
+                <tr><th>2</th><td class="res">1</td><td class="hl">1</td><td class="soft">2</td><td class="soft">3</td></tr>
+                <tr><th>3</th><td class="res">2</td><td class="soft">2</td><td class="soft">4</td><td class="soft">6</td></tr>
+                <tr><th>4</th><td class="res">3</td><td class="soft">3</td><td class="soft">6</td><td class="soft">9</td></tr>
+              </table></div>
+              <p class="small"><code class="f">$A</code> keeps column A; <code class="f">$1</code> keeps row 1. One formula fills the whole multiplication table — D4 holds <code class="f">=$A4*D$1</code>.</p>
+            </div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Type</th><th>Form</th><th>When copied</th><th>Typical use</th></tr></thead>
+              <tbody>
+                <tr><th>Relative</th><td><code class="f">A1</code></td><td>Row and column both change</td><td>Same calculation for every row</td></tr>
+                <tr><th>Absolute</th><td><code class="f">$A$1</code></td><td>Nothing changes</td><td>A constant — tax rate, exchange rate</td></tr>
+                <tr><th>Mixed</th><td><code class="f">$A1</code> / <code class="f">A$1</code></td><td>Only the unlocked part changes</td><td>Two-way tables, cross-calculations</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.5</span>Linking data between worksheets and workbooks</h4>
+          <p><strong>Linking</strong> means a cell in one sheet uses the value of a cell in another sheet or workbook through a formula, so the data is entered once and <b>updates automatically</b> everywhere it is used.</p>
+          <div class="grid-2">
+            <div class="mini-card"><h5>How to link</h5><ol class="tight">
+              <li>In the destination cell type <code class="f">=</code></li>
+              <li>Click the source sheet tab, click the source cell, press <kbd>Enter</kbd></li>
+              <li>Excel writes <code class="f">=Jan!B5</code>; with spaces in the name: <code class="f">='Jan Sales'!B5</code></li>
+              <li>Another workbook: <code class="f">=[Sales.xlsx]Jan!$B$5</code></li>
+              <li>3-D sum across sheets: <code class="f">=SUM(Jan:Mar!B5)</code></li>
+              <li>Or Copy ▸ Paste Special ▸ <b>Paste Link</b></li>
+            </ol></div>
+            <div class="mini-card"><h5>Uses and common issues</h5><ul class="tight">
+              <li><b>Uses:</b> summary sheet from monthly sheets; one master price list; consolidation of branch reports; dashboards.</li>
+              <li><b>Broken links</b> when the source file is moved or renamed — fix via Data ▸ Edit Links / Workbook Links ▸ Change Source.</li>
+              <li><b>#REF!</b> error when the source sheet or cell is deleted.</li>
+              <li><b>Update prompts and security warnings</b> when opening linked files.</li>
+              <li>Circular references, slower recalculation, and hard-to-trace errors in long chains.</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">1.6</span>Functions in the syllabus — syntax and a worked example each</h4>
+          <p>A <strong>function</strong> is a built-in formula that performs a calculation using values called <b>arguments</b>: <code class="f">=NAME(argument1, argument2, …)</code>. Every formula starts with <code class="f">=</code>.</p>
+          <div class="xl-wrap"><table class="xl" style="--mc:var(--m1)"><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr>
+            <tr><th>1</th><td>Student</td><td>Region</td><td>Marks</td><td>Fee</td></tr>
+            <tr><th>2</th><td>Anu</td><td>North</td><td class="num">78</td><td class="num">1250.75</td></tr>
+            <tr><th>3</th><td>Basil</td><td>South</td><td class="num">35</td><td class="num">980.40</td></tr>
+            <tr><th>4</th><td>Cyril</td><td>North</td><td class="num">62</td><td class="num">1100.00</td></tr>
+            <tr><th>5</th><td>Diya</td><td>South</td><td class="num">91</td><td class="num">1430.25</td></tr>
+            <caption>Sample data used in the table below (A1:D5).</caption>
+          </table></div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Function</th><th>Syntax</th><th>Example on the data</th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><th>SUM</th><td><code class="f">=SUM(number1, …)</code></td><td><code class="f">=SUM(C2:C5)</code></td><td>266</td></tr>
+                <tr><th>AVERAGE</th><td><code class="f">=AVERAGE(range)</code></td><td><code class="f">=AVERAGE(C2:C5)</code></td><td>66.5</td></tr>
+                <tr><th>MIN / MAX</th><td><code class="f">=MIN(range)</code> · <code class="f">=MAX(range)</code></td><td><code class="f">=MIN(C2:C5)</code> · <code class="f">=MAX(C2:C5)</code></td><td>35 · 91</td></tr>
+                <tr><th>COUNT</th><td><code class="f">=COUNT(range)</code> — counts numbers</td><td><code class="f">=COUNT(A1:C5)</code></td><td>4</td></tr>
+                <tr><th>ROUND</th><td><code class="f">=ROUND(number, num_digits)</code></td><td><code class="f">=ROUND(D2,1)</code></td><td>1250.8</td></tr>
+                <tr><th>CEILING</th><td><code class="f">=CEILING(number, significance)</code> — up to a multiple</td><td><code class="f">=CEILING(D3,100)</code></td><td>1000</td></tr>
+                <tr><th>FLOOR</th><td><code class="f">=FLOOR(number, significance)</code> — down to a multiple</td><td><code class="f">=FLOOR(D3,100)</code></td><td>900</td></tr>
+                <tr><th>IF</th><td><code class="f">=IF(test, if_true, if_false)</code></td><td><code class="f">=IF(C3&gt;=40,"Pass","Fail")</code></td><td>Fail</td></tr>
+                <tr><th>AND / OR</th><td><code class="f">=AND(c1, c2)</code> · <code class="f">=OR(c1, c2)</code></td><td><code class="f">=AND(C2&gt;=40, D2&lt;1300)</code></td><td>TRUE</td></tr>
+                <tr><th>COUNTIF</th><td><code class="f">=COUNTIF(range, criteria)</code></td><td><code class="f">=COUNTIF(C2:C5,"&gt;=60")</code></td><td>3</td></tr>
+                <tr><th>SUMIF</th><td><code class="f">=SUMIF(range, criteria, [sum_range])</code></td><td><code class="f">=SUMIF(B2:B5,"North",C2:C5)</code></td><td>140</td></tr>
+                <tr><th>VLOOKUP</th><td><code class="f">=VLOOKUP(value, table, col_index, [range_lookup])</code></td><td><code class="f">=VLOOKUP("Cyril",A2:D5,3,FALSE)</code></td><td>62</td></tr>
+                <tr><th>HLOOKUP</th><td><code class="f">=HLOOKUP(value, table, row_index, [range_lookup])</code></td><td><code class="f">=HLOOKUP("Marks",A1:D5,3,FALSE)</code></td><td>35</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note"><span class="callout-title">CEILING vs FLOOR — the pair examiners like</span>Both round to a <b>multiple of the significance</b>. CEILING always rounds <b>up</b> (away from zero for positive numbers), FLOOR always <b>down</b>: <code class="f">=CEILING(4.3,1)</code> → 5, <code class="f">=FLOOR(4.7,1)</code> → 4; <code class="f">=CEILING(23,5)</code> → 25, <code class="f">=FLOOR(23,5)</code> → 20. ROUND goes to the <i>nearest</i> value. Excel's names are CEILING and FLOOR (also CEILING.MATH, FLOOR.MATH); “CEIL” in the syllabus means CEILING. In Google Sheets the significance is optional and defaults to 1.</div>
+          <figure class="diagram">
+            <div class="diagram-title">How VLOOKUP reads <code class="f">=VLOOKUP(103, A2:D6, 3, FALSE)</code></div>
+            <div class="xl-wrap"><table class="xl" style="--mc:var(--m1)"><tr><th></th><th class="idx">A · col 1</th><th class="idx">B · col 2</th><th class="idx">C · col 3</th><th class="idx">D · col 4</th></tr>
+              <tr><th>1</th><td>Roll No</td><td>Name</td><td>Marks</td><td>Grade</td></tr>
+              <tr><th>2</th><td class="num">101</td><td>Anu</td><td class="num">78</td><td>B+</td></tr>
+              <tr><th>3</th><td class="num">102</td><td>Basil</td><td class="num">35</td><td>F</td></tr>
+              <tr><th>4</th><td class="num soft">103</td><td class="soft">Cyril</td><td class="num hl">62</td><td class="soft">B</td></tr>
+              <tr><th>5</th><td class="num">104</td><td>Diya</td><td class="num">91</td><td>A+</td></tr>
+              <tr><th>6</th><td class="num">105</td><td>Elsa</td><td class="num">54</td><td>C</td></tr>
+              <caption>① Looks for 103 down the <b>first column</b> of A2:D6 → ② finds it in row 4 → ③ moves to the <b>3rd column</b> of the table → returns <b>62</b>. FALSE = exact match; TRUE (or omitted) = approximate match on a sorted first column.</caption>
+            </table></div>
+          </figure>
+          <div class="tip"><span class="callout-title">VLOOKUP limitations</span>Searches only the <b>leftmost</b> column and returns values to its right; the column index breaks if columns are inserted; returns <b>#N/A</b> when not found (wrap in <code class="f">IFERROR</code>). HLOOKUP does the same along rows. Newer Excel has XLOOKUP, which removes these limits.</div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE II ========== -->
+      <article class="module m2" id="m2">
+        <div class="module-banner">
+          <div class="mnum">Module II · 9 hours · 10 syllabus marks · 30 of 140 PYQ marks</div>
+          <h3>Data Cleansing</h3>
+          <div class="chips"><span class="chip">Importance</span><span class="chip">Import &amp; export</span><span class="chip">Sort &amp; filter</span><span class="chip">Validation &amp; duplicates</span><span class="chip">Group &amp; subtotal</span><span class="chip">Conditional formatting</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“Data cleansing (data cleaning) is the process of detecting and correcting — or removing — inaccurate, incomplete, duplicate, inconsistent or irrelevant data so that the dataset is accurate and ready for analysis.”</blockquote>
+          <div class="g-src">The rule behind it: <b>garbage in, garbage out</b> — a pivot table or chart built on dirty data gives wrong answers.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">2.1</span>Importance of data cleansing and organisation</h4>
+          <div class="xl-pair">
+            <div>
+              <div class="diagram-title">Dirty data</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m2)"><tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+                <tr><th>1</th><td>Name</td><td>City</td><td>Sales</td></tr>
+                <tr><th>2</th><td class="bad">&nbsp;&nbsp;anu joseph</td><td>Kochi</td><td class="num">1200</td></tr>
+                <tr><th>3</th><td>Basil K</td><td class="bad">kochi</td><td class="num">850</td></tr>
+                <tr><th>4</th><td class="bad">Basil K</td><td class="bad">kochi</td><td class="num bad">850</td></tr>
+                <tr><th>5</th><td>Cyril M</td><td class="bad">Calicut</td><td class="bad">N/A</td></tr>
+                <tr><th>6</th><td>Diya R</td><td>Kozhikode</td><td class="num">1430</td></tr>
+              </table></div>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div>
+              <div class="diagram-title">Clean data</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+                <tr><th>1</th><td>Name</td><td>City</td><td>Sales</td></tr>
+                <tr><th>2</th><td class="res">Anu Joseph</td><td>Kochi</td><td class="num">1200</td></tr>
+                <tr><th>3</th><td>Basil K</td><td class="res">Kochi</td><td class="num">850</td></tr>
+                <tr><th>4</th><td>Cyril M</td><td class="res">Kozhikode</td><td class="num res">0</td></tr>
+                <tr><th>5</th><td>Diya R</td><td>Kozhikode</td><td class="num">1430</td></tr>
+                <caption>TRIM + PROPER fixed names; duplicate row removed; “Calicut” standardised; blank/text sales handled.</caption>
+              </table></div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Why it matters</h5><ul class="tight">
+              <li><b>Accuracy</b> — correct totals, averages and counts</li>
+              <li><b>Reliable decisions</b> — managers trust the reports</li>
+              <li><b>Consistency</b> — one spelling, one format for each value</li>
+              <li><b>Efficiency</b> — formulas, sorting and pivots work first time</li>
+              <li><b>Avoids double counting</b> from duplicates</li>
+              <li><b>Better visualisation</b> — charts show the true picture</li>
+            </ul></div>
+            <div class="mini-card"><h5>Common cleansing tools</h5><ul class="tight">
+              <li><b>Remove Duplicates</b> (Data tab)</li>
+              <li><code class="f">=TRIM(A2)</code> extra spaces · <code class="f">=PROPER(A2)</code> / <code class="f">UPPER</code> / <code class="f">LOWER</code> case</li>
+              <li><b>Find &amp; Replace</b> (<kbd>Ctrl</kbd>+<kbd>H</kbd>) — standardise spellings</li>
+              <li><b>Text to Columns</b> — split “Anu Joseph” into two columns</li>
+              <li><b>Flash Fill</b> (<kbd>Ctrl</kbd>+<kbd>E</kbd>) — fill a pattern from an example</li>
+              <li><b>Data validation</b> to stop bad entries; <b>Go To Special ▸ Blanks</b> to find gaps</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.2</span>Importing and exporting data</h4>
+          <div class="flow accent" style="--mc:var(--m2)">
+            <div class="flow-step"><b>Data ▸ Get Data</b><small>or Data ▸ From Text/CSV, From Web, From Table/Range</small></div>
+            <div class="flow-step"><b>Choose source</b><small>CSV/text file, web page URL, Access/SQL database, another workbook</small></div>
+            <div class="flow-step"><b>Preview</b><small>Check delimiter (comma, tab), data types, headers</small></div>
+            <div class="flow-step"><b>Load or Transform</b><small>Load to a sheet, or clean first in Power Query Editor</small></div>
+            <div class="flow-step"><b>Refresh</b><small>Data ▸ Refresh All updates the imported data</small></div>
+          </div>
+          <p style="margin-top:10px"><b>Google Sheets:</b> File ▸ Import ▸ Upload ▸ choose “Replace sheet / Insert new sheet / Append”. <b>Export:</b> File ▸ Save As (Excel) or File ▸ Download (Sheets) ▸ CSV, PDF, .xlsx.</p>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.3</span>Sorting and filtering</h4>
+          <div class="tchart">
+            <div><h5>Sorting</h5><ul>
+              <li><b>Rearranges</b> all rows in order — A→Z / Z→A, smallest→largest, by date, by cell colour</li>
+              <li>Quick: <span class="path">Data ▸ Sort A→Z</span></li>
+              <li><b>Multiple columns:</b> <span class="path">Data ▸ Sort ▸ Sort by Department (A→Z) ▸ Add Level ▸ Then by Salary (Largest to Smallest) ▸ OK</span></li>
+              <li>Tick “My data has headers”; select the whole table so rows stay together</li>
+              <li>Custom lists — sort Jan, Feb, Mar in month order</li>
+            </ul></div>
+            <div><h5>Filtering</h5><ul>
+              <li><b>Shows only</b> rows that meet a condition and <b>hides</b> the rest — nothing is deleted</li>
+              <li><span class="path">Data ▸ Filter</span> (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>) adds drop-down arrows</li>
+              <li>Text filters (contains, begins with), number filters (greater than, top 10), date filters, filter by colour</li>
+              <li><b>Advanced Filter</b> — complex criteria, copy results elsewhere</li>
+              <li>Clear: Data ▸ Clear</li>
+            </ul></div>
+          </div>
+          <div class="xl-pair">
+            <div>
+              <div class="diagram-title">Multi-level sort: Dept A→Z, then Salary largest first</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m2)"><tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+                <tr><th>1</th><td>Name</td><td>Dept</td><td>Salary</td></tr>
+                <tr><th>2</th><td>Ravi</td><td class="soft">Accounts</td><td class="num hl">42000</td></tr>
+                <tr><th>3</th><td>Meera</td><td class="soft">Accounts</td><td class="num hl">35000</td></tr>
+                <tr><th>4</th><td>Joel</td><td class="soft">Sales</td><td class="num hl">39000</td></tr>
+                <tr><th>5</th><td>Sara</td><td class="soft">Sales</td><td class="num hl">31000</td></tr>
+              </table></div>
+            </div>
+            <div class="arrow" aria-hidden="true">vs</div>
+            <div>
+              <div class="diagram-title">Filter: Dept = Sales (rows 2–3 hidden)</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m2)"><tr><th></th><th>A</th><th>B ▾</th><th>C</th></tr>
+                <tr><th>1</th><td>Name</td><td>Dept</td><td>Salary</td></tr>
+                <tr><th style="color:var(--m1)">4</th><td>Joel</td><td>Sales</td><td class="num">39000</td></tr>
+                <tr><th style="color:var(--m1)">5</th><td>Sara</td><td>Sales</td><td class="num">31000</td></tr>
+                <caption>Row numbers jump (1, 4, 5) and turn blue — the sign that a filter is on.</caption>
+              </table></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.4</span>Data validation and removing duplicates</h4>
+          <p><strong>Data validation</strong> controls <b>what users can enter</b> in a cell, preventing errors at the point of entry.</p>
+          <div class="flow accent" style="--mc:var(--m2)">
+            <div class="flow-step"><b>Select cells</b></div>
+            <div class="flow-step"><b>Data ▸ Data Validation</b></div>
+            <div class="flow-step"><b>Settings</b><small>Allow: Whole number, Decimal, <b>List</b>, Date, Time, Text length, Custom; set criteria (between 0 and 100)</small></div>
+            <div class="flow-step"><b>Input Message</b><small>Prompt shown when the cell is selected</small></div>
+            <div class="flow-step"><b>Error Alert</b><small>Stop (blocks), Warning (asks), Information (informs)</small></div>
+          </div>
+          <div class="grid-3" style="margin-top:12px">
+            <div class="mini-card"><h5>Examples</h5><p>Marks: whole number 0–100 · Department: drop-down list “Sales, Accounts, HR” · Date of joining: after 1-1-2020 · Phone: text length = 10.</p></div>
+            <div class="mini-card"><h5>Remove duplicates</h5><p>Select the data ▸ <span class="path">Data ▸ Remove Duplicates</span> ▸ tick the columns that define a duplicate ▸ OK. Excel reports how many were removed. Sheets: Data ▸ Data cleanup ▸ Remove duplicates.</p></div>
+            <div class="mini-card"><h5>Check old data</h5><p><span class="path">Data ▸ Data Validation ▸ Circle Invalid Data</span> marks existing entries that break the rule. Copy first, or highlight duplicates with conditional formatting before deleting.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.5</span>Group, ungroup and subtotal</h4>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Group / Ungroup</h5><p>Select rows or columns ▸ <span class="path">Data ▸ Group</span> (<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>→</kbd>). An outline bar with <b>+ / −</b> buttons collapses or expands the detail. Ungroup: Data ▸ Ungroup.</p></div>
+            <div class="mini-card"><h5>Subtotal</h5><p><b>Sort</b> by the category first ▸ <span class="path">Data ▸ Subtotal</span> ▸ At each change in: Region ▸ Use function: Sum ▸ Add subtotal to: Sales ▸ OK. Excel inserts subtotal rows, a grand total and outline levels 1-2-3.</p></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">2.6</span>Conditional formatting</h4>
+          <p><strong>Conditional formatting</strong> automatically changes a cell's format (fill, font colour, icons) <b>when its value meets a condition</b>, so patterns, outliers and duplicates stand out.</p>
+          <div class="grid-2">
+            <div>
+              <div class="diagram-title">Highlight duplicate values</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m2)"><tr><th></th><th>A</th><th>B</th></tr>
+                <tr><th>1</th><td>Email</td><td>Marks</td></tr>
+                <tr><th>2</th><td class="bad">anu@mail.com</td><td class="num">78</td></tr>
+                <tr><th>3</th><td>basil@mail.com</td><td class="num">35</td></tr>
+                <tr><th>4</th><td class="bad">anu@mail.com</td><td class="num">78</td></tr>
+                <tr><th>5</th><td>diya@mail.com</td><td class="num">91</td></tr>
+              </table></div>
+              <ol class="tight">
+                <li>Select A2:A5</li>
+                <li><span class="path">Home ▸ Conditional Formatting ▸ Highlight Cells Rules ▸ Duplicate Values</span></li>
+                <li>Choose “Duplicate” (or “Unique”) and a format — Light Red Fill</li>
+                <li>OK — then review, and use Remove Duplicates if needed</li>
+              </ol>
+            </div>
+            <div>
+              <div class="tbl-wrap" style="margin-top:0">
+                <table class="tbl compact">
+                  <thead><tr><th>Rule group</th><th>Options</th></tr></thead>
+                  <tbody>
+                    <tr><th>Highlight Cells Rules</th><td>Greater Than, Less Than, Between, Equal To, Text that Contains, A Date Occurring, Duplicate Values</td></tr>
+                    <tr><th>Top/Bottom Rules</th><td>Top 10 Items, Top 10%, Bottom 10 Items, Bottom 10%, Above Average, Below Average</td></tr>
+                    <tr><th>Data Bars</th><td>In-cell bar proportional to value</td></tr>
+                    <tr><th>Color Scales</th><td>Green–yellow–red gradient</td></tr>
+                    <tr><th>Icon Sets</th><td>Arrows, traffic lights, ratings</td></tr>
+                    <tr><th>New Rule</th><td>Formula-based, e.g. <code class="f">=$C2&lt;40</code> shades the whole row</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="small">Manage or delete: Home ▸ Conditional Formatting ▸ Manage Rules / Clear Rules.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE III ========== -->
+      <article class="module m3" id="m3">
+        <div class="module-banner">
+          <div class="mnum">Module III · 8 hours · 10 syllabus marks · 46 of 140 PYQ marks</div>
+          <h3>Pivot Tables &amp; What-If Analysis</h3>
+          <div class="chips"><span class="chip">Pivot table features</span><span class="chip">Creating a pivot</span><span class="chip">What-If</span><span class="chip">Goal Seek</span><span class="chip">Watch Window</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“A PivotTable is an interactive way to quickly summarise large amounts of data — to calculate, summarise and analyse it so that you can see comparisons, patterns and trends.”</blockquote>
+          <div class="g-src">— Microsoft Support. “Pivot” means you can rotate the summary (swap rows and columns) by dragging fields, without changing the source data.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">3.1</span>Creating a pivot table — from raw data to summary</h4>
+          <div class="xl-pair">
+            <div>
+              <div class="diagram-title">Source data (sales records)</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+                <tr><th>1</th><td>Region</td><td>Product</td><td>Sales</td></tr>
+                <tr><th>2</th><td>North</td><td>Pen</td><td class="num">200</td></tr>
+                <tr><th>3</th><td>South</td><td>Book</td><td class="num">450</td></tr>
+                <tr><th>4</th><td>North</td><td>Book</td><td class="num">300</td></tr>
+                <tr><th>5</th><td>South</td><td>Pen</td><td class="num">150</td></tr>
+                <tr><th>6</th><td>North</td><td>Pen</td><td class="num">250</td></tr>
+                <tr><th>7</th><td>South</td><td>Book</td><td class="num">100</td></tr>
+              </table></div>
+            </div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div>
+              <div class="diagram-title">Pivot: Rows = Region, Columns = Product, Values = Sum of Sales</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th>Sum of Sales</th><th>Book</th><th>Pen</th><th>Grand Total</th></tr>
+                <tr><th>North</th><td class="num">300</td><td class="num">450</td><td class="num res">750</td></tr>
+                <tr><th>South</th><td class="num">550</td><td class="num">150</td><td class="num res">700</td></tr>
+                <tr><th>Grand Total</th><td class="num res">850</td><td class="num res">600</td><td class="num hl">1450</td></tr>
+                <caption>Six records summarised in four drags — no formulas typed.</caption>
+              </table></div>
+            </div>
+          </div>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">The four areas of the PivotTable Fields pane</div>
+              <div class="areas m3">
+                <div><b>Filters</b>Filter the whole report — e.g. Year<br><span class="tag">Year: 2025 ▾</span></div>
+                <div><b>Columns</b>Field values become column headings<br><span class="tag">Product</span></div>
+                <div><b>Rows</b>Field values become row labels<br><span class="tag">Region</span></div>
+                <div><b>Values</b>Numbers to summarise — Sum, Count, Average…<br><span class="tag">Sum of Sales</span></div>
+              </div>
+            </figure>
+            <div class="mini-card"><h5>Steps to create</h5><ol class="tight">
+              <li>Make sure the data has <b>headings</b>, no blank rows or columns</li>
+              <li>Click any cell in the data</li>
+              <li><span class="path">Insert ▸ PivotTable</span> (From Table/Range)</li>
+              <li>Check the range; choose <b>New Worksheet</b> or Existing Worksheet ▸ OK</li>
+              <li>In the PivotTable Fields pane, drag fields to <b>Rows, Columns, Values, Filters</b></li>
+              <li>Change the calculation: Values field ▸ <b>Value Field Settings</b> ▸ Sum / Count / Average / Max</li>
+              <li>After changing the source, <b>Refresh</b> (PivotTable Analyze ▸ Refresh, <kbd>Alt</kbd>+<kbd>F5</kbd>)</li>
+            </ol></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.2</span>Key features of pivot tables and their importance</h4>
+          <div class="grid-4">
+            <div class="mini-card"><h5>Quick summarising</h5><p>Sum, Count, Average, Max, Min of thousands of rows in seconds.</p></div>
+            <div class="mini-card"><h5>Drag-and-drop pivoting</h5><p>Rearrange rows and columns to view data from different angles.</p></div>
+            <div class="mini-card"><h5>Filtering &amp; sorting</h5><p>Report filters, label/value filters, sort by totals.</p></div>
+            <div class="mini-card"><h5>Slicers &amp; timelines</h5><p>Clickable buttons to filter by category or date.</p></div>
+            <div class="mini-card"><h5>Grouping</h5><p>Group dates into months/quarters/years; numbers into ranges (0–50, 51–100).</p></div>
+            <div class="mini-card"><h5>Show Values As</h5><p>% of grand total, % of row, running total, rank.</p></div>
+            <div class="mini-card"><h5>Drill-down</h5><p>Double-click a total to see the underlying records on a new sheet.</p></div>
+            <div class="mini-card"><h5>Calculated fields &amp; Pivot Charts</h5><p>Add formulas inside the pivot; chart it with one click.</p></div>
+          </div>
+          <div class="tip"><span class="callout-title">Importance in data analysis</span>No formulas needed · fast and accurate summaries of very large data · source data stays unchanged · interactive “what's happening in each region / month / product?” questions · easy to update with Refresh · basis for Pivot Charts and dashboards · supports decision-making (best-selling product, weakest branch, monthly trend).</div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.3</span>What-If Analysis and Goal Seek</h4>
+          <p><strong>What-If Analysis</strong> means changing the values in cells to see how the changes affect the results of formulas. Path: <span class="path">Data ▸ Forecast ▸ What-If Analysis</span>. It has three tools:</p>
+          <div class="grid-3">
+            <div class="mini-card"><h5>Scenario Manager</h5><p>Saves several <b>sets of input values</b> (best case, worst case, likely case) and switches between them or makes a summary report.</p></div>
+            <div class="mini-card"><h5>Goal Seek</h5><p>You know the <b>result you want</b>; Excel finds the <b>one input value</b> that produces it. Works backwards.</p></div>
+            <div class="mini-card"><h5>Data Table</h5><p>Shows results for <b>many values of one or two inputs</b> at once — e.g. EMI for different interest rates and periods.</p></div>
+          </div>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Goal Seek example: what must Cyril score in Test 3 to average 75?</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th></th><th>A</th><th>B</th></tr>
+                <tr><th>1</th><td>Test</td><td>Marks</td></tr>
+                <tr><th>2</th><td>Test 1</td><td class="num">70</td></tr>
+                <tr><th>3</th><td>Test 2</td><td class="num">68</td></tr>
+                <tr><th>4</th><td>Test 3</td><td class="num hl">? → 87</td></tr>
+                <tr><th>5</th><td>Average</td><td class="res">=AVERAGE(B2:B4) → 75</td></tr>
+              </table></div>
+              <div class="flow accent" style="--mc:var(--m3)">
+                <div class="flow-step"><b>Set cell</b><small>B5 (the formula)</small></div>
+                <div class="flow-step"><b>To value</b><small>75 (the target)</small></div>
+                <div class="flow-step"><b>By changing cell</b><small>B4 (the input)</small></div>
+              </div>
+              <figcaption>Check: (70 + 68 + 87) ÷ 3 = 75.</figcaption>
+            </figure>
+            <div class="mini-card"><h5>Goal Seek vs (other) What-If tools</h5>
+              <div class="tbl-wrap" style="margin:6px 0 0">
+                <table class="tbl compact">
+                  <thead><tr><th>Goal Seek</th><th>Scenario Manager / Data Table</th></tr></thead>
+                  <tbody>
+                    <tr><td>Starts from the <b>desired result</b></td><td>Start from <b>inputs</b> and show results</td></tr>
+                    <tr><td>Changes <b>one</b> input cell</td><td>Many inputs (scenarios: up to 32 changing cells) or 1–2 variables (data table)</td></tr>
+                    <tr><td>Gives <b>one answer</b></td><td>Gives a <b>range of outcomes</b> to compare</td></tr>
+                    <tr><td>Example: sales needed to earn ₹1 lakh profit</td><td>Example: profit under best, worst and likely cases</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">3.4</span>Watch Window, formula auditing and add-ins</h4>
+          <p>The <strong>Watch Window</strong> is a floating window that lets you <b>monitor the values and formulas of important cells</b> while you work on other parts of the workbook, other sheets, or other open workbooks.</p>
+          <div class="grid-2">
+            <div>
+              <div class="diagram-title">Watch Window</div>
+              <div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th>Book</th><th>Sheet</th><th>Name</th><th>Cell</th><th>Value</th><th>Formula</th></tr>
+                <tr><td>Budget.xlsx</td><td>Summary</td><td>Total</td><td>D20</td><td class="num hl">48,500</td><td>=SUM(D2:D19)</td></tr>
+                <tr><td>Budget.xlsx</td><td>Summary</td><td></td><td>D21</td><td class="num">8,730</td><td>=D20*Rates!$B$1</td></tr>
+                <tr><td>Budget.xlsx</td><td>Jan</td><td></td><td>C40</td><td class="num">12,300</td><td>=SUM(C2:C39)</td></tr>
+              </table></div>
+              <p><b>Steps:</b> <span class="path">Formulas ▸ Formula Auditing ▸ Watch Window ▸ Add Watch</span> ▸ select cells ▸ Add. Delete Watch removes one; double-click an entry to jump to the cell.</p>
+            </div>
+            <div class="mini-card"><h5>How it helps in auditing</h5><ul class="tight">
+              <li>See totals change <b>instantly</b> while editing data far away or on another sheet</li>
+              <li>No scrolling or switching sheets back and forth</li>
+              <li>Shows the <b>formula</b> as well as the value — spot wrong references</li>
+              <li>Tracks key cells across <b>several sheets and workbooks</b> at once</li>
+              <li>Useful in large models, budgets and dashboards</li>
+            </ul></div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Formula auditing tool (Formulas tab)</th><th>What it does</th></tr></thead>
+              <tbody>
+                <tr><th>Trace Precedents</th><td>Arrows from the cells that <b>feed</b> the selected formula</td></tr>
+                <tr><th>Trace Dependents</th><td>Arrows to the formulas that <b>use</b> the selected cell</td></tr>
+                <tr><th>Remove Arrows</th><td>Clears the tracer arrows</td></tr>
+                <tr><th>Show Formulas</th><td>Displays formulas instead of results (<kbd>Ctrl</kbd>+<kbd>`</kbd>)</td></tr>
+                <tr><th>Error Checking</th><td>Finds and explains errors — #DIV/0!, #REF!, #N/A, #VALUE!, #NAME?</td></tr>
+                <tr><th>Evaluate Formula</th><td>Calculates a formula step by step</td></tr>
+                <tr><th>Watch Window</th><td>Monitors chosen cells' values and formulas</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Excel add-ins</h5><p>Optional programs that <b>add extra commands and features</b> to Excel. Enable: <span class="path">File ▸ Options ▸ Add-ins ▸ Manage: Excel Add-ins ▸ Go ▸ tick ▸ OK</span>. Office Store add-ins: Home ▸ Add-ins (or Insert ▸ Get Add-ins).</p></div>
+            <div class="mini-card"><h5>Common add-ins</h5><ul class="tight">
+              <li><b>Analysis ToolPak</b> — statistics: descriptive statistics, regression, histogram, t-test (Data ▸ Data Analysis)</li>
+              <li><b>Solver</b> — optimisation with several variables and constraints</li>
+              <li><b>Power Pivot</b> (COM add-in) — data models with millions of rows</li>
+              <li>Store add-ins — maps, translators, charts</li>
+            </ul></div>
+          </div>
+        </section>
+      </article>
+
+      <!-- ========== MODULE IV ========== -->
+      <article class="module m4" id="m4">
+        <div class="module-banner">
+          <div class="mnum">Module IV · 10 hours · 15 syllabus marks · 18 of 140 PYQ marks</div>
+          <h3>Data Visualizations</h3>
+          <div class="chips"><span class="chip">Creating charts</span><span class="chip">Chart types</span><span class="chip">Formatting charts</span><span class="chip">Pivot Chart</span><span class="chip">Dashboards</span><span class="chip">Form controls</span></div>
+        </div>
+        <div class="golden">
+          <div class="g-label">★ Golden definition</div>
+          <blockquote>“Data visualization is the graphical representation of data — using charts, graphs and dashboards — so that patterns, trends, comparisons and outliers can be understood at a glance.”</blockquote>
+          <div class="g-src">In a spreadsheet, a <b>chart</b> is linked to its data: change the numbers and the chart updates.</div>
+        </div>
+
+        <section class="concept">
+          <h4><span class="cnum">4.1</span>Creating charts and choosing the right type</h4>
+          <div class="flow accent" style="--mc:var(--m4)">
+            <div class="flow-step"><b>Select data</b><small>Include headings (labels + values)</small></div>
+            <div class="flow-step"><b>Insert ▸ Charts</b><small>Or Recommended Charts</small></div>
+            <div class="flow-step"><b>Pick type</b><small>Column, Line, Pie, Bar…</small></div>
+            <div class="flow-step"><b>Add elements</b><small>Title, axis titles, legend, data labels (+ button)</small></div>
+            <div class="flow-step"><b>Format &amp; place</b><small>Styles, colours; move or resize; Move Chart to a new sheet</small></div>
+          </div>
+          <p style="margin-top:8px">Shortcuts: <kbd>Alt</kbd>+<kbd>F1</kbd> inserts a default chart on the same sheet; <kbd>F11</kbd> creates it on a new chart sheet. <b>Purpose of charts:</b> make data easy to understand, show trends and comparisons, highlight outliers, support decisions and presentations.</p>
+          <figure class="diagram">
+            <div class="diagram-title">Three chart types examiners ask about — same data idea, different question</div>
+            <svg class="diag" viewBox="0 0 640 230" role="img" aria-label="Three small illustrative charts: a column chart comparing four categories, a line chart showing a rising trend over six months, and a pie chart showing four parts of a whole">
+              <text x="105" y="18" text-anchor="middle" class="bold">Column / Bar</text>
+              <path class="axis" d="M25,180 H190 M25,180 V35"/>
+              <rect class="s1" x="38" y="80" width="28" height="100"/><rect class="s1" x="76" y="110" width="28" height="70"/><rect class="s1" x="114" y="60" width="28" height="120"/><rect class="s1" x="152" y="130" width="28" height="50"/>
+              <text x="52" y="194" text-anchor="middle" class="small">N</text><text x="90" y="194" text-anchor="middle" class="small">S</text><text x="128" y="194" text-anchor="middle" class="small">E</text><text x="166" y="194" text-anchor="middle" class="small">W</text>
+              <text x="105" y="218" text-anchor="middle" class="small">Compare categories</text>
+              <text x="320" y="18" text-anchor="middle" class="bold">Line</text>
+              <path class="axis" d="M240,180 H405 M240,180 V35"/>
+              <path class="ln2" d="M250,160 L280,145 L310,150 L340,115 L370,95 L398,62"/>
+              <circle class="s2" cx="250" cy="160" r="3.5"/><circle class="s2" cx="280" cy="145" r="3.5"/><circle class="s2" cx="310" cy="150" r="3.5"/><circle class="s2" cx="340" cy="115" r="3.5"/><circle class="s2" cx="370" cy="95" r="3.5"/><circle class="s2" cx="398" cy="62" r="3.5"/>
+              <text x="250" y="194" text-anchor="middle" class="small">Jan</text><text x="398" y="194" text-anchor="middle" class="small">Jun</text>
+              <text x="320" y="218" text-anchor="middle" class="small">Show a trend over time</text>
+              <text x="535" y="18" text-anchor="middle" class="bold">Pie</text>
+              <path class="s1 wedge" d="M535,108 L535,38 A70,70 0 0,1 576.1,164.6 Z"/>
+              <path class="s2 wedge" d="M535,108 L576.1,164.6 A70,70 0 0,1 478.4,149.1 Z"/>
+              <path class="s3 wedge" d="M535,108 L478.4,149.1 A70,70 0 0,1 468.4,86.4 Z"/>
+              <path class="s4 wedge" d="M535,108 L468.4,86.4 A70,70 0 0,1 535,38 Z"/>
+              <text x="535" y="218" text-anchor="middle" class="small">Parts of one whole</text>
+            </svg>
+            <figcaption>Illustrative shapes only, not real data. Pie shares: 40%, 25%, 15%, 20%.</figcaption>
+          </figure>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Chart</th><th>Best for</th><th>Example</th><th>Avoid when</th></tr></thead>
+              <tbody>
+                <tr><th>Column (vertical bars)</th><td>Comparing values across categories</td><td>Sales by region</td><td>Too many categories</td></tr>
+                <tr><th>Bar (horizontal)</th><td>Long category names, rankings</td><td>Top 10 products</td><td>Time series</td></tr>
+                <tr><th>Line</th><td>Trends over time</td><td>Monthly temperature, share price</td><td>Unordered categories</td></tr>
+                <tr><th>Pie / Doughnut</th><td>Share of a whole — one series, few slices</td><td>Budget split, market share</td><td>More than ~5 slices or several series</td></tr>
+                <tr><th>Area</th><td>Trend plus volume</td><td>Cumulative sales</td><td>Many overlapping series</td></tr>
+                <tr><th>Scatter (XY)</th><td>Relationship between two variables</td><td>Study hours vs marks</td><td>Categories</td></tr>
+                <tr><th>Combo</th><td>Two measures with different scales</td><td>Sales (column) + profit % (line)</td><td>Simple comparisons</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.2</span>Formatting chart objects</h4>
+          <div class="grid-2">
+            <div class="mini-card"><h5>Chart elements (the + button, or Chart Design ▸ Add Chart Element)</h5><ul class="tight">
+              <li><b>Chart title</b> and <b>axis titles</b></li>
+              <li><b>Legend</b> — show/hide; position top, bottom, left, right</li>
+              <li><b>Data labels</b> — values on bars or slices</li>
+              <li><b>Gridlines</b> and axes</li>
+              <li><b>Data table</b> — shows the source numbers under the chart</li>
+              <li>Error bars, trendline</li>
+            </ul></div>
+            <div class="mini-card"><h5>Other formatting</h5><ul class="tight">
+              <li><span class="path">Chart Design ▸ Change Chart Type</span> — switch column ↔ line without redrawing</li>
+              <li><span class="path">Chart Design ▸ Switch Row/Column</span> — swap the series and categories</li>
+              <li>Chart Styles and Change Colors</li>
+              <li>Double-click any element ▸ <b>Format pane</b> — fill, border, number format, axis bounds</li>
+              <li><span class="path">Chart Design ▸ Move Chart</span> — to a new sheet</li>
+            </ul></div>
+          </div>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.3</span>Pivot Charts</h4>
+          <p>A <strong>Pivot Chart</strong> is a chart based on a pivot table. It is <b>linked</b> to it — filter or rearrange the pivot and the chart changes too — and it has <b>field buttons</b> for filtering on the chart itself.</p>
+          <div class="flow accent" style="--mc:var(--m4)">
+            <div class="flow-step"><b>Click in the pivot table</b></div>
+            <div class="flow-step"><b>PivotTable Analyze ▸ PivotChart</b><small>(or Insert ▸ PivotChart)</small></div>
+            <div class="flow-step"><b>Choose a chart type</b><small>Column, line, pie…</small></div>
+            <div class="flow-step"><b>OK</b><small>Use field buttons / slicers to filter</small></div>
+          </div>
+          <p class="small" style="margin-top:8px">Difference from a normal chart: a normal chart uses a fixed cell range; a Pivot Chart follows the pivot table's summary and is interactive. Pivot Charts cannot be XY scatter, bubble or stock charts.</p>
+        </section>
+
+        <section class="concept">
+          <h4><span class="cnum">4.4</span>Dashboards and form controls</h4>
+          <p>A <strong>dashboard</strong> is a single screen that combines <b>key figures (KPIs), charts, pivot tables and interactive controls</b> to give a global picture of the data at a glance — a visual summary for managers.</p>
+          <div class="grid-2">
+            <figure class="diagram" style="margin:0">
+              <div class="diagram-title">Typical Excel dashboard layout</div>
+              <svg class="diag" viewBox="0 0 400 250" role="img" aria-label="Dashboard wireframe: title bar, three KPI tiles, a slicer panel, a column chart, a line chart and a small table">
+                <rect class="frame" x="5" y="5" width="390" height="240" rx="8"/>
+                <rect class="bar" x="15" y="14" width="370" height="24" rx="4"/><text x="25" y="30" class="bold">Sales Dashboard 2025</text>
+                <rect class="acc" x="15" y="46" width="112" height="44" rx="6"/><text x="71" y="64" text-anchor="middle" class="small">Total sales</text><text x="71" y="82" text-anchor="middle" class="bold">₹14.5 L</text>
+                <rect class="acc" x="137" y="46" width="112" height="44" rx="6"/><text x="193" y="64" text-anchor="middle" class="small">Orders</text><text x="193" y="82" text-anchor="middle" class="bold">1,240</text>
+                <rect class="acc" x="259" y="46" width="126" height="44" rx="6"/><text x="322" y="64" text-anchor="middle" class="small">Growth</text><text x="322" y="82" text-anchor="middle" class="bold">+12%</text>
+                <rect class="frame" x="15" y="98" width="80" height="138" rx="6"/><text x="55" y="114" text-anchor="middle" class="small">Slicer</text>
+                <rect class="bar" x="23" y="122" width="64" height="18" rx="3"/><text x="55" y="135" text-anchor="middle" class="small">North</text>
+                <rect class="bar" x="23" y="144" width="64" height="18" rx="3"/><text x="55" y="157" text-anchor="middle" class="small">South</text>
+                <rect class="frame" x="23" y="170" width="64" height="18" rx="3"/><text x="55" y="183" text-anchor="middle" class="small">Year ▾</text>
+                <rect class="frame" x="103" y="98" width="140" height="138" rx="6"/>
+                <rect class="s1" x="118" y="170" width="18" height="50"/><rect class="s1" x="144" y="140" width="18" height="80"/><rect class="s1" x="170" y="155" width="18" height="65"/><rect class="s1" x="196" y="125" width="18" height="95"/>
+                <text x="173" y="114" text-anchor="middle" class="small">Sales by region</text>
+                <rect class="frame" x="251" y="98" width="134" height="80" rx="6"/>
+                <path class="ln2" d="M262,165 L285,150 L308,155 L331,135 L354,128 L376,112"/>
+                <text x="318" y="112" text-anchor="middle" class="small">Monthly trend</text>
+                <rect class="frame" x="251" y="186" width="134" height="50" rx="6"/>
+                <path class="grid" d="M259,202 H377 M259,214 H377 M259,226 H377"/>
+                <text x="318" y="198" text-anchor="middle" class="small">Top products</text>
+              </svg>
+            </figure>
+            <div class="mini-card"><h5>Steps to build an interactive dashboard</h5><ol class="tight">
+              <li>Clean the data and format it as a <b>Table</b> (<kbd>Ctrl</kbd>+<kbd>T</kbd>)</li>
+              <li>Build <b>pivot tables</b> for each question (sales by region, by month…)</li>
+              <li>Create <b>pivot charts</b> from them</li>
+              <li>Arrange charts and KPI cells on a separate <b>Dashboard sheet</b></li>
+              <li>Add <b>slicers / timelines</b> and connect them to all pivots (Report Connections)</li>
+              <li>Add <b>form controls</b> for user choices</li>
+              <li>Format: consistent colours, hide gridlines, protect the sheet</li>
+            </ol></div>
+          </div>
+          <div class="tbl-wrap">
+            <table class="tbl compact">
+              <thead><tr><th>Form control (Developer ▸ Insert ▸ Form Controls)</th><th>Use in a dashboard</th></tr></thead>
+              <tbody>
+                <tr><th>Combo box (drop-down)</th><td>Pick a region or product; the chart updates</td></tr>
+                <tr><th>List box</th><td>Choose from a visible list</td></tr>
+                <tr><th>Check box</th><td>Show or hide a series (TRUE/FALSE)</td></tr>
+                <tr><th>Option button</th><td>Choose one option — Monthly / Quarterly</td></tr>
+                <tr><th>Spin button / Scroll bar</th><td>Increase or decrease a value — interest rate, year</td></tr>
+                <tr><th>Button</th><td>Run a macro</td></tr>
+                <tr><th>Group box, Label</th><td>Organise and label controls</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">Enable the Developer tab: File ▸ Options ▸ Customize Ribbon ▸ tick Developer. Connect a control: right-click ▸ <b>Format Control ▸ Control ▸ Cell link</b>. The linked cell's value drives formulas such as <code class="f">INDEX</code> or <code class="f">IF</code>, which feed the chart.</p>
+        </section>
+      </article>
+    </section>
+
+    <!-- ===================== 3. SOLVED PYQs ===================== -->
+    <section class="block" id="pyqs">
+      <div class="section-head">
+        <span class="sec-num">3</span>
+        <div>
+          <h2>Solved PYQs &amp; high-probability questions</h2>
+          <p>Both papers solved — University Nov 2024 (D 113387) and Amal College Nov 2025 (100044). Where the same topic was asked in both, one answer covers both wordings. Questions marked “Likely” have not been asked yet but come straight from the syllabus units.</p>
+        </div>
+      </div>
+
+      <div class="qa-toolbar no-print">
+        <div class="filter-group" role="group" aria-label="Filter questions">
+          <button class="fbtn" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="fbtn" type="button" data-filter="hot" aria-pressed="false">★ Repeated</button>
+          <button class="fbtn m1" type="button" data-filter="m1" aria-pressed="false"><span class="dot"></span>I</button>
+          <button class="fbtn m2" type="button" data-filter="m2" aria-pressed="false"><span class="dot"></span>II</button>
+          <button class="fbtn m3" type="button" data-filter="m3" aria-pressed="false"><span class="dot"></span>III</button>
+          <button class="fbtn m4" type="button" data-filter="m4" aria-pressed="false"><span class="dot"></span>IV</button>
+        </div>
+        <button class="mode-btn" type="button" data-mode-toggle aria-pressed="false">Practice mode: hide answers</button>
+      </div>
+
+      <div data-qa-group id="sec-a">
+        <div class="qa-group-title"><h3>Section A — Short answers</h3><span class="chip">2 marks each</span><span class="chip">~3–4 lines · 2 min</span></div>
+        <p class="qa-sub">Formula: <b>one-line definition</b> (1 mark) + <b>menu path, syntax or a tiny example</b> (1 mark). Ten questions carry 20 marks but only 16 count, so answer all ten.</p>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Define a cell and a range in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Amal 2025 Q1</span></span></summary>
+  <div class="ans">
+<p>A <strong>cell</strong> is the box formed where a row and a column meet; it is identified by its <b>cell address</b> — column letter + row number, e.g. <code class="f">C5</code>. A <strong>range</strong> is a group of two or more adjacent cells, written as first cell : last cell, e.g. <code class="f">A1:D10</code> (40 cells), used in formulas such as <code class="f">=SUM(B2:B10)</code>.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">How do you insert and delete cells, rows and columns in an Excel worksheet? / How do you insert a column in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q1</span><span class="badge">Amal 2025 Q2</span></span></summary>
+  <div class="ans">
+<ul><li><b>Insert:</b> right-click a cell ▸ Insert ▸ Shift cells right / down, Entire row or Entire column. For a column: right-click the column letter ▸ <b>Insert</b> (a new column appears to the left) — or <span class="path">Home ▸ Cells ▸ Insert ▸ Insert Sheet Columns</span>.</li><li><b>Delete:</b> right-click ▸ Delete ▸ Shift cells left / up, Entire row or Entire column — or Home ▸ Cells ▸ Delete.</li><li>Shortcuts: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>+</kbd> insert, <kbd>Ctrl</kbd>+<kbd>-</kbd> delete.</li></ul>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Describe the use of the IF function in Excel and give a simple example.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Univ 2024 Q2</span></span></summary>
+  <div class="ans">
+<p>The <strong>IF</strong> function performs a <b>logical test</b> and returns one value if the test is TRUE and another if it is FALSE. Syntax: <code class="f">=IF(logical_test, value_if_true, value_if_false)</code>.</p>
+<p><b>Example:</b> <code class="f">=IF(B2&gt;=40,"Pass","Fail")</code> — if B2 is 55 the result is <b>Pass</b>; if 32, <b>Fail</b>.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is the difference between the FLOOR and CEIL (CEILING) functions in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q3</span><span class="badge">Amal 2025 Q14 (6m)</span></span></summary>
+  <div class="ans">
+<p>Both round a number to a <b>multiple of a given significance</b>. <strong>CEILING</strong> rounds <b>up</b>; <strong>FLOOR</strong> rounds <b>down</b>.</p>
+<p><code class="f">=CEILING(23,5)</code> → 25 · <code class="f">=FLOOR(23,5)</code> → 20 · <code class="f">=CEILING(4.2,1)</code> → 5 · <code class="f">=FLOOR(4.8,1)</code> → 4.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Write the syntax of the VLOOKUP function. / Explain VLOOKUP in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q4</span><span class="badge">Amal 2025 Q9</span></span></summary>
+  <div class="ans">
+<p><strong>VLOOKUP</strong> (vertical lookup) searches for a value in the <b>first column</b> of a table and returns the value from a specified column in the same row.</p>
+<p>Syntax: <code class="f">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code> — range_lookup FALSE = exact match, TRUE = approximate. Example: <code class="f">=VLOOKUP(103,A2:D6,3,FALSE)</code> returns the marks (3rd column) of roll no. 103.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain MIN and MAX functions in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Amal 2025 Q8</span></span></summary>
+  <div class="ans">
+<p><strong>MIN</strong> returns the <b>smallest</b> number and <strong>MAX</strong> the <b>largest</b> number in a set of values; text and blank cells are ignored.</p>
+<p>Syntax: <code class="f">=MIN(number1, [number2], …)</code>, <code class="f">=MAX(…)</code>. Example: marks 78, 35, 62, 91 in C2:C5 → <code class="f">=MIN(C2:C5)</code> = 35, <code class="f">=MAX(C2:C5)</code> = 91.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is the difference between the “Split” and “Freeze” options in Excel, and when would you use them?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Univ 2024 Q10</span></span></summary>
+  <div class="ans">
+<p><strong>Freeze Panes</strong> (View ▸ Freeze Panes) locks rows at the top and/or columns at the left so they <b>stay visible while scrolling</b> — use it to keep headings in view in a long list. <strong>Split</strong> (View ▸ Split) divides the window into up to <b>four panes that scroll independently</b> — use it to compare two distant parts of the same sheet.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the steps involved in importing data from an external source into Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Univ 2024 Q4</span></span></summary>
+  <div class="ans">
+<ol><li><span class="path">Data ▸ Get Data</span> (or From Text/CSV, From Web, From Database).</li><li>Select the file or enter the URL ▸ Import.</li><li>Check the preview — delimiter, data types, headers.</li><li>Click <b>Load</b> (to a sheet) or <b>Transform Data</b> to clean it in Power Query first. Use Data ▸ Refresh All to update later.</li></ol>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">How do you perform sorting by multiple columns in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q5</span><span class="badge">Amal 2025 Q17B (5m)</span></span></summary>
+  <div class="ans">
+<p>Select the data ▸ <span class="path">Data ▸ Sort</span> ▸ tick “My data has headers” ▸ <b>Sort by</b> first column (e.g., Department, A to Z) ▸ <b>Add Level</b> ▸ <b>Then by</b> second column (e.g., Salary, Largest to Smallest) ▸ OK. Rows are sorted by department, and within each department by salary.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define filtering. How is it different from sorting?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q7</span><span class="badge">Amal 2025 Q17B (5m)</span></span></summary>
+  <div class="ans">
+<p><strong>Filtering</strong> displays only the rows that meet given criteria and <b>temporarily hides</b> the others (Data ▸ Filter, <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>). <strong>Sorting</strong> <b>rearranges all rows</b> in ascending or descending order; nothing is hidden. Filter = see a subset (only “Sales” staff); sort = change the order (highest salary first).</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain the use of Data Validation.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q3</span><span class="badge">Univ 2024 Q12 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Data validation</strong> restricts the type or range of data that can be entered in a cell, preventing errors at entry. <span class="path">Data ▸ Data Validation</span> ▸ Allow: whole number, decimal, list, date, time, text length, custom; plus an input message and error alert. Example: allow only whole numbers 0–100 in a marks column, or a drop-down list of departments.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Define a Pivot Table. / Outline the steps for creating a Pivot Table in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 4×</span><span class="badge">Univ 2024 Q6</span><span class="badge">Amal 2025 Q5</span><span class="badge">Univ 2024 Q17 (10m)</span><span class="badge">Amal 2025 Q16 (10m)</span></span></summary>
+  <div class="ans">
+<p>A <strong>pivot table</strong> is an interactive tool that summarises large data (sum, count, average) by arranging fields in rows, columns, values and filters, without changing the source.</p>
+<p><b>Steps:</b> click in the data ▸ <span class="path">Insert ▸ PivotTable</span> ▸ confirm range ▸ New Worksheet ▸ OK ▸ drag fields to Rows, Columns, Values and Filters.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">How does “Goal Seek” differ from standard “What-If Analysis” in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge">Univ 2024 Q7</span></span></summary>
+  <div class="ans">
+<p><strong>What-If Analysis</strong> changes input values to see how <b>results</b> change (Scenario Manager, Data Table) — inputs → many outcomes. <strong>Goal Seek</strong>, one of its tools, works <b>backwards</b>: you set the <b>desired result</b> and Excel finds the <b>single input value</b> needed. Example: the Test 3 mark needed for an average of 75.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is a formula audit in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 3×</span><span class="badge">Amal 2025 Q10</span><span class="badge">Univ 2024 Q13 (6m)</span><span class="badge">Amal 2025 Q15 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Formula auditing</strong> means checking formulas for accuracy by showing how they are connected and where errors arise. Tools in <span class="path">Formulas ▸ Formula Auditing</span>: Trace Precedents, Trace Dependents, Remove Arrows, Show Formulas (<kbd>Ctrl</kbd>+<kbd>`</kbd>), Error Checking, Evaluate Formula and Watch Window.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">What is the purpose of charts in Excel? / What are the steps involved in creating a chart?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 3×</span><span class="badge">Amal 2025 Q6</span><span class="badge">Univ 2024 Q8</span><span class="badge">Amal 2025 Q13 (6m)</span></span></summary>
+  <div class="ans">
+<p><strong>Purpose:</strong> charts present data graphically so that trends, comparisons and proportions can be understood at a glance and communicated clearly.</p>
+<p><b>Steps:</b> select the data with headings ▸ <span class="path">Insert ▸ Charts</span> (or Recommended Charts) ▸ choose type ▸ OK ▸ add title, axis titles, legend and data labels with the <b>+</b> button. Shortcut: <kbd>Alt</kbd>+<kbd>F1</kbd>.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">How can you generate a Pivot Chart from a Pivot Table in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge">Univ 2024 Q9</span></span></summary>
+  <div class="ans">
+<p>Click anywhere in the pivot table ▸ <span class="path">PivotTable Analyze ▸ PivotChart</span> ▸ choose a chart type (e.g., Clustered Column) ▸ OK. The Pivot Chart is <b>linked</b> to the pivot table — filtering or rearranging fields updates both — and has field buttons for filtering on the chart.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What are AutoFill and AutoSum?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>AutoFill</strong> copies a formula or continues a series (1, 2, 3…; Jan, Feb…) when you drag the <b>fill handle</b> at the corner of a cell. <strong>AutoSum</strong> (Σ, <span class="path">Home ▸ Editing</span>, or <kbd>Alt</kbd>+<kbd>=</kbd>) automatically inserts <code class="f">=SUM()</code> for the adjacent range of numbers.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is the use of COUNTIF and SUMIF?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>COUNTIF</strong> counts cells that meet one condition: <code class="f">=COUNTIF(C2:C11,"&gt;=60")</code> — number of students with 60 or more. <strong>SUMIF</strong> adds values that meet a condition: <code class="f">=SUMIF(B2:B11,"North",C2:C11)</code> — total sales of the North region.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is conditional formatting?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Conditional formatting</strong> automatically applies a format (fill colour, font colour, data bars, icons) to cells <b>when their values meet a condition</b>. <span class="path">Home ▸ Conditional Formatting</span> ▸ Highlight Cells Rules / Top-Bottom Rules / Data Bars / Color Scales / Icon Sets. Example: marks below 40 in red.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is the use of the Subtotal command?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Subtotal</strong> (<span class="path">Data ▸ Subtotal</span>) automatically inserts subtotal and grand-total rows for each group in <b>sorted</b> data, using a chosen function (Sum, Count, Average) and adds outline buttons (1-2-3) to collapse or expand detail. Example: total sales at each change in Region.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is Scenario Manager?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Scenario Manager</strong> (<span class="path">Data ▸ What-If Analysis ▸ Scenario Manager</span>) stores several named <b>sets of input values</b> — best case, worst case, most likely — so you can switch between them and compare results, or create a scenario summary report.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What is a dashboard in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p>A <strong>dashboard</strong> is a one-screen visual summary that combines key figures (KPIs), charts, pivot tables, slicers and form controls to give an <b>overall picture</b> of the data and support quick decisions — e.g., a sales dashboard with total sales, sales by region and a monthly trend.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What are form controls in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">2 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p><strong>Form controls</strong> are interactive objects — combo box, list box, check box, option button, spin button, scroll bar, button — inserted from <span class="path">Developer ▸ Insert</span>. Linked to a cell (Format Control ▸ Cell link), they let users change inputs and make charts and dashboards interactive.</p>
+  </div>
+</details>
+      </div>
+
+      <div data-qa-group id="sec-b">
+        <div class="qa-group-title"><h3>Section B — Short essays</h3><span class="chip">6 marks each</span><span class="chip">1–1.5 pages · 8–9 min</span></div>
+        <p class="qa-sub">Formula: <b>definition</b> → <b>menu path / steps</b> → <b>a small grid or formula example with results</b> → <b>uses or advantages</b>. Five questions carry 30 marks but only 24 count.</p>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Compare / explain the difference between relative, absolute and mixed cell referencing in Excel with examples.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q11</span><span class="badge">Amal 2025 Q11</span></span></summary>
+  <div class="ans">
+<p class="intro">A cell reference identifies the cell a formula uses. When a formula is copied, Excel adjusts the references; the <b>$</b> sign controls which part is fixed. <kbd>F4</kbd> cycles A1 → $A$1 → A$1 → $A1.</p>
+<h5>1. Relative reference (A1)</h5>
+<p>Both row and column change relative to the new position. In D2, <code class="f">=B2*C2</code> (Qty × Rate) copied to D3 becomes <code class="f">=B3*C3</code>. Used when the same calculation repeats down a column.</p>
+<h5>2. Absolute reference ($A$1)</h5>
+<p>Neither row nor column changes. GST rate 18% is in F1: in E2 <code class="f">=D2*$F$1</code>; copied to E3 → <code class="f">=D3*$F$1</code>. Without $, E3 would refer to F2 (blank) and give 0. Used for constants — tax rate, exchange rate.</p>
+<h5>3. Mixed reference ($A1 or A$1)</h5>
+<p>Only one part is fixed. <code class="f">$A1</code> fixes the column; <code class="f">A$1</code> fixes the row. Multiplication table: in B2 <code class="f">=$A2*B$1</code>, filled across and down, always multiplies column A by row 1.</p>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Type</th><th>Example</th><th>Copied one row down and one column right</th></tr></thead><tbody>
+<tr><th>Relative</th><td><code class="f">=A1</code></td><td><code class="f">=B2</code></td></tr>
+<tr><th>Absolute</th><td><code class="f">=$A$1</code></td><td><code class="f">=$A$1</code></td></tr>
+<tr><th>Mixed (column fixed)</th><td><code class="f">=$A1</code></td><td><code class="f">=$A2</code></td></tr>
+<tr><th>Mixed (row fixed)</th><td><code class="f">=A$1</code></td><td><code class="f">=B$1</code></td></tr>
+</tbody></table></div>
+<p class="concl">Choosing the right reference lets one formula be copied across a whole table without errors.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Asked in both papers. Draw the three small grids from Module I (1.4). The “copied one row down and one column right” table is the fastest way to show the difference.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain the SUM, ROUND, CEILING and FLOOR functions in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge hot">★ Asked 2×</span><span class="badge">Amal 2025 Q14</span><span class="badge">Univ 2024 Q3 (2m)</span></span></summary>
+  <div class="ans">
+<p class="intro">These are math functions that add or round numbers. Each begins with = and takes arguments in brackets.</p>
+<ol>
+<li><b>SUM</b> — adds numbers, cells or ranges. <code class="f">=SUM(number1, [number2], …)</code>. <code class="f">=SUM(C2:C5)</code> with 78, 35, 62, 91 → <b>266</b>. AutoSum (<kbd>Alt</kbd>+<kbd>=</kbd>) inserts it.</li>
+<li><b>ROUND</b> — rounds to a given number of digits, to the <i>nearest</i> value. <code class="f">=ROUND(number, num_digits)</code>. <code class="f">=ROUND(3.146,2)</code> → 3.15; <code class="f">=ROUND(1250.75,0)</code> → 1251; <code class="f">=ROUND(1234,-2)</code> → 1200 (negative digits round left of the decimal).</li>
+<li><b>CEILING</b> — rounds <b>up</b> to the nearest multiple of significance. <code class="f">=CEILING(number, significance)</code>. <code class="f">=CEILING(23,5)</code> → 25; <code class="f">=CEILING(4.2,1)</code> → 5; prices up to the next ₹10: <code class="f">=CEILING(982,10)</code> → 990.</li>
+<li><b>FLOOR</b> — rounds <b>down</b> to the nearest multiple of significance. <code class="f">=FLOOR(number, significance)</code>. <code class="f">=FLOOR(23,5)</code> → 20; <code class="f">=FLOOR(4.8,1)</code> → 4; <code class="f">=FLOOR(982,10)</code> → 980.</li>
+</ol>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Value</th><th>ROUND(x,0)</th><th>CEILING(x,1)</th><th>FLOOR(x,1)</th></tr></thead><tbody>
+<tr><td>4.2</td><td>4</td><td>5</td><td>4</td></tr><tr><td>4.5</td><td>5</td><td>5</td><td>4</td></tr><tr><td>4.8</td><td>5</td><td>5</td><td>4</td></tr>
+</tbody></table></div>
+<p class="concl">SUM totals; ROUND goes to the nearest; CEILING always up; FLOOR always down. (Excel's names are CEILING/FLOOR; the syllabus's “CEIL” means CEILING.)</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Explain how data validation functions in Excel and describe how to remove duplicate values from a dataset.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q12</span><span class="badge">Amal 2025 Q3 (2m)</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Data validation</strong> controls what users can type in a cell, so errors are prevented at entry. <strong>Remove Duplicates</strong> deletes repeated records so each record appears once. Both are data-cleansing tools.</p>
+<h5>A. Data validation — steps</h5>
+<ol>
+<li>Select the cells ▸ <span class="path">Data ▸ Data Tools ▸ Data Validation</span>.</li>
+<li><b>Settings:</b> Allow — Whole number, Decimal, List, Date, Time, Text length, Custom; set the condition (between 0 and 100) or list source (Sales, Accounts, HR).</li>
+<li><b>Input Message:</b> a tip shown when the cell is selected.</li>
+<li><b>Error Alert:</b> Stop (blocks invalid entry), Warning or Information.</li>
+<li>To check existing data: Data Validation ▸ <b>Circle Invalid Data</b>.</li>
+</ol>
+<h5>B. Removing duplicates — steps</h5>
+<ol start="6">
+<li>Select the dataset (with headers) ▸ <span class="path">Data ▸ Remove Duplicates</span>.</li>
+<li>Tick the columns that together define a duplicate (e.g., Name + Email) ▸ OK.</li>
+<li>Excel deletes the extra rows and reports “X duplicate values found and removed; Y unique values remain”.</li>
+</ol>
+<p class="concl">Validation keeps new data clean; Remove Duplicates cleans existing data — together they ensure accurate analysis. (Tip: first highlight duplicates with conditional formatting to review them.)</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Discuss the steps to apply Conditional Formatting for highlighting duplicate values.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Amal 2025 Q12</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Conditional formatting</strong> automatically formats cells that meet a condition. The Duplicate Values rule colours every value that appears more than once, so repeated entries can be reviewed before removal.</p>
+<h5>Steps</h5>
+<ol>
+<li>Select the range to check, e.g. A2:A100 (emails or roll numbers).</li>
+<li><span class="path">Home ▸ Styles ▸ Conditional Formatting</span>.</li>
+<li>Point to <b>Highlight Cells Rules</b> ▸ click <b>Duplicate Values…</b></li>
+<li>In the dialog, choose <b>Duplicate</b> (or Unique) from the first box.</li>
+<li>Choose a format — Light Red Fill with Dark Red Text, or Custom Format.</li>
+<li>Click <b>OK</b> — all repeated values are highlighted.</li>
+</ol>
+<div class="xl-wrap"><table class="xl" style="--mc:var(--m2)"><tr><th></th><th>A</th></tr><tr><th>1</th><td>Email</td></tr><tr><th>2</th><td class="bad">anu@mail.com</td></tr><tr><th>3</th><td>basil@mail.com</td></tr><tr><th>4</th><td class="bad">anu@mail.com</td></tr></table></div>
+<h5>Follow-up</h5>
+<ul><li>Filter by colour to list only duplicates; delete or use Data ▸ Remove Duplicates.</li><li>Edit or delete the rule: Conditional Formatting ▸ Manage Rules / Clear Rules.</li><li>For whole-row duplicates, use a formula rule: <code class="f">=COUNTIF($A$2:$A$100,$A2)&gt;1</code>.</li></ul>
+<p class="concl">Highlighting first is safer than deleting straight away — you see exactly what is repeated.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">How does the Watch Window feature help in tracking changes in Excel data / in formula auditing?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 3×</span><span class="badge">Univ 2024 Q13</span><span class="badge">Amal 2025 Q15</span><span class="badge">Amal 2025 Q10 (2m)</span></span></summary>
+  <div class="ans">
+<p class="intro">The <strong>Watch Window</strong> is a floating window in the Formula Auditing group that displays the <b>current value and formula</b> of selected cells, so you can monitor them while working elsewhere in the workbook.</p>
+<h5>Steps</h5>
+<ol>
+<li><span class="path">Formulas ▸ Formula Auditing ▸ Watch Window</span>.</li>
+<li>Click <b>Add Watch</b> ▸ select the cell(s) — e.g., the grand total ▸ <b>Add</b>.</li>
+<li>The window lists <b>Book, Sheet, Name, Cell, Value, Formula</b> for each watched cell.</li>
+<li>Double-click an entry to jump to the cell; <b>Delete Watch</b> to remove it.</li>
+</ol>
+<h5>How it helps</h5>
+<ul>
+<li><b>Instant feedback:</b> see a total change as soon as you edit source data on another sheet.</li>
+<li><b>No scrolling or switching</b> between far-apart cells or sheets.</li>
+<li><b>Shows the formula</b> too — spot wrong references and errors (#REF!, #DIV/0!).</li>
+<li>Monitors cells across <b>several sheets and open workbooks</b> at once.</li>
+<li>Very useful for <b>large models, budgets and dashboards</b>; works with Trace Precedents/Dependents and Evaluate Formula in auditing.</li>
+</ul>
+<p class="concl">The Watch Window makes formula auditing faster and more reliable by keeping key results always in view.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Asked in both papers. Draw the Watch Window's six column headings (Book · Sheet · Name · Cell · Value · Formula) — it proves you have used it.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">What are Excel Add-ins, and how do they improve the functionality of the program?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge">Univ 2024 Q15</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Add-ins</strong> are optional programs that add extra commands, functions and features to Excel that are not available by default.</p>
+<h5>Enabling add-ins</h5>
+<ol><li><span class="path">File ▸ Options ▸ Add-ins</span>.</li><li>Manage: <b>Excel Add-ins</b> (or COM Add-ins) ▸ <b>Go</b>.</li><li>Tick the add-in ▸ OK. Store add-ins: Home ▸ Add-ins / Insert ▸ Get Add-ins.</li></ol>
+<h5>Common add-ins and what they add</h5>
+<ul>
+<li><b>Analysis ToolPak</b> — statistical and engineering analysis: descriptive statistics, histogram, regression, correlation, t-test, ANOVA (Data ▸ Data Analysis).</li>
+<li><b>Solver</b> — finds the optimal value of a formula by changing several cells under constraints (maximise profit, minimise cost).</li>
+<li><b>Power Pivot</b> — data models joining large tables with millions of rows; DAX measures.</li>
+<li><b>Office Store add-ins</b> — maps, translation, extra chart types, connectors.</li>
+</ul>
+<h5>How they improve Excel</h5>
+<p>Advanced analysis without programming · automation and time saving · handling bigger data · specialised tools for statistics, finance and engineering · customisation for each user's needs.</p>
+<p class="concl">Add-ins turn Excel from a calculator into a full analysis platform.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Discuss how dashboards and form controls can be utilised in Excel to create interactive data reports.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge">Univ 2024 Q14</span></span></summary>
+  <div class="ans">
+<p class="intro">A <strong>dashboard</strong> is a single-screen visual report of key figures and charts. <strong>Form controls</strong> are interactive objects (drop-downs, check boxes, spin buttons) that let the user change what the dashboard shows.</p>
+<h5>Building the dashboard</h5>
+<ol>
+<li>Clean the data and convert it to a Table (<kbd>Ctrl</kbd>+<kbd>T</kbd>).</li>
+<li>Create pivot tables for each measure and <b>pivot charts</b> from them.</li>
+<li>Place KPI cells and charts on a separate Dashboard sheet; add <b>slicers/timelines</b> connected to all pivots.</li>
+</ol>
+<h5>Adding form controls</h5>
+<ol start="4">
+<li>Show the Developer tab: File ▸ Options ▸ Customize Ribbon ▸ Developer.</li>
+<li><span class="path">Developer ▸ Insert ▸ Form Controls</span> ▸ draw a Combo Box, Check Box, Option Button, Spin Button or Scroll Bar.</li>
+<li>Right-click ▸ <b>Format Control</b> ▸ set the input range and <b>Cell link</b>.</li>
+<li>Use the linked cell in formulas (<code class="f">INDEX</code>, <code class="f">IF</code>, <code class="f">VLOOKUP</code>) that feed the charts — choosing “South” in the drop-down redraws the chart for South.</li>
+</ol>
+<h5>Benefits</h5>
+<p>One-glance overview · user explores data without editing formulas · fewer separate reports · quick, data-driven decisions.</p>
+<p class="concl">Dashboards present the data; form controls make the presentation interactive.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Describe different types of charts (Bar, Line, Pie) and their applications.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge hot">★ Asked 3×</span><span class="badge">Amal 2025 Q13</span><span class="badge">Univ 2024 Q8 (2m)</span><span class="badge">Amal 2025 Q6 (2m)</span></span></summary>
+  <div class="ans">
+<p class="intro">A chart is a graphical representation of data. Choosing the right type depends on the question: <b>compare</b> (bar), <b>trend</b> (line) or <b>proportion</b> (pie). Create with Insert ▸ Charts. (Draw the three mini-charts from Module IV, 4.1.)</p>
+<h5>1. Bar / Column chart</h5>
+<p>Rectangular bars whose length shows the value — <b>column</b> (vertical) or <b>bar</b> (horizontal); clustered or stacked. <b>Applications:</b> comparing categories — sales by region, marks by subject, population by state. Bar charts suit long names and rankings.</p>
+<h5>2. Line chart</h5>
+<p>Points joined by lines along a time axis. <b>Applications:</b> trends over time — monthly sales, temperature, share prices, attendance over a year; several lines compare trends.</p>
+<h5>3. Pie chart</h5>
+<p>A circle divided into slices showing each part's <b>percentage of the whole</b>; one data series only; best with ≤ 5 slices. <b>Applications:</b> budget distribution, market share, expense breakdown. Doughnut is a variant.</p>
+<div class="tbl-wrap"><table class="tbl compact"><thead><tr><th>Basis</th><th>Bar/Column</th><th>Line</th><th>Pie</th></tr></thead><tbody>
+<tr><th>Shows</th><td>Comparison</td><td>Trend</td><td>Proportion</td></tr>
+<tr><th>Series</th><td>One or many</td><td>One or many</td><td>One only</td></tr>
+<tr><th>Example</th><td>Sales by region</td><td>Monthly sales</td><td>Share of each product</td></tr>
+</tbody></table></div>
+<p class="concl">Matching chart to purpose makes data easy to read; other types include area, scatter, combo and histogram.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the parts of the Excel window.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">The Excel window is the screen layout used to create and work on workbooks. (Draw the numbered window from Module I, 1.2.)</p>
+<ol>
+<li><b>Title bar</b> — workbook name; <b>Quick Access Toolbar</b> — Save, Undo, Redo.</li>
+<li><b>Ribbon</b> — tabs (File, Home, Insert, Page Layout, Formulas, Data, Review, View) with commands in groups.</li>
+<li><b>Name Box</b> — address of the active cell or a named range.</li>
+<li><b>Formula Bar</b> — shows and edits the cell's content or formula.</li>
+<li><b>Column headings</b> (A … XFD) and <b>row headings</b> (1 … 1,048,576).</li>
+<li><b>Cell / active cell</b> — the selected cell with a bold border.</li>
+<li><b>Worksheet area</b> — the grid; <b>sheet tabs</b> to switch, add, rename sheets.</li>
+<li><b>Scroll bars</b> and <b>status bar</b> — mode, Sum/Average/Count of the selection, zoom slider, view buttons.</li>
+</ol>
+<p class="concl">Knowing the window parts makes every other Excel task faster.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the logical and conditional functions IF, AND, OR, COUNTIF and SUMIF with examples.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Logical functions test conditions and return TRUE/FALSE or chosen values; conditional functions count or add only the cells that meet a condition. Data: marks in C2:C5 = 78, 35, 62, 91; regions in B2:B5 = North, South, North, South.</p>
+<ol>
+<li><b>IF</b> — <code class="f">=IF(test, if_true, if_false)</code>. <code class="f">=IF(C3&gt;=40,"Pass","Fail")</code> → Fail.</li>
+<li><b>AND</b> — TRUE only if <i>all</i> conditions are true. <code class="f">=AND(C2&gt;=40, C2&lt;80)</code> → TRUE.</li>
+<li><b>OR</b> — TRUE if <i>any</i> condition is true. <code class="f">=OR(C3&gt;=40, B3="South")</code> → TRUE.</li>
+<li><b>Nested</b> — <code class="f">=IF(AND(C2&gt;=40,D2="Paid"),"Eligible","Not eligible")</code>.</li>
+<li><b>COUNTIF</b> — <code class="f">=COUNTIF(C2:C5,"&gt;=60")</code> → 3.</li>
+<li><b>SUMIF</b> — <code class="f">=SUMIF(B2:B5,"North",C2:C5)</code> → 140.</li>
+</ol>
+<p class="concl">They let a spreadsheet make decisions and produce conditional summaries automatically.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain VLOOKUP and HLOOKUP with examples.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Lookup functions find a value in a table and return related information from the same row (VLOOKUP) or column (HLOOKUP).</p>
+<h5>VLOOKUP (vertical)</h5>
+<p><code class="f">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code>. Searches the <b>first column</b> top to bottom. <code class="f">=VLOOKUP(103,A2:D6,3,FALSE)</code> finds roll no. 103 and returns column 3 (Marks) → 62. (Draw the highlighted grid from Module I, 1.6.)</p>
+<h5>HLOOKUP (horizontal)</h5>
+<p><code class="f">=HLOOKUP(lookup_value, table_array, row_index_num, [range_lookup])</code>. Searches the <b>first row</b> left to right. With months in row 1 and sales in row 2: <code class="f">=HLOOKUP("Mar",A1:L2,2,FALSE)</code> returns March sales.</p>
+<h5>Points to remember</h5>
+<ul><li>FALSE = exact match (use for codes, names); TRUE = approximate match on sorted data (grade slabs).</li><li>Returns <b>#N/A</b> if not found — wrap in <code class="f">IFERROR(…,"Not found")</code>.</li><li>Lookup column must be leftmost (VLOOKUP) / top row (HLOOKUP); newer Excel has XLOOKUP.</li></ul>
+<p class="concl">Lookups connect tables — price lists, mark lists, employee records — without manual searching.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain Group, Ungroup and Subtotal in Excel.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">These outline tools organise large lists so detail can be collapsed or expanded and group totals calculated automatically.</p>
+<h5>Group / Ungroup</h5>
+<ol><li>Select rows or columns ▸ <span class="path">Data ▸ Outline ▸ Group</span> (<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>→</kbd>).</li><li>An outline bar with <b>−</b> (collapse) and <b>+</b> (expand) appears.</li><li>Ungroup: select ▸ Data ▸ Ungroup (<kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>←</kbd>).</li></ol>
+<h5>Subtotal</h5>
+<ol start="4"><li><b>Sort</b> the data by the grouping column (e.g., Region).</li><li><span class="path">Data ▸ Outline ▸ Subtotal</span>.</li><li>At each change in: Region · Use function: Sum · Add subtotal to: Sales ▸ OK.</li><li>Excel inserts a subtotal row for each region, a grand total and outline levels <b>1-2-3</b> (1 = grand total only, 2 = subtotals, 3 = all detail). Remove: Subtotal ▸ Remove All.</li></ol>
+<p class="concl">Grouping hides detail; Subtotal summarises it — together they make long data readable.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the What-If Analysis tools: Scenario Manager, Goal Seek and Data Table.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">What-If Analysis (Data ▸ What-If Analysis) changes input values to see their effect on formula results.</p>
+<ol>
+<li><b>Scenario Manager</b> — stores named sets of inputs (best, worst, likely case); Show switches between them; Summary compares results side by side.</li>
+<li><b>Goal Seek</b> — finds the one input needed to reach a target result: Set cell (formula) ▸ To value ▸ By changing cell. Example: Test 3 mark needed for a 75 average → 87.</li>
+<li><b>Data Table</b> — shows results for many values of one or two inputs at once; e.g., EMI for interest rates 8–12% and periods 5–20 years.</li>
+</ol>
+<p class="concl">These tools support planning and decision-making by testing “what happens if…?” before acting.</p>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">How do you format chart objects in Excel?</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">6 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<p class="intro">Formatting makes a chart clear and presentable. Click the chart to see the <b>Chart Design</b> and <b>Format</b> tabs and the <b>+</b>, brush and filter buttons.</p>
+<ol>
+<li><b>Chart elements (+):</b> add or remove chart title, axis titles, data labels, gridlines, legend, <b>data table</b>, trendline.</li>
+<li><b>Legend:</b> show/hide; position right, top, bottom, left.</li>
+<li><b>Change Chart Type:</b> Chart Design ▸ Change Chart Type — e.g., column to line.</li>
+<li><b>Switch Row/Column</b> and <b>Select Data</b> to change the series.</li>
+<li><b>Chart Styles and Colors</b> for a quick look.</li>
+<li><b>Format pane:</b> double-click any element — fill, border, font, number format, axis minimum/maximum.</li>
+<li><b>Move/resize:</b> drag handles; Chart Design ▸ Move Chart to a new sheet.</li>
+</ol>
+<p class="concl">A well-formatted chart tells its story without extra explanation.</p>
+  </div>
+</details>
+      </div>
+
+      <div data-qa-group id="sec-c">
+        <div class="qa-group-title"><h3>Section C — Long essays</h3><span class="chip">10 marks · answer 1 of 2</span><span class="chip">3 pages · ~22 min</span></div>
+        <p class="qa-sub">Formula: <b>definition</b> → <b>a worked example grid</b> → <b>steps with menu paths</b> → <b>features / uses / issues as headed points</b> → <b>conclusion</b>.</p>
+
+<details class="qa" open data-mod="m3" data-hot="1">
+  <summary><span class="q-line"><span class="q-text">Discuss / explain the key features of Pivot Tables in Excel and analyse their importance in data analysis. Illustrate with a suitable example.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge hot">★ Asked 2×</span><span class="badge">Univ 2024 Q17</span><span class="badge">Amal 2025 Q16</span></span></summary>
+  <div class="ans">
+<p class="intro">A <strong>pivot table</strong> is an interactive Excel tool that quickly <b>summarises, analyses and reorganises</b> large amounts of data — by dragging fields into Rows, Columns, Values and Filters — without writing formulas and without changing the source data. “Pivot” means the summary can be rotated to view the data from different angles.</p>
+<h5>A. Example</h5>
+<p>A shop records each sale with Region, Product and Sales (six rows below). The question “What are total sales of each product in each region?” is answered by one pivot table.</p>
+<div class="xl-pair">
+<div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th></th><th>A</th><th>B</th><th>C</th></tr>
+<tr><th>1</th><td>Region</td><td>Product</td><td>Sales</td></tr>
+<tr><th>2</th><td>North</td><td>Pen</td><td class="num">200</td></tr>
+<tr><th>3</th><td>South</td><td>Book</td><td class="num">450</td></tr>
+<tr><th>4</th><td>North</td><td>Book</td><td class="num">300</td></tr>
+<tr><th>5</th><td>South</td><td>Pen</td><td class="num">150</td></tr>
+<tr><th>6</th><td>North</td><td>Pen</td><td class="num">250</td></tr>
+<tr><th>7</th><td>South</td><td>Book</td><td class="num">100</td></tr></table></div>
+<div class="arrow" aria-hidden="true">→</div>
+<div class="xl-wrap"><table class="xl" style="--mc:var(--m3)"><tr><th>Sum of Sales</th><th>Book</th><th>Pen</th><th>Grand Total</th></tr>
+<tr><th>North</th><td class="num">300</td><td class="num">450</td><td class="num res">750</td></tr>
+<tr><th>South</th><td class="num">550</td><td class="num">150</td><td class="num res">700</td></tr>
+<tr><th>Grand Total</th><td class="num res">850</td><td class="num res">600</td><td class="num hl">1450</td></tr></table></div>
+</div>
+<h5>B. Steps to create</h5>
+<ol>
+<li>Data in a list with headings and no blank rows ▸ click any cell.</li>
+<li><span class="path">Insert ▸ PivotTable</span> ▸ check range ▸ New Worksheet ▸ OK.</li>
+<li>Drag <b>Region → Rows</b>, <b>Product → Columns</b>, <b>Sales → Values</b> (Sum of Sales). Optionally <b>Year → Filters</b>.</li>
+</ol>
+<h5>C. Key features</h5>
+<ol start="4">
+<li><b>Fast summarising</b> — Sum, Count, Average, Max, Min via Value Field Settings.</li>
+<li><b>Drag-and-drop pivoting</b> — swap rows and columns instantly.</li>
+<li><b>Filtering and sorting</b> — report filters, label/value filters, top 10, sort by totals.</li>
+<li><b>Slicers and timelines</b> — clickable filters for categories and dates.</li>
+<li><b>Grouping</b> — dates into months/quarters/years; numbers into ranges.</li>
+<li><b>Show Values As</b> — % of grand total, % of row, running total, rank.</li>
+<li><b>Drill-down</b> — double-click a value to see the records behind it.</li>
+<li><b>Calculated fields, Refresh and Pivot Charts</b> — add formulas, update after source changes, chart in one click.</li>
+</ol>
+<h5>D. Importance in data analysis</h5>
+<ul>
+<li>Summarises thousands of rows in seconds — no formulas, fewer errors.</li>
+<li>Source data stays unchanged; analysis is <b>non-destructive</b>.</li>
+<li>Answers business questions interactively — best region, best product, monthly trend.</li>
+<li>Spots patterns and outliers; supports quick, data-driven decisions.</li>
+<li>Foundation for <b>Pivot Charts and dashboards</b>; easy to update with Refresh.</li>
+</ul>
+<p class="concl">Pivot tables are the most powerful everyday analysis tool in Excel: they turn raw records into meaningful summaries, quickly, accurately and interactively.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>This exact question was set in <b>both</b> papers. Write it in four parts: example grid, steps, at least seven features, importance. The before → after grid is what lifts the answer from 6 to 9–10.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m1" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the process of linking data between multiple worksheets, its uses, and common issues that may arise.</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m1"><span class="dot"></span>Module I</span><span class="badge">Univ 2024 Q16</span></span></summary>
+  <div class="ans">
+<p class="intro"><strong>Linking</strong> means using a formula in one worksheet (or workbook) that refers to a cell in another, so data entered once flows automatically to every place it is used, and updates when the source changes.</p>
+<h5>A. Process of linking</h5>
+<ol>
+<li><b>Same workbook:</b> in the destination cell type <code class="f">=</code>, click the source sheet tab, click the source cell, press <kbd>Enter</kbd>. Excel writes <code class="f">=Jan!B5</code>; with spaces: <code class="f">='Jan Sales'!B5</code>.</li>
+<li><b>Calculations across sheets:</b> <code class="f">=Jan!B5+Feb!B5+Mar!B5</code>, or a <b>3-D reference</b> <code class="f">=SUM(Jan:Mar!B5)</code>.</li>
+<li><b>Another workbook:</b> open both files and click the source: <code class="f">=[Sales.xlsx]Jan!$B$5</code>; when closed, the full path is shown.</li>
+<li><b>Paste Link:</b> copy the source ▸ destination ▸ Home ▸ Paste ▸ Paste Special ▸ <b>Paste Link</b>.</li>
+<li><b>Manage links:</b> Data ▸ Queries &amp; Connections ▸ <b>Edit Links</b> (Workbook Links) — Update Values, Change Source, Break Link.</li>
+</ol>
+<div class="xl-wrap"><table class="xl" style="--mc:var(--m1)"><tr><th></th><th>A</th><th>B</th></tr>
+<tr><th>1</th><td>Summary</td><td>Total sales</td></tr>
+<tr><th>2</th><td>January</td><td class="soft">=Jan!B20 → 48,500</td></tr>
+<tr><th>3</th><td>February</td><td class="soft">=Feb!B20 → 51,200</td></tr>
+<tr><th>4</th><td>Quarter</td><td class="hl">=SUM(Jan:Mar!B20) → 1,52,300</td></tr>
+<caption>A Summary sheet linked to monthly sheets.</caption></table></div>
+<h5>B. Uses</h5>
+<ul>
+<li><b>Consolidation</b> — monthly or branch sheets into one summary.</li>
+<li><b>Single source of truth</b> — one master price or rate list used everywhere.</li>
+<li><b>Automatic updates</b> — change once, all reports update; saves time, avoids re-typing errors.</li>
+<li><b>Dashboards and reports</b> fed from data sheets; separates input and output.</li>
+</ul>
+<h5>C. Common issues</h5>
+<ul>
+<li><b>Broken links</b> — the source file is moved, renamed or deleted (fix with Change Source).</li>
+<li><b>#REF! errors</b> — a referenced sheet, row or cell is deleted.</li>
+<li><b>Security warnings and update prompts</b> when opening files with external links.</li>
+<li><b>Outdated values</b> if links are not refreshed; <b>circular references</b>.</li>
+<li><b>Hard to trace</b> long chains of links; slower recalculation in big workbooks.</li>
+<li>Sharing problems — others may not have access to the source file path.</li>
+</ul>
+<p class="concl">Linking makes multi-sheet workbooks consistent and efficient, provided links are documented, kept in stable locations and checked with Edit Links and formula auditing tools.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Three parts are asked — process, uses, issues. Give the formula syntax for same-sheet, 3-D and other-workbook links; that alone separates a good answer from an average one.</div>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m2" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">(A) Explain the importance of data cleansing in Excel with suitable examples. (5 marks) (B) Describe how sorting and filtering help in organising and analysing data effectively, with examples. (5 marks)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m2"><span class="dot"></span>Module II</span><span class="badge">Amal 2025 Q17</span></span></summary>
+  <div class="ans">
+<h5>(A) Importance of data cleansing</h5>
+<p class="intro"><strong>Data cleansing</strong> is detecting and correcting errors, duplicates, blanks and inconsistencies so that data is accurate and ready for analysis — “garbage in, garbage out”.</p>
+<ol>
+<li><b>Accuracy:</b> duplicate rows double-count sales; Data ▸ <b>Remove Duplicates</b> fixes totals.</li>
+<li><b>Consistency:</b> “Calicut”, “Kozhikode”, “kozhikode ” become one value with <b>Find &amp; Replace</b>, <code class="f">=TRIM()</code> and <code class="f">=PROPER()</code> — otherwise a pivot shows three cities.</li>
+<li><b>Correct data types:</b> numbers stored as text break SUM; dates in mixed formats break sorting — use Text to Columns / Number format.</li>
+<li><b>Completeness:</b> find blanks (Go To Special ▸ Blanks) and fill or flag them.</li>
+<li><b>Prevention:</b> <b>data validation</b> stops wrong entries (marks &gt; 100).</li>
+<li><b>Reliable decisions and efficiency:</b> clean data makes formulas, pivots and charts correct the first time.</li>
+</ol>
+<h5>(B) Sorting and filtering</h5>
+<p><strong>Sorting</strong> rearranges rows in order; <strong>filtering</strong> shows only rows meeting conditions and hides the rest.</p>
+<ol start="7">
+<li><b>Sorting organises:</b> <span class="path">Data ▸ Sort</span> — Marks largest to smallest gives the rank list instantly; names A to Z for registers.</li>
+<li><b>Multi-level sort:</b> Department A→Z, then Salary largest first (Add Level) — groups and ranks together.</li>
+<li><b>Filtering focuses:</b> <span class="path">Data ▸ Filter</span> — show only “Sales” department, only marks below 40, top 10 values, dates in March.</li>
+<li><b>Analysis:</b> filtered data works with SUBTOTAL and the status bar to total only visible rows; Advanced Filter extracts records to another place.</li>
+<li><b>Prepares data</b> for Subtotal (needs sorted data), spotting duplicates and outliers, and reports.</li>
+</ol>
+<p class="concl">Cleansing makes the data trustworthy; sorting and filtering make it readable and focused — together they are the first steps of any spreadsheet analysis.</p>
+<div class="note"><span class="callout-title">💡 Examiner's note</span>Two 5-mark halves: treat each as a short essay with its own heading and 5–6 points. Use the dirty → clean grid from Module II (2.1) for part A and the sort-vs-filter grids for part B.</div>
+  </div>
+</details>
+
+        <div class="qa-group-title"><h3>Section C — High-probability essays: blueprints</h3><span class="chip">10 marks</span></div>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain the steps to create a chart in Excel, the different chart types and how chart objects are formatted. (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> definition and purpose of charts; charts are linked to data.</li>
+<li><b>Steps to create:</b> select data ▸ Insert ▸ Charts / Recommended Charts ▸ type ▸ OK; <kbd>Alt</kbd>+<kbd>F1</kbd>, <kbd>F11</kbd>.</li>
+<li><b>Chart types:</b> column, bar, line, pie, area, scatter, combo — use and example of each (draw three mini-charts).</li>
+<li><b>Formatting:</b> chart elements (title, axis titles, legend, data labels, data table), Change Chart Type, Switch Row/Column, styles, Format pane, Move Chart.</li>
+<li><b>Pivot Chart</b> in two lines; <b>conclusion</b> on choosing the right chart.</li>
+</ol>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m3" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain What-If Analysis in Excel. Discuss Scenario Manager, Goal Seek and Data Tables with examples. (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m3"><span class="dot"></span>Module III</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> meaning of what-if analysis; path Data ▸ What-If Analysis.</li>
+<li><b>Scenario Manager:</b> steps (Add ▸ name ▸ changing cells ▸ values ▸ Show / Summary); best/worst/likely example.</li>
+<li><b>Goal Seek:</b> Set cell / To value / By changing cell; Test-3 example (87); limitations — one input only.</li>
+<li><b>Data Table:</b> one-variable and two-variable tables; EMI example.</li>
+<li><b>Comparison table</b> of the three tools; <b>uses</b> in budgeting, pricing, loans; conclusion.</li>
+</ol>
+  </div>
+</details>
+
+<details class="qa" open data-mod="m4" data-hot="0">
+  <summary><span class="q-line"><span class="q-text">Explain how to build an interactive dashboard in Excel using pivot tables, pivot charts, slicers and form controls. (Essay blueprint)</span><span class="chev" aria-hidden="true">›</span></span><span class="badges"><span class="badge marks">10 marks</span><span class="badge m4"><span class="dot"></span>Module IV</span><span class="badge new">Likely · not yet asked</span></span></summary>
+  <div class="ans">
+<ol>
+<li><b>Introduction:</b> what a dashboard is and why managers use it.</li>
+<li><b>Preparation:</b> clean data, format as Table.</li>
+<li><b>Components:</b> KPI cells, pivot tables, pivot charts, slicers/timelines, form controls — draw the wireframe from Module IV (4.4).</li>
+<li><b>Steps:</b> build pivots ▸ pivot charts ▸ arrange on a dashboard sheet ▸ connect slicers (Report Connections) ▸ add form controls with cell links ▸ format and protect.</li>
+<li><b>Benefits and limitations;</b> conclusion.</li>
+</ol>
+  </div>
+</details>
+      </div>
+    </section>
+
+    <!-- ===================== 4. STRATEGY ===================== -->
+    <section class="block" id="strategy">
+      <div class="section-head">
+        <span class="sec-num">4</span>
+        <div>
+          <h2>Exam strategy &amp; answer formatting</h2>
+          <p>How to write this 90-minute practical-theory paper for maximum marks.</p>
+        </div>
+      </div>
+
+      <ol class="strategy-list">
+        <li>
+          <h4>Exploit the ceilings — attempt every question in Sections A and B</h4>
+          <p>Section A offers 20 marks against a ceiling of 16; Section B offers 30 against 24. Answering everything gives a <b>4-mark and a 6-mark buffer</b>. Section C has no buffer — the pivot-table essay is the safest choice if it appears.</p>
+        </li>
+        <li>
+          <h4>Budget your 90 minutes</h4>
+          <div class="time-bar" role="img" aria-label="Section A 20 minutes, Section C 22 minutes, Section B 42 minutes, review 6 minutes">
+            <div style="flex:20"><span class="lbl-long">A · 20 min</span><span class="lbl-short">A</span></div>
+            <div class="tb-c" style="flex:22"><span class="lbl-long">C · 22 min</span><span class="lbl-short">C</span></div>
+            <div style="flex:42"><span class="lbl-long">B · 42 min</span><span class="lbl-short">B</span></div>
+            <div style="flex:6" title="Review 6 min"><span class="lbl-long">6</span><span class="lbl-short">R</span></div>
+          </div>
+          <p class="small muted" style="margin-top:-2px">Section A 20 min → Section C 22 min → Section B 42 min → review 6 min</p>
+        </li>
+        <li>
+          <h4>Write the menu path, the syntax and the result</h4>
+          <p>Examiners of a spreadsheet paper look for three things: the <b>path</b> (<span class="path">Data ▸ Sort ▸ Add Level</span>), the <b>syntax</b> (<code class="f">=VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])</code>) and a <b>worked result</b> (<code class="f">=CEILING(23,5)</code> → 25). Underline function names and use “▸” or “→” between menu steps.</p>
+        </li>
+        <li>
+          <h4>Draw a small grid in every 6- and 10-mark answer</h4>
+          <p>A 4×4 grid with column letters and row numbers proves understanding: referencing (formula copied down), VLOOKUP (highlighted row and column), pivot (before → after), Goal Seek (target cell), conditional formatting (shaded duplicates), Watch Window (six headings).</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead><tr><th>Marks</th><th>Length</th><th>Structure</th></tr></thead>
+              <tbody>
+                <tr><th>2</th><td>3–4 lines</td><td>Definition → path / syntax / one example</td></tr>
+                <tr><th>6</th><td>1–1.5 pages</td><td>Definition → steps with menu path → grid or formula example → uses → conclusion</td></tr>
+                <tr><th>10</th><td>3 pages</td><td>Definition → worked example grid → steps → 7–10 features or points → importance / issues → conclusion</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </li>
+        <li>
+          <h4>Revise the repeats first</h4>
+          <p><b>Pivot tables</b> (10-mark essay in both papers), <b>cell referencing</b> and the <b>Watch Window</b> (6-mark questions in both), then sorting/filtering, charts, data validation and the function family IF · VLOOKUP · MIN/MAX · ROUND/CEILING/FLOOR. If possible, practise each once on a computer — remembering a step you have actually clicked is far easier.</p>
+        </li>
+      </ol>
+
+      <div class="warn">
+        <span class="callout-title">Night-before checklist</span>
+        <ul class="tight">
+          <li>Can you write the syntax of IF, VLOOKUP, COUNTIF, SUMIF, ROUND, CEILING and FLOOR from memory?</li>
+          <li>Can you show what happens to <code class="f">A1</code>, <code class="f">$A$1</code>, <code class="f">$A1</code> and <code class="f">A$1</code> when copied?</li>
+          <li>Can you draw a pivot table from six rows of data and list seven features?</li>
+          <li>Can you give the paths for Sort (Add Level), Filter, Data Validation, Remove Duplicates, Conditional Formatting ▸ Duplicate Values, Watch Window and Goal Seek?</li>
+          <li>Can you say when to use a bar, line and pie chart, and how to make a Pivot Chart?</li>
+        </ul>
+      </div>
     </section>
 
     <footer class="site-footer" style="margin-top:40px">
-      <p><b>Sources.</b> Syllabus: University of Calicut CUFYUGP B.Sc. Computer Science Honours — CSC1FM105 Data Analysis and Visualization Through Spreadsheets (MDC; St. Thomas College, Thrissur copy, 2024 admission onwards). Question papers from the Amal College library folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 113387); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100044).</p>
+      <p><b>Sources used to build these notes.</b> Syllabus: University of Calicut CUFYUGP B.Sc. Computer Science Honours — CSC1FM105 Data Analysis and Visualization Through Spreadsheets (MDC, 3 credits; St. Thomas College, Thrissur copy, 2024 admission onwards). Question papers, from the Amal College library's 1st Semester folder: First Semester (CUFYUGP) Degree Examination, November 2024 (QP D 113387 — header prints “Maximum: 70 Marks”, but the sections total 50); Amal College of Advanced Studies (Autonomous) End-Semester Examination, November 2025 (QP 100044). Syllabus references: Google Workspace Learning Center (Sheets) and GCFGlobal Google Sheets tutorials; Excel menu paths follow Microsoft 365.</p>
       <p><a href="../#semester-1">← Back to all Semester 1 subjects</a></p>
     </footer>
   </main>

@@ -10,6 +10,7 @@ Visual, exam-focused revision notes for FYUGP programmes (University of Calicut 
 | 1 | COM1MN107 · Essentials of Marketing | [`semester-1/essentials-of-marketing.html`](semester-1/essentials-of-marketing.html) |
 | 1 | COM1MN108 · Advertisement and Sales Promotion | [`semester-1/advertisement-and-sales-promotion.html`](semester-1/advertisement-and-sales-promotion.html) |
 | 1 | ENG1FA101(1B) · English Language Skills for Humanities and Other BA Programmes | [`semester-1/english-language-skills-for-humanities.html`](semester-1/english-language-skills-for-humanities.html) |
+| 1 | CSC1FM105 · Data Analysis and Visualization Through Spreadsheets | [`semester-1/data-analysis-and-visualization-through-spreadsheets.html`](semester-1/data-analysis-and-visualization-through-spreadsheets.html) |
 | 1 | MAL1FA102(1) · Literary Practices in Malayalam | [`semester-1/literary-practices-in-malayalam.html`](semester-1/literary-practices-in-malayalam.html) |
 
 Each subject page follows the same four-part structure:
